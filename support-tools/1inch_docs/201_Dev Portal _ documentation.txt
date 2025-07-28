@@ -1,0 +1,221 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Introduction
+AggregationRouterV6
+ClipperRouter
+GenericRouter
+LimitOrderProtocol
+UnoswapRouter
+Helpers
+Permitable
+AddressLib
+EthReceiver
+MakerTraitsLib
+OnlyWethReceiver
+PredicateHelper
+SeriesEpochManager
+TakerTraitsLib
+Interfaces
+Limit Order Protocol
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Introduction
+AggregationRouterV6
+ClipperRouter
+GenericRouter
+LimitOrderProtocol
+UnoswapRouter
+Helpers
+Permitable
+AddressLib
+EthReceiver
+MakerTraitsLib
+OnlyWethReceiver
+PredicateHelper
+SeriesEpochManager
+TakerTraitsLib
+Interfaces
+Limit Order Protocol
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+MakerTraitsLib
+
+type MakerTraits is uint256;
+
+Functions
+hasExtension
+function hasExtension(
+    MakerTraits makerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+isAllowedSender
+function isAllowedSender(
+    MakerTraits makerTraits,
+    address sender
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+sender	address	
+Return values
+Type	Description
+bool	
+isExpired
+function isExpired(
+    MakerTraits makerTraits
+) internal view returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+nonceOrEpoch
+function nonceOrEpoch(
+    MakerTraits makerTraits
+) internal pure returns (uint256)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+uint256	
+series
+function series(
+    MakerTraits makerTraits
+) internal pure returns (uint256)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+uint256	
+allowPartialFills
+function allowPartialFills(
+    MakerTraits makerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+allowImproveRateViaInteraction
+function allowImproveRateViaInteraction(
+    MakerTraits makerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+needPreInteractionCall
+function needPreInteractionCall(
+    MakerTraits makerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+needPostInteractionCall
+function needPostInteractionCall(
+    MakerTraits makerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+allowMultipleFills
+function allowMultipleFills(
+    MakerTraits makerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+useBitInvalidator
+function useBitInvalidator(
+    MakerTraits makerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+needCheckEpochManager
+function needCheckEpochManager(
+    MakerTraits makerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+usePermit2
+function usePermit2(
+    MakerTraits makerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+unwrapWeth
+function unwrapWeth(
+    MakerTraits makerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+makerTraits	MakerTraits	
+Return values
+Type	Description
+bool	
+Previous
+EthReceiver
+Next
+OnlyWethReceiver
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

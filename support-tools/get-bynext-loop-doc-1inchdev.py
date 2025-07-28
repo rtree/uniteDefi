@@ -12,6 +12,16 @@ BASE_URL = "https://portal.1inch.dev/documentation/apis/swap/intent-swap/swagger
 STARTNUMBER = 33
 BASE_URL = "https://portal.1inch.dev/documentation/apis/history/swagger?method=post&path=%2Fv2.0%2Fhistory%2F%7Baddress%7D%2Fsearch%2Fevents"
 STARTNUMBER = 83
+BASE_URL = "https://portal.1inch.dev/documentation/apis/balance/swagger?method=post&path=%2Fv1.2%2F1%2Fbalances%2Fmultiple%2FwalletsAndTokens"
+STARTNUMBER = 122
+BASE_URL = "https://portal.1inch.dev/documentation/apis/balance/swagger?method=get&path=%2Fv1.2%2F1%2Fallowances%2F%7Bspender%7D%2F%7BwalletAddress%7D"
+STARTNUMBER = 125
+BASE_URL = "https://portal.1inch.dev/documentation/apis/gas-price/introduction"
+STARTNUMBER = 127
+BASE_URL = "https://portal.1inch.dev/documentation/apis/spot-price/swagger?method=get&path=%2Fv1.1%2F1%2Fcurrencies"
+STARTNUMBER = 134
+BASE_URL = "https://portal.1inch.dev/documentation/apis/token-details/swagger?method=get&path=%2Fv1.0%2Fprices%2Fchange%2F%7Bchain%7D%2F%7BtokenAddress%7D"
+STARTNUMBER = 191
 
 OUTPUT_DIR = "1inch_docs"
 MERGED_PDF_PATH = "1inch_full_documentation.pdf"

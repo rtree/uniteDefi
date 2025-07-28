@@ -1,0 +1,175 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Introduction
+Quickstart guide
+Swagger
+GET
+Prices for whitelisted tokens
+POST
+Prices for requested tokens
+GET
+List of custom currencies
+GET
+Prices for requested tokens
+Oracle Deployment Guide
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Introduction
+Quickstart guide
+Swagger
+GET
+Prices for whitelisted tokens
+POST
+Prices for requested tokens
+GET
+List of custom currencies
+GET
+Prices for requested tokens
+Oracle Deployment Guide
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+1inch Spot Price API
+POST
+https://api.1inch.dev/price/v1.1/{chain}
+Prices for requested tokens
+Returns prices for requested tokens
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+Request Body
+Content type
+application/json
+Click in to adjust the request body:
+  
+{
+  "tokens": [
+    "0x111111111117dc0aa78b770fa6a738034120c302"
+  ],
+  "currency": "USD"
+}
+
+
+Request Body Schema:
+GetPricesRequestDto
+object
+tokens
+*
+array
+items
+string
+currency
+string (Enum)
+USD
+swagger.response
+Code: 200
+Prices for requested tokens
+Schema:
+object
+Code: 400
+Schema:
+object
+error
+any (Enum)
+Bad Request
+description
+string
+statusCode
+any (Enum)
+400
+meta
+array
+items
+any
+type
+string
+value
+any
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/price/v1.1/1";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+  const body = {
+    tokens: ["0x111111111117dc0aa78b770fa6a738034120c302"],
+    currency: "USD",
+  };
+
+  try {
+    const response = await axios.post(url, body, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Quickstart guide
+Next
+Prices for requested tokens
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

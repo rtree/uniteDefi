@@ -1,0 +1,85 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+Interfaces
+IAmountGetter
+ICreate3Deployer
+IOrderMixin
+IPermit2WitnessTransferFrom
+IPostInteraction
+IPreInteraction
+ITakerInteraction
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+Interfaces
+IAmountGetter
+ICreate3Deployer
+IOrderMixin
+IPermit2WitnessTransferFrom
+IPostInteraction
+IPreInteraction
+ITakerInteraction
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+IPermit2WitnessTransferFrom
+
+Types
+Functions
+
+Types
+TokenPermissions
+struct TokenPermissions {
+  address token;
+  uint256 amount;
+}
+
+PermitTransferFrom
+struct PermitTransferFrom {
+  struct IPermit2WitnessTransferFrom.TokenPermissions permitted;
+  uint256 nonce;
+  uint256 deadline;
+}
+
+SignatureTransferDetails
+struct SignatureTransferDetails {
+  address to;
+  uint256 requestedAmount;
+}
+
+Functions
+permitWitnessTransferFrom
+function permitWitnessTransferFrom(struct IPermit2WitnessTransferFrom.PermitTransferFrom permit, struct IPermit2WitnessTransferFrom.SignatureTransferDetails transferDetails, address owner, bytes32 witness, string witnessTypeString, bytes signature) external
+
+Previous
+IOrderMixin
+Next
+IPostInteraction
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

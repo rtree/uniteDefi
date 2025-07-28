@@ -1,0 +1,99 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Introduction
+Quickstart guide
+Swagger
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Introduction
+Quickstart guide
+Swagger
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Quickstart guide
+Building a Simple dApp using the 1inch Web3 RPC API
+
+In this tutorial, we will build a simple decentralized application (dApp) that checks the Ethereum balance of any EVM-compatible wallet address. We'll be using the 1inch Web3 RPC API along with the web3.js library to interact with the blockchain.
+
+Prerequisites:
+Node.js installed on your machine. Download it here.
+Web3 library. Install it using npm install web3.
+
+Details:
+
+Endpoint: https://api.1inch.dev/web3/1
+Method: POST
+Parameters:
+RPC-specific parameters: jsonrpc, method, params, and id.
+Step 1: Set up environment variables
+
+Create a .env file in your project directory and add the following lines. Be sure to replace YOUR_API_KEY and YOUR_0x_WALLET_ADDRESS with your actual 1inch API key and wallet address. You can obtain an API key here.
+
+API_KEY=YOUR_API_KEY;
+WALLET_ADDRESS=YOUR_0x_WALLET_ADDRESS;
+CHAIN_ID=1;
+
+Step 2: Building the Balance Checker
+
+Create a new file named balance_checker.js and write the following code:
+
+Step 3: Running the Balance Checker
+
+Save the script and run it using the command:
+
+node balance_checker.js
+
+
+The script will then fetch and display the balance for the designated wallet address.
+
+That's it! You've just built a simple balance checker using the 1inch Web3 RPC API. This basic app can serve as a foundation for more complex dApp projects, such as creating functions to check additional token balances or incorporating new features (like swaps) available through the other available 1inch APIs.
+
+Questions, comments concerns? Feel free to reach out to us in the live support chat.
+Previous
+Introduction
+Next
+Perform RPC calls against full nodes
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

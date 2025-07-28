@@ -1,0 +1,98 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Introduction
+Quickstart guide
+Swagger
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Introduction
+Quickstart guide
+Swagger
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The 1inch Web3 RPC API provides you with an easy way to maintain a constant, secure connection to the blockchain. These nodes provide reliable, real-time data access and interaction capabilities for executing transactions, monitoring block events, and querying network data efficiently.
+
+INFO
+
+Enhanced API services are available as part of our paid plans. They are designed for enterprises with high-demand blockchain interactions or substantial operational scale, ensuring superior performance in terms of connectivity, throughput, and response times.
+
+Supported Networks
+Ethereum Mainnet
+Solana
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+[Linea] (https://linea.build)
+Unichain
+Potential use cases
+Decentralized applications (dApps): ensure your dApp has a stable and secure connection to the blockchain for tasks like reading smart contract data, sending transactions, and querying blockchain state.
+Decentralized exchanges (DEXes): maintain high uptime and reliable data feeds for trading operations, ensuring users can trade assets seamlessly.
+Trading bots: achieve fast and reliable access to blockchain data to make timely trading decisions and execute trades.
+Wallets: provide users with real-time balance updates, transaction statuses, and other important blockchain data.
+Analytics platforms: collect and analyze blockchain data for insights and trends without worrying about node maintenance.
+Benefits of using 1inch Web3 RPC API
+Maximal uptime: we have developed the most advanced internal systems for node health check/load balancing, which enable us to offer the maximum possible uptime.
+High load resistance: thanks to our significant expertise, we can support high network load without sacrificing uptime.
+Support for multiple chains: the Web3 Node API supports different EVM networks, allowing you to interact with various blockchains through a single provider.
+Seamless integration: easily integrate with your existing web3 projects using standard Web3 libraries.
+Included with paid accounts: our enhanced API services, including the Web3 RPC API, are included with all paid user accounts, offering a comprehensive solution for enterprises and high-demand projects.
+API Reference
+
+For detailed information about each endpoint, refer to the Web3 RPC API Swagger section.
+
+Previous
+Broadcast private transaction
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

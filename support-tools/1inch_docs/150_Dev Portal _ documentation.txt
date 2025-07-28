@@ -1,0 +1,255 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+Introduction
+Quickstart guide
+Swagger
+GET
+1inch whitelisted multi-chain tokens
+GET
+1inch whitelisted multi-chain tokens in list format
+GET
+Get all supported chain ids
+GET
+Search multi-chain tokens by name or symbol
+GET
+1inch whitelisted tokens
+GET
+1inch whitelisted tokens
+GET
+1inch whitelisted tokens
+GET
+1inch whitelisted tokens in list format
+GET
+1inch whitelisted tokens in list format
+GET
+1inch whitelisted tokens in list format
+GET
+Search tokens by name or symbol
+GET
+Search tokens by name or symbol
+GET
+Search tokens by name or symbol
+GET
+Get many tokens
+GET
+Get many tokens
+GET
+Get many tokens
+GET
+Get single token
+GET
+Get single token
+GET
+Get single token
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+Introduction
+Quickstart guide
+Swagger
+GET
+1inch whitelisted multi-chain tokens
+GET
+1inch whitelisted multi-chain tokens in list format
+GET
+Get all supported chain ids
+GET
+Search multi-chain tokens by name or symbol
+GET
+1inch whitelisted tokens
+GET
+1inch whitelisted tokens
+GET
+1inch whitelisted tokens
+GET
+1inch whitelisted tokens in list format
+GET
+1inch whitelisted tokens in list format
+GET
+1inch whitelisted tokens in list format
+GET
+Search tokens by name or symbol
+GET
+Search tokens by name or symbol
+GET
+Search tokens by name or symbol
+GET
+Get many tokens
+GET
+Get many tokens
+GET
+Get many tokens
+GET
+Get single token
+GET
+Get single token
+GET
+Get single token
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+1inch Tokens API
+GET
+https://api.1inch.dev/token/v1.3/{chainId}/search
+Search tokens by name or symbol
+Search tokens by name or symbol
+Network
+Ethereum
+Parameters
+chainId
+number
+*
+(path)
+query
+string
+(query)
+Text to search for in token address, token symbol, or description
+ignore_listed
+boolean
+(query)
+Whether to ignore listed tokens
+only_positive_rating
+boolean
+*
+(query)
+limit
+number
+(query)
+Maximum number of tokens to return
+country
+object
+*
+(query)
+swagger.response
+Code: 200
+Search results
+Schema:
+array
+items
+TokenDto
+object
+chainId
+*
+number
+symbol
+*
+string
+name
+*
+string
+address
+*
+string
+decimals
+*
+number
+logoURI
+string
+rating
+*
+number
+eip2612
+boolean
+isFoT
+boolean
+tags
+*
+array
+items
+TagDto
+object
+provider
+*
+string
+value
+*
+string
+providers
+*
+array
+items
+string
+Code: 400
+Invalid chain ID
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/token/v1.3/1/search";
+
+  const config = {
+    headers: undefined,
+    params: {
+      query: "1inch",
+      limit: 10,
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Search tokens by name or symbol
+Next
+Search tokens by name or symbol
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

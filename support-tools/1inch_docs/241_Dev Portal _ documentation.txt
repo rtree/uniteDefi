@@ -1,0 +1,107 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Spot Price Aggregator
+Introduction
+Examples
+Oracle Deployment Guide
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Spot Price Aggregator
+Introduction
+Examples
+Oracle Deployment Guide
+FAQ
+Becoming a Resolver
+Introduction
+
+The 1inch spot price aggregator is a set of smart contracts that extract price data for tokens traded on DEXes from the blockchain. To avoid price manipulations within a transaction, the spot price aggregator should ONLY be used off-chain. DO NOT use it on-chain. For off-chain usage check out these Examples.
+
+Wrappers
+
+To handle wrapped tokens, such as wETH, cDAI, aDAI etc., the 1inch spot price aggregator uses custom wrapper smart contracts that wrap/unwrap tokens at the current wrapping exchange rate.
+
+Connectors
+
+If no direct liquidity pair exists between two tokens, the spot price aggregator calculates rates for those coins using another token that has pairs with both of them – a connector token.
+
+Supported Deployments
+Ethereum Mainnet
+Oracle 0x0AdDd25a91563696D8567Df78D5A01C9a991F9B8
+Supported DEXes
+Supported wrappers
+Supported connectors
+Prev oracle versions (legacy)
+Binance Smart Chain (BSC, BNB)
+Oracle 0x0AdDd25a91563696D8567Df78D5A01C9a991F9B8
+Supported DEXes
+Supported wrappers
+Supported connectors
+Prev oracle versions (legacy)
+Polygon (Matic)
+Oracle 0x0AdDd25a91563696D8567Df78D5A01C9a991F9B8
+Supported DEXes
+Supported wrappers
+Supported connectors
+Prev oracle versions (legacy)
+Optimism (Optimistic)
+Oracle 0x0AdDd25a91563696D8567Df78D5A01C9a991F9B8
+Supported DEXes
+Supported wrappers
+Supported connectors
+Prev oracle versions (legacy)
+Arbitrum
+Oracle 0x0AdDd25a91563696D8567Df78D5A01C9a991F9B8
+Supported DEXes
+Supported wrappers
+Supported connectors
+Prev oracle versions (legacy)
+Avalanche (Avax)
+Oracle 0x0AdDd25a91563696D8567Df78D5A01C9a991F9B8
+Supported DEXes
+Supported wrappers
+Supported connectors
+Prev oracle versions (legacy)
+Gnosis (xDai)
+Oracle 0x0AdDd25a91563696D8567Df78D5A01C9a991F9B8
+Supported DEXes
+Supported wrappers
+Supported connectors
+Prev oracle versions (legacy)
+Klaytn
+Oracle 0x0AdDd25a91563696D8567Df78D5A01C9a991F9B8
+Supported DEXes
+Supported wrappers
+Supported connectors
+Prev oracle versions (legacy)
+zkSync
+Oracle 0xc9bB6e4FF7dEEa48e045CEd9C0ce016c7CFbD500
+Supported DEXes
+Supported wrappers
+Supported connectors
+Prev oracle versions (legacy)
+Base
+Oracle 0x0AdDd25a91563696D8567Df78D5A01C9a991F9B8
+Supported DEXes
+Supported wrappers
+Supported connectors
+Prev oracle versions (legacy)
+Previous
+TakerTraits
+Next
+Examples
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

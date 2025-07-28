@@ -1,0 +1,97 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Introduction
+Quickstart guide
+Swagger
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Introduction
+Quickstart guide
+Swagger
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The 1inch Charts API is designed to provide easy retrieval and display of chart data for onchain assets, including ERC20 tokens, NFTs, and more. It fetches and visualizes historical market data, giving you the tools needed to make data-driven decisions.
+
+Key features
+Retrieval of chart data: enables fetching of historical and real-time chart data.
+Versatile data types: supports data for ERC20 token pairs, NFTs, and more.
+Easy integration: designed to be easily integrated into backend systems (Node.js) and frontend applications (React).
+Support for multiple networks: currently available on Ethereum, Binance Smart Chain, and Polygon.
+Use cases in dApps
+NFT marketplaces
+Price history charts: display historical price trends for NFTs
+Volume charts: show trading volume over time, gain insight into the sentiment and liquidity of specific NFTs.
+Decentralized exchanges (DEXes)
+Token price charts: provide users with historical and real-time price charts for any supported ERC20 token.
+Trading volume charts: visualize trading volumes to help users understand market activity.
+Portfolio management tools
+Asset performance tracking: allow users to track the historical performance of their assets—ideal for wallet applications as well!
+Portfolio analysis: provide insights into the value changes and trends in a user's portfolio over time.
+Yield farming platforms
+Yield tracking: show historical yields of multiple farming positions to help users make informed decisions.
+APY trends: visualize the APY trends of an individual farm to help users assess its performance.
+DeFi analytics
+Market analysis: provide comprehensive market analysis tools for users to study trends and make data-driven decisions.
+Liquidity pool charts: show data for various liquidity pools, including volume, fees, and pool composition.
+Supported networks
+Ethereum Mainnet
+BNB Chain
+Polygon
+INFO
+
+If you are an enterprise with significant API request volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+API reference
+
+For detailed information about each endpoint, refer to the Charts API Swagger section.
+
+Previous
+Perform RPC calls
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

@@ -1,0 +1,47 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+FAQ
+Common API Error Messages
+API troubleshooting
+CORS Errors
+General Integration Questions
+How to read transaction input data
+How to implement 1inch wallet auto-connect
+Infrastructure Fees
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+FAQ
+Common API Error Messages
+API troubleshooting
+CORS Errors
+General Integration Questions
+How to read transaction input data
+How to implement 1inch wallet auto-connect
+Infrastructure Fees
+Becoming a Resolver
+Infrastructure Fees
+
+Infrastructure fees apply to all prepaid plans, exclusively for Classic Swap API transactions. These fees are deducted from the destination amount of each completed Network Request and are distinct from subscription fees. They help maintain and scale the infrastructure that powers the APIs—ensuring reliability, performance, and operational continuity.
+
+Following infrastructure fees apply by plan:
+
+Plan	Fees for stable coins	Fees for non-stable coins
+Dev	10bps	30 bps
+Startup	7bps	20 bps
+Pro	4 bps	10 bps
+Business	2 bps	5 bps
+Previous
+How to implement 1inch wallet auto-connect
+Next
+Terms of Use for Resolvers
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

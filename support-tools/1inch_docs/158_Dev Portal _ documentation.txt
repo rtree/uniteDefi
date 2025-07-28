@@ -1,0 +1,99 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Introduction
+Quickstart guide
+Swagger
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Introduction
+Quickstart guide
+Swagger
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+Get expanded data on users’ NFTs.
+
+The NFT API is designed to meet the needs of NFT platform developers and provides direct streamlined access to on-chain vital NFT data. With a simple GET request, retrieve comprehensive information about any NFT—whether it’s pixel art, a meme, or a unique collectible.
+
+Using just an NFT owner's address, developers can access detailed attributes of their assets, including image URLs, descriptions, associated contract details, and links to platforms like OpenSea. Queries can be customized with parameters like 'limit' and 'offset' to fit a variety of use cases, from lightweight data visualization to in-depth analytics.
+
+As NFTs continue to gain prominence as digital art, collectibles, and even financial assets, having an efficient way to interact with and retrieve data about them is crucial. Whether you’re building an NFT marketplace, a personal collection tracker, or a digital art gallery, our NFT API is the ideal foundation to start.
+
+Supported networks
+Ethereum Mainnet
+Gnosis
+Why use the NFT API?
+
+The NFT API offers several key advantages:
+
+Comprehensive NFT data: retrieve a wide array of NFT attributes, including image URLs, descriptions, metadata, and contract details, all from a single API.
+Efficient querying: customize requests with parameters like limit and offset to ensure seamless data retrieval, whether for simple lists or complex analyses.
+Cross-platform compatibility: direct links to platforms like OpenSea make it easy to integrate NFT data across different marketplaces and applications.
+Optimized for large datasets: designed to handle significant query volumes, ensuring stable performance even for high-traffic applications.
+Integration possibilities
+
+The NFT API can be integrated into various applications, making it highly versatile for different NFT-centric use cases. It is especially valuable for:
+
+NFT marketplaces
+Personal NFT collection trackers
+Digital art galleries and virtual galleries
+Wallets with NFT support
+DeFi platforms leveraging NFTs as collateral
+NFT data aggregators and analytics platforms
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+API reference
+
+For detailed information about each endpoint, refer to the NFT API Swagger section.
+
+Previous
+Get single token
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

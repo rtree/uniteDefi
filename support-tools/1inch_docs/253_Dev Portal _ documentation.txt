@@ -1,0 +1,44 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+FAQ
+Becoming a Resolver
+Terms of Use for Resolvers
+Introduction
+Resolver verification
+Resolver’s setup script example
+Fusion+ test examples
+Initializing Farm Reward Distribution
+Contract interaction
+Articles
+Overview
+APIs
+Contracts
+FAQ
+Becoming a Resolver
+Terms of Use for Resolvers
+Introduction
+Resolver verification
+Resolver’s setup script example
+Fusion+ test examples
+Initializing Farm Reward Distribution
+Contract interaction
+Resolver verification
+
+Prior to registering as a resolver, each individual or company is required to pass a verification procedure.
+
+The aim of the verification is to provide a safe and transparent environment within the 1inch Network. Verification ensures that each resolver is a trustworthy actor within the network, increasing user confidence and trust. Additionally, verification is necessary for the resolver to receive relevant rewards.
+
+Essentially, verification involves completing an identifying KYC (know-your-client)/KYB (know-your-business process) questionnaire. The process is slightly different for individuals and entities, but in both cases it is straightforward. It involves answering several questions and uploading basic identification documents.
+
+Previous
+Introduction
+Next
+Resolver’s setup script example
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

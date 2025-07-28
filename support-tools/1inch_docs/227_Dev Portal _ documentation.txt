@@ -1,0 +1,64 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+Interfaces
+IAmountGetter
+ICreate3Deployer
+IOrderMixin
+IPermit2WitnessTransferFrom
+IPostInteraction
+IPreInteraction
+ITakerInteraction
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+Interfaces
+IAmountGetter
+ICreate3Deployer
+IOrderMixin
+IPermit2WitnessTransferFrom
+IPostInteraction
+IPreInteraction
+ITakerInteraction
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+ICreate3Deployer
+Functions
+deploy
+function deploy(bytes32 salt, bytes code) external returns (address)
+
+addressOf
+function addressOf(bytes32 salt) external view returns (address)
+
+Previous
+IAmountGetter
+Next
+IOrderMixin
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

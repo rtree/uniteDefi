@@ -1,0 +1,91 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+PredicateHelper
+SeriesEpochManager
+SeriesNonceManager
+Interfaces
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+PredicateHelper
+SeriesEpochManager
+SeriesNonceManager
+Interfaces
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+SeriesEpochManager
+Quick links
+
+Functions
+Events
+Errors
+
+Functions
+epoch
+function epoch(address maker, uint96 series) public view returns (uint256)
+
+
+Returns nonce for maker and series
+
+increaseEpoch
+function increaseEpoch(uint96 series) external
+
+
+Advances nonce by one
+
+advanceEpoch
+function advanceEpoch(uint96 series, uint256 amount) public
+
+
+Advances nonce by specified amount
+
+epochEquals
+function epochEquals(address maker, uint256 series, uint256 makerEpoch) public view returns (bool)
+
+
+Checks if maker has specified makerEpoch for series
+
+Return Values
+Name	Type	Description
+[0]	bool	Result True if maker has specified epoch. Otherwise, false
+Events
+EpochIncreased
+event EpochIncreased(address maker, uint256 series, uint256 newEpoch)
+
+Errors
+AdvanceEpochFailed
+error AdvanceEpochFailed()
+
+Previous
+PredicateHelper
+Next
+SeriesNonceManager
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

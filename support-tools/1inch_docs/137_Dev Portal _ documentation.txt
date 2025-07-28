@@ -1,0 +1,102 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+Introduction
+Quickstart guide
+Swagger
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+Introduction
+Quickstart guide
+Swagger
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The Token API retrieves comprehensive token information and allows users to search for token data using a token’s name, address, or symbol. This feature ensures that your application or platform can access precise token details across various blockchain networks. Whether you’re developing a new dApp, a data aggregation tool, or a financial platform, the Token API provides up-to-date and essential token information whenever required. This API is indispensable for wallets, explorers, portfolio trackers, and any application that needs reliable token data.
+
+Supported networks
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Solana
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+[Linea] (https://linea.build)
+Unichain
+Why use the Token API?
+
+The Token API offers several key advantages:
+
+Extensive token search capabilities: supports searches by token name, address, or symbol, covering a broad range of tokens across popular blockchain networks.
+Reliable data accuracy: ensures accurate and up-to-date token information to support a seamless user experience.
+High availability: designed for robustness, the Token API performs efficiently, even under heavy query loads.
+Integration possibilities
+
+The Token API can be integrated into a variety of applications, making it a flexible solution for diverse use cases. It is especially beneficial for:
+
+Price trackers
+Block explorers
+Wallets
+Portfolio and token trackers
+Exchanges and meta-aggregators
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+API reference
+
+For detailed information about each endpoint, refer to the Token API Swagger section.
+
+Previous
+Oracle Deployment Guide
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

@@ -1,0 +1,188 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Introduction
+Quickstart guide
+Swagger
+GET
+NftDevV2Controller_supportedChain_v2
+GET
+NftDevV2Controller_getNfts_v2
+GET
+NftDevV2Controller_getNftById_v2
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Introduction
+Quickstart guide
+Swagger
+GET
+NftDevV2Controller_supportedChain_v2
+GET
+NftDevV2Controller_getNfts_v2
+GET
+NftDevV2Controller_getNftById_v2
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+NFT Metadata Indexer API Docs
+GET
+https://api.1inch.dev/nft/v2/byaddress
+get list of nfts
+Parameters
+chainIds
+array
+*
+(query)
+list of supported chains `ETHEREUM = 1, POLYGON = 137, ARBITRUM = 42161, AVALANCHE = 43114, GNOSIS = 100, KLAYTN = 8217, OPTIMISM = 10, BASE = 8453`
+address
+string
+*
+(query)
+web3 address of owner NFTS
+limit
+number
+(query)
+The maximum number of assets to return
+offset
+number
+(query)
+The offset number of assets to return
+openseaNextToken
+string
+(query)
+The cursor for the next page of results. This is returned from a previous request.
+swagger.response
+Code: 200
+Schema:
+array
+items
+AssetsResponse
+object
+assets
+*
+array
+items
+NftV2Model
+object
+id
+*
+string
+token_id
+*
+string
+provider
+*
+string (Enum)
+OPENSEA
+RARIBLE
+POAP
+name
+*
+string
+chainId
+*
+number
+priority
+*
+number
+asset_contract
+*
+AssetContract
+object
+address
+*
+string
+schema_name
+*
+string
+image_url
+*
+string
+openseaNextToken
+*
+string
+Code: 400
+Bad Request.
+Code: 401
+Unauthorized.
+Code: 500
+Internal server error.
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/nft/v2/byaddress";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+NftDevV2Controller_supportedChain_v2
+Next
+NftDevV2Controller_getNftById_v2
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

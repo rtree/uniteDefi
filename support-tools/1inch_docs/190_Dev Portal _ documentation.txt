@@ -1,0 +1,219 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Introduction
+Quickstart guide
+Swagger
+GET
+Returns details for native token
+GET
+Returns details for token
+GET
+Returns historical native chain token prices at USD by time range
+GET
+Returns historical token prices at USD by time range
+GET
+Returns historical native chain token prices at USD by time interval
+GET
+Returns historical token prices at USD by time interval
+GET
+Returns native token price change by interval
+POST
+Returns token price change by interval for a list of tokens
+GET
+Returns token price change by interval
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Introduction
+Quickstart guide
+Swagger
+GET
+Returns details for native token
+GET
+Returns details for token
+GET
+Returns historical native chain token prices at USD by time range
+GET
+Returns historical token prices at USD by time range
+GET
+Returns historical native chain token prices at USD by time interval
+GET
+Returns historical token prices at USD by time interval
+GET
+Returns native token price change by interval
+POST
+Returns token price change by interval for a list of tokens
+GET
+Returns token price change by interval
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+Token-details API
+POST
+https://api.1inch.dev/token-details/v1.0/prices/change/{chain}
+Returns token price change by interval for a list of tokens
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+Chain id of network
+Example: 1
+Request Body
+Content type
+application/json
+Click in to adjust the request body:
+  
+{
+  "tokenAddresses": [
+    "0x111111111117dC0aa78b770fA6A738034120C302",
+    "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984"
+  ],
+  "interval": "24h"
+}
+
+
+Request Body Schema:
+GetTokenListPriceRequestDto
+object
+tokenAddresses
+*
+array
+items
+string
+interval
+*
+string (Enum)
+5m
+10m
+15m
+30m
+50m
+1h
+2h
+3h
+4h
+6h
+12h
+24h
+2d
+3d
+7d
+14d
+15d
+30d
+60d
+90d
+365d
+max
+swagger.response
+Code: 200
+Token price changes over the given interval
+Schema:
+array
+items
+TokenListPriceChangeResponseDto
+object
+tokenAddress
+*
+string
+inUSD
+*
+number
+inPercent
+*
+number
+Code: 400
+If data format is invalid or there are validation errors
+Code: 404
+If one or more tokens were not found in the price listings
+Code: 500
+Fatal server error
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/token-details/v1.0/prices/change/1";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+  const body = {
+    tokenAddresses: [
+      "0x111111111117dC0aa78b770fA6A738034120C302",
+      "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+    ],
+    interval: "24h",
+  };
+
+  try {
+    const response = await axios.post(url, body, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Returns historical token prices at USD by time interval
+Next
+Returns token price change by interval for a list of tokens
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

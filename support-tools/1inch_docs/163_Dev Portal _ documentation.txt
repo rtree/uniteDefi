@@ -1,0 +1,102 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Introduction
+Quickstart guide
+Swagger
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Introduction
+Quickstart guide
+Swagger
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The Transaction Gateway API provides reliable on-chain transaction broadcasting, supporting both public and private modes. This enables developers to choose the most appropriate broadcasting method for their use case, whether for general public transactions or for sensitive, protected transactions in a private mempool. Ideal for applications focused on security and efficiency, the Transaction Gateway API is a powerful tool for wallets, exchanges, and virtually any on-chain application.
+
+Supported networks
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Solana
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+Unichain
+Why use the Transaction Gateway API?
+
+The Transaction Gateway API offers several key advantages:
+
+Private broadcasting: provides a secure way to broadcast transactions to a private mempool, offering protection against front-running and ensuring increased transaction privacy.
+Flexible broadcasting modes: supports both public and private transaction broadcasting, allowing users to choose the method that best fits their needs.
+Reliable performance: ensures robust transaction delivery, even under high-volume scenarios, making it suitable for fast-paced trading environments.
+Integration possibilities
+
+The Transaction Gateway API can be integrated into a wide range of applications, including:
+
+Wallets
+Exchanges and meta-aggregators
+Traders and arbitrage bots
+DeFi platforms and lending protocols
+NFT marketplaces
+Payment processors and merchant tools
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+API reference
+
+For detailed information about each endpoint, refer to the Transaction Gateway API Swagger section.
+
+Previous
+NftDevV2Controller_getNftById_v2
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

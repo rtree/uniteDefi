@@ -1,0 +1,190 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+Interfaces
+Libraries
+Errors
+AmountCalculatorLib
+BitInvalidatorLib
+ExtensionLib
+MakerTraits
+Offsets
+RemainingInvalidator
+TakerTraits
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+Interfaces
+Libraries
+Errors
+AmountCalculatorLib
+BitInvalidatorLib
+ExtensionLib
+MakerTraits
+Offsets
+RemainingInvalidator
+TakerTraits
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+ExtensionLib
+
+Library for retrieving extensions information for the IOrderMixin Interface.
+
+Quick links
+
+Types
+Functions
+
+Types
+DynamicField
+enum DynamicField {
+  MakerAssetSuffix,
+  TakerAssetSuffix,
+  MakingAmountData,
+  TakingAmountData,
+  Predicate,
+  MakerPermit,
+  PreInteractionData,
+  PostInteractionData,
+  CustomData
+}
+
+Functions
+makerAssetSuffix
+function makerAssetSuffix(bytes extension) internal pure returns (bytes)
+
+
+Returns the MakerAssetSuffix from the provided extension calldata.
+
+Parameters
+Name	Type	Description
+extension	bytes	The calldata from which the MakerAssetSuffix is to be retrieved.
+Return Values
+Name	Type	Description
+[0]	bytes	calldata Bytes representing the MakerAssetSuffix.
+takerAssetSuffix
+function takerAssetSuffix(bytes extension) internal pure returns (bytes)
+
+
+Returns the TakerAssetSuffix from the provided extension calldata.
+
+Parameters
+Name	Type	Description
+extension	bytes	The calldata from which the TakerAssetSuffix is to be retrieved.
+Return Values
+Name	Type	Description
+[0]	bytes	calldata Bytes representing the TakerAssetSuffix.
+makingAmountData
+function makingAmountData(bytes extension) internal pure returns (bytes)
+
+
+Returns the MakingAmountData from the provided extension calldata.
+
+Parameters
+Name	Type	Description
+extension	bytes	The calldata from which the MakingAmountData is to be retrieved.
+Return Values
+Name	Type	Description
+[0]	bytes	calldata Bytes representing the MakingAmountData.
+takingAmountData
+function takingAmountData(bytes extension) internal pure returns (bytes)
+
+
+Returns the TakingAmountData from the provided extension calldata.
+
+Parameters
+Name	Type	Description
+extension	bytes	The calldata from which the TakingAmountData is to be retrieved.
+Return Values
+Name	Type	Description
+[0]	bytes	calldata Bytes representing the TakingAmountData.
+predicate
+function predicate(bytes extension) internal pure returns (bytes)
+
+
+Returns the order's predicate from the provided extension calldata.
+
+Parameters
+Name	Type	Description
+extension	bytes	The calldata from which the predicate is to be retrieved.
+Return Values
+Name	Type	Description
+[0]	bytes	calldata Bytes representing the predicate.
+makerPermit
+function makerPermit(bytes extension) internal pure returns (bytes)
+
+
+Returns the maker's permit from the provided extension calldata.
+
+Parameters
+Name	Type	Description
+extension	bytes	The calldata from which the maker's permit is to be retrieved.
+Return Values
+Name	Type	Description
+[0]	bytes	calldata Bytes representing the maker's permit.
+preInteractionTargetAndData
+function preInteractionTargetAndData(bytes extension) internal pure returns (bytes)
+
+
+Returns the pre-interaction from the provided extension calldata.
+
+Parameters
+Name	Type	Description
+extension	bytes	The calldata from which the pre-interaction is to be retrieved.
+Return Values
+Name	Type	Description
+[0]	bytes	calldata Bytes representing the pre-interaction.
+postInteractionTargetAndData
+function postInteractionTargetAndData(bytes extension) internal pure returns (bytes)
+
+
+Returns the post-interaction from the provided extension calldata.
+
+Parameters
+Name	Type	Description
+extension	bytes	The calldata from which the post-interaction is to be retrieved.
+Return Values
+Name	Type	Description
+[0]	bytes	calldata Bytes representing the post-interaction.
+customData
+function customData(bytes extension) internal pure returns (bytes)
+
+
+Returns extra suffix data from the provided extension calldata.
+
+Parameters
+Name	Type	Description
+extension	bytes	The calldata from which the extra suffix data is to be retrieved.
+Return Values
+Name	Type	Description
+[0]	bytes	calldata Bytes representing the extra suffix data.
+Previous
+BitInvalidatorLib
+Next
+MakerTraits
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

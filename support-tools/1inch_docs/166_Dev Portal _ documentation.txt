@@ -1,0 +1,143 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Introduction
+Quickstart guide
+Swagger
+POST
+Broadcast public transaction
+POST
+Broadcast private transaction
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Introduction
+Quickstart guide
+Swagger
+POST
+Broadcast public transaction
+POST
+Broadcast private transaction
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+1inch Transaction Gateway API
+POST
+https://api.1inch.dev/tx-gateway/v1.1/{chain}/flashbots
+Broadcast private transaction
+Takes the raw transaction data as input and broadcasts it privately, only available for Ethereum network
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+Request Body
+Content type
+application/json
+Click in to adjust the request body:
+  
+{
+  "rawTransaction": "0x123..."
+}
+
+
+Request Body Schema:
+BroadcastRequest
+object
+rawTransaction
+*
+string
+swagger.response
+Code: 200
+The transaction was successfully broadcasted
+Schema:
+BroadcastResponse
+object
+transactionHash
+*
+string
+Code: 400
+The provided input data is invalid
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/tx-gateway/v1.1/1/flashbots";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+  const body = {
+    rawTransaction: "0x123...",
+  };
+
+  try {
+    const response = await axios.post(url, body, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Broadcast public transaction
+Next
+Introduction
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

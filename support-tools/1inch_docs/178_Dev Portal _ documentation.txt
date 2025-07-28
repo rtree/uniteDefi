@@ -1,0 +1,139 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Introduction
+Quickstart guide
+Swagger
+GET
+Returns domains for address if existed
+GET
+Returns domain for address if existed
+POST
+Returns domain for addresses if existed
+GET
+Returns list of provider data with avatar
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Introduction
+Quickstart guide
+Swagger
+GET
+Returns domains for address if existed
+GET
+Returns domain for address if existed
+POST
+Returns domain for addresses if existed
+GET
+Returns list of provider data with avatar
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+domains
+GET
+https://api.1inch.dev/domains/v2.0/reverse-lookup
+Returns domain for address if existed
+Parameters
+address
+string
+*
+(query)
+address
+swagger.response
+Code: 200
+Schema:
+ResponseReverseV2Dto
+object
+result
+*
+ProviderReverseResponse
+object
+protocol
+*
+string
+domain
+*
+string
+checkUrl
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/domains/v2.0/reverse-lookup";
+
+  const config = {
+    headers: undefined,
+    params: {
+      address: "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045",
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Returns domains for address if existed
+Next
+Returns domain for addresses if existed
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

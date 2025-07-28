@@ -1,0 +1,152 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Introduction
+Quickstart guide
+Swagger
+GET
+Get balances and allowances by spender for list of wallets addresses
+GET
+Get balances of tokens for walletAddress
+POST
+Get balances of custom tokens for walletAddress
+POST
+Get balances of custom tokens for list of wallets addresses
+GET
+Get balances and allowances of tokens by spender for walletAddress
+POST
+Get balances and allowances of custom tokens by spender for walletAddress
+GET
+Get allowances of tokens by spender for walletAddress
+POST
+Get allowances of custom tokens by spender for walletAddress
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Introduction
+Quickstart guide
+Swagger
+GET
+Get balances and allowances by spender for list of wallets addresses
+GET
+Get balances of tokens for walletAddress
+POST
+Get balances of custom tokens for walletAddress
+POST
+Get balances of custom tokens for list of wallets addresses
+GET
+Get balances and allowances of tokens by spender for walletAddress
+POST
+Get balances and allowances of custom tokens by spender for walletAddress
+GET
+Get allowances of tokens by spender for walletAddress
+POST
+Get allowances of custom tokens by spender for walletAddress
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+1inch Balance API
+GET
+https://api.1inch.dev/balance/v1.2/{chain}/allowancesAndBalances/{spender}/{walletAddress}
+Get balances and allowances of tokens by spender for walletAddress
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+spender
+string
+*
+(path)
+walletAddress
+string
+*
+(path)
+swagger.response
+Code: 200
+Get address balances and allowances
+Schema:
+object
+Code: 400
+The provided input data is invalid
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url =
+    "https://api.1inch.dev/balance/v1.2/1/allowancesAndBalances/{spender}/{walletAddress}";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get balances of custom tokens for list of wallets addresses
+Next
+Get balances and allowances of custom tokens by spender for walletAddress
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

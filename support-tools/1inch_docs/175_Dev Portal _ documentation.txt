@@ -1,0 +1,82 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Introduction
+Quickstart guide
+Swagger
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Introduction
+Quickstart guide
+Swagger
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The Domains API enables seamless interaction with blockchain-based domain services, providing tools to resolve and retrieve domain information for addresses, as well as access provider data. Whether you're building a wallet, an identity service, or any web3 application, the Domains API offers essential functionality to enhance user experiences with blockchain domains.
+
+Use cases
+
+The Domains API can be applied for the following use cases:
+
+Wallets and identity applications: enable users to interact with human-readable domain names instead of long blockchain addresses.
+Batch domain resolution: efficiently resolve multiple addresses to domains for applications handling large datasets.
+Provider information: integrate provider avatars and branding for enhanced visual experiences.
+Supported networks
+Ethereum Mainnet
+Polygon
+Quickstart
+
+To start using Domains API swiftly, refer to the Quickstart guide.
+
+API reference
+
+For detailed information about each endpoint, refer to the Domains API Swagger section.
+
+Previous
+Allows to get historical candle chart data for specific token pair and period
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

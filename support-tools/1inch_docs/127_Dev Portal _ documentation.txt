@@ -1,0 +1,106 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Introduction
+Quickstart guide
+Swagger
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Introduction
+Quickstart guide
+Swagger
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The 1inch Gas Price API provides real-time, accurate gas price data across various blockchains, enabling developers and users to make informed decisions on transaction costs. With ultimate interoperability, the API allows seamless integration into applications that require up-to-date gas prices.
+
+Supported networks
+
+The Gas Price API provides support for the following chains:
+
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Solana
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+Unichain
+Why use the Gas Price API?
+
+The Gas Price API offers several key benefits:
+
+Up-to-date information: provides the most current gas price data on various blockchains for your users.
+Enterprise-grade performance: A dedicated endpoint ensures optimal performance.
+Fast response: With a response time of less than 200 ms, the Gas Price API is one of the fastest solutions available.
+Integration possibilities
+
+The Gas Price API can be integrated into various applications, such as:
+
+Wallets
+Exchanges and meta-aggregators
+Portfolio trackers
+Trading and arbitrage bots
+
+Any user interface that needs to display gas prices can benefit from integrating the Gas Price API.
+
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+API reference
+
+For detailed information about each endpoint, refer to the Gas Price API Swagger section.
+
+Previous
+Get allowances of custom tokens by spender for walletAddress
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

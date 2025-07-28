@@ -1,0 +1,140 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+ApprovalPreInteraction
+ChainlinkCalculator
+DutchAuctionCalculator
+ERC1155Proxy
+ERC721ProxySafe
+ERC721Proxy
+ETHOrders
+FeeTaker
+ImmutableOwner
+OrderIdInvalidator
+Permit2WitnessProxy
+PriorityFeeLimiter
+RangeAmountCalculator
+Helpers
+Interfaces
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+ApprovalPreInteraction
+ChainlinkCalculator
+DutchAuctionCalculator
+ERC1155Proxy
+ERC721ProxySafe
+ERC721Proxy
+ETHOrders
+FeeTaker
+ImmutableOwner
+OrderIdInvalidator
+Permit2WitnessProxy
+PriorityFeeLimiter
+RangeAmountCalculator
+Helpers
+Interfaces
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+ETHOrders
+Quick links
+
+Functions
+Events
+Errors
+
+ETH order struct.
+
+struct ETHOrder {
+  address maker;
+  uint96 balance;
+}
+
+Functions
+constructor
+constructor(contract IWETH weth, address limitOrderProtocol) public
+
+ethOrdersBatch
+function ethOrdersBatch(bytes32[] orderHashes) external view returns (struct ETHOrders.ETHOrder[] ethOrders)
+
+ethOrderDeposit
+function ethOrderDeposit(struct IOrderMixin.Order order, bytes extension) external payable returns (bytes32 orderHash)
+
+cancelOrder
+function cancelOrder(MakerTraits makerTraits, bytes32 orderHash) external
+
+
+Sets ordersMakersBalances to 0, refunds ETH and does standard order cancellation on Limit Order Protocol.
+
+isValidSignature
+function isValidSignature(bytes32 orderHash, bytes signature) external view returns (bytes4)
+
+
+Checks if orderHash signature was signed with real order maker.
+
+postInteraction
+function postInteraction(struct IOrderMixin.Order, bytes, bytes32 orderHash, address, uint256 makingAmount, uint256, uint256, bytes) external
+
+
+Callback method that gets called after all funds transfers. Updates _ordersMakersBalances by makingAmount for order with orderHash.
+
+Parameters
+Name	Type	Description
+	struct IOrderMixin.Order	
+	bytes	
+orderHash	bytes32	Hash of the order being processed
+	address	
+makingAmount	uint256	Actual making amount
+	uint256	
+	uint256	
+	bytes	
+Events
+ETHDeposited
+event ETHDeposited(bytes32 orderHash, uint256 amount)
+
+ETHOrderCancelled
+event ETHOrderCancelled(bytes32 orderHash, uint256 amount)
+
+Errors
+AccessDenied
+error AccessDenied()
+
+InvalidOrder
+error InvalidOrder()
+
+NotEnoughBalance
+error NotEnoughBalance()
+
+ExistingOrder
+error ExistingOrder()
+
+Previous
+ERC721Proxy
+Next
+FeeTaker
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

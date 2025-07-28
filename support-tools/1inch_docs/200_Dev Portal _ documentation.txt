@@ -1,0 +1,69 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Introduction
+AggregationRouterV6
+ClipperRouter
+GenericRouter
+LimitOrderProtocol
+UnoswapRouter
+Helpers
+Permitable
+AddressLib
+EthReceiver
+MakerTraitsLib
+OnlyWethReceiver
+PredicateHelper
+SeriesEpochManager
+TakerTraitsLib
+Interfaces
+Limit Order Protocol
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Introduction
+AggregationRouterV6
+ClipperRouter
+GenericRouter
+LimitOrderProtocol
+UnoswapRouter
+Helpers
+Permitable
+AddressLib
+EthReceiver
+MakerTraitsLib
+OnlyWethReceiver
+PredicateHelper
+SeriesEpochManager
+TakerTraitsLib
+Interfaces
+Limit Order Protocol
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+EthReceiver
+
+Base contract with common payable logics
+
+Functions
+receive
+function receive(
+) external
+
+Previous
+AddressLib
+Next
+MakerTraitsLib
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

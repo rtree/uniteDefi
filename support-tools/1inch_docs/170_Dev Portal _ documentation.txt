@@ -1,0 +1,164 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Introduction
+Quickstart guide
+Swagger
+POST
+Perform RPC calls against full nodes
+POST
+Perform RPC calls
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Introduction
+Quickstart guide
+Swagger
+POST
+Perform RPC calls against full nodes
+POST
+Perform RPC calls
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+Web3 RPC API
+POST
+https://api.1inch.dev/web3/{chainId}/{nodeType}
+Perform RPC calls
+Performs JSON-RPC calls on the blockchain identified by the given chainId. If nodeType is not provided, a default nodeType will be used.
+Network
+Ethereum
+Parameters
+chainId
+string
+*
+(path)
+The unique identifier for the blockchain.
+nodeType
+string
+*
+(path)
+The node type you require for your call. If not provided, 'full' will be used as the default value.
+Request Body
+Content type
+application/json
+Click in to adjust the request body:
+  
+{
+  "jsonrpc": "2.0",
+  "method": "eth_blockNumber",
+  "params": [],
+  "id": 1
+}
+
+
+Request Body Schema:
+object
+jsonrpc
+string
+method
+string
+params
+array
+items
+string
+id
+integer
+swagger.response
+Code: 200
+JSON-RPC response
+Schema:
+object
+jsonrpc
+string
+result
+string
+id
+integer
+Code: 400
+Invalid request format
+Code: 404
+ChainId not found
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/web3/1/{nodeType}";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+  const body = {
+    jsonrpc: "2.0",
+    method: "eth_blockNumber",
+    id: 1,
+  };
+
+  try {
+    const response = await axios.post(url, body, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Perform RPC calls against full nodes
+Next
+Introduction
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

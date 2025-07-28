@@ -1,0 +1,132 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Introduction
+Quickstart guide
+Swagger
+GET
+Prices for whitelisted tokens
+POST
+Prices for requested tokens
+GET
+List of custom currencies
+GET
+Prices for requested tokens
+Oracle Deployment Guide
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Introduction
+Quickstart guide
+Swagger
+GET
+Prices for whitelisted tokens
+POST
+Prices for requested tokens
+GET
+List of custom currencies
+GET
+Prices for requested tokens
+Oracle Deployment Guide
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+1inch Spot Price API
+GET
+https://api.1inch.dev/price/v1.1/{chain}
+Prices for whitelisted tokens
+Prices for whitelisted tokens
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+currency
+string
+(query)
+If no currency provided, then price returned in native Wei
+swagger.response
+Code: 200
+Prices for whitelisted tokens
+Schema:
+object
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/price/v1.1/1";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Quickstart guide
+Next
+Prices for requested tokens
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

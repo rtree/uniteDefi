@@ -1,0 +1,120 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Introduction
+AggregationRouterV6
+ClipperRouter
+GenericRouter
+LimitOrderProtocol
+UnoswapRouter
+Helpers
+Permitable
+AddressLib
+EthReceiver
+MakerTraitsLib
+OnlyWethReceiver
+PredicateHelper
+SeriesEpochManager
+TakerTraitsLib
+Interfaces
+Limit Order Protocol
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Introduction
+AggregationRouterV6
+ClipperRouter
+GenericRouter
+LimitOrderProtocol
+UnoswapRouter
+Helpers
+Permitable
+AddressLib
+EthReceiver
+MakerTraitsLib
+OnlyWethReceiver
+PredicateHelper
+SeriesEpochManager
+TakerTraitsLib
+Interfaces
+Limit Order Protocol
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+TakerTraitsLib
+
+type TakerTraits is uint256;
+
+Functions
+isMakingAmount
+function isMakingAmount(
+    TakerTraits takerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+takerTraits	TakerTraits	
+Return values
+Type	Description
+bool	
+unwrapWeth
+function unwrapWeth(
+    TakerTraits takerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+takerTraits	TakerTraits	
+Return values
+Type	Description
+bool	
+skipMakerPermit
+function skipMakerPermit(
+    TakerTraits takerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+takerTraits	TakerTraits	
+Return values
+Type	Description
+bool	
+usePermit2
+function usePermit2(
+    TakerTraits takerTraits
+) internal pure returns (bool)
+
+Parameters:
+Name	Type	Description
+takerTraits	TakerTraits	
+Return values
+Type	Description
+bool	
+threshold
+function threshold(
+    TakerTraits takerTraits
+) internal pure returns (uint256)
+
+Parameters:
+Name	Type	Description
+takerTraits	TakerTraits	
+Return values
+Type	Description
+uint256	
+Previous
+SeriesEpochManager
+Next
+IUniswapV3SwapCallback
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

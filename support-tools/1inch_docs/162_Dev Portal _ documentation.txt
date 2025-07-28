@@ -1,0 +1,218 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Introduction
+Quickstart guide
+Swagger
+GET
+NftDevV2Controller_supportedChain_v2
+GET
+NftDevV2Controller_getNfts_v2
+GET
+NftDevV2Controller_getNftById_v2
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Introduction
+Quickstart guide
+Swagger
+GET
+NftDevV2Controller_supportedChain_v2
+GET
+NftDevV2Controller_getNfts_v2
+GET
+NftDevV2Controller_getNftById_v2
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+NFT Metadata Indexer API Docs
+GET
+https://api.1inch.dev/nft/v2/contract
+get single nft with detail data collection & metadata
+Network
+Parameters
+chainId
+number
+*
+(query)
+network chain
+1
+contract
+string
+*
+(query)
+owner of NFT
+id
+string
+*
+(query)
+NFT ID
+provider
+string
+*
+(query)
+provider of NFT (opensea,rarible,poap)
+swagger.response
+Code: 200
+Schema:
+SingleNft
+object
+id
+*
+string
+token_id
+*
+string
+name
+*
+string
+image_url
+*
+object
+chainId
+*
+number
+provider
+*
+string
+description
+*
+string
+permalink
+*
+string
+collection
+*
+Collection
+object
+image_url
+*
+string
+name
+*
+string
+description
+*
+string
+creator
+*
+Creator
+object
+profile_img_url
+*
+string
+address
+*
+string
+user
+*
+User
+object
+username
+*
+string
+traits
+*
+array
+items
+Traits
+object
+value
+*
+string
+asset_contract
+*
+AssetContract
+object
+address
+*
+string
+schema_name
+*
+string
+Code: 400
+Bad Request.
+Code: 401
+Unauthorized.
+Code: 500
+Internal server error.
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/nft/v2/contract";
+
+  const config = {
+    headers: undefined,
+    params: {
+      chainId: "1",
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+NftDevV2Controller_getNfts_v2
+Next
+Introduction
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

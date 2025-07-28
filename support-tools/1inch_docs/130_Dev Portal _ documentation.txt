@@ -1,0 +1,105 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Introduction
+Quickstart guide
+Swagger
+Oracle Deployment Guide
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Introduction
+Quickstart guide
+Swagger
+Oracle Deployment Guide
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The Spot Price API provides real-time token price data across a multiple blockchains. This provides your users with accurate pricing information in a given chain’s native currency. Whether you're building a new dApp, financial platform, or web3-based tool, this API ensures you have up-to-date and reliable price information when you need it. This API is an essential tool for wallets, exchanges, portfolio trackers, and any application that requires real-time data.
+
+Supported networks
+
+The Spot Price API supports a wide range of chains:
+
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Solana
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+[Linea] (https://linea.build)
+Unichain
+Why use the Spot Price API?
+
+The Spot Price API offers several key advantages:
+
+Wide selection of tokens: supports any token across the most popular blockchain networks.
+Enterprise-grade performance: a dedicated endpoint ensures that performance remains optimal, even under heavy traffic.
+Fastest response time: with a response time under 300 ms, the Spot Price API is one of the fastest solutions on the market.
+Integration possibilities
+
+The Spot Price API can be integrated into a wide range of applications, making it a versatile tool for different use cases. It is particularly useful in:
+
+Wallets
+Portfolio and token trackers
+Exchanges and meta-aggregators
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+API reference
+
+For detailed information about each endpoint, refer to the Spot Price API Swagger section.
+
+Previous
+Gas Price from network
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

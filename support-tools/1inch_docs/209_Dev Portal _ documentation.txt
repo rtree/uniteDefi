@@ -1,0 +1,143 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+Interfaces
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+Interfaces
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+OrderMixin
+Functions list
+OrderMixin
+Functions list
+Functions
+constructor
+bitInvalidatorForOrder
+remainingInvalidatorForOrder
+rawRemainingInvalidatorForOrder
+simulate
+cancelOrder
+cancelOrders
+bitsInvalidateForOrder
+hashOrder
+checkPredicate
+fillOrder
+fillOrderArgs
+fillContractOrder
+fillContractOrderArgs
+Functions
+constructor
+constructor(contract IWETH weth) internal
+
+bitInvalidatorForOrder
+function bitInvalidatorForOrder(address maker, uint256 slot) external view returns (uint256)
+
+
+See {IOrderMixin-bitInvalidatorForOrder}.
+
+remainingInvalidatorForOrder
+function remainingInvalidatorForOrder(address maker, bytes32 orderHash) external view returns (uint256)
+
+
+See {IOrderMixin-remainingInvalidatorForOrder}.
+
+rawRemainingInvalidatorForOrder
+function rawRemainingInvalidatorForOrder(address maker, bytes32 orderHash) external view returns (uint256)
+
+
+See {IOrderMixin-rawRemainingInvalidatorForOrder}.
+
+simulate
+function simulate(address target, bytes data) external
+
+
+See {IOrderMixin-simulate}.
+
+cancelOrder
+function cancelOrder(MakerTraits makerTraits, bytes32 orderHash) public
+
+
+See {IOrderMixin-cancelOrder}.
+
+cancelOrders
+function cancelOrders(MakerTraits[] makerTraits, bytes32[] orderHashes) external
+
+
+See {IOrderMixin-cancelOrders}.
+
+bitsInvalidateForOrder
+function bitsInvalidateForOrder(MakerTraits makerTraits, uint256 additionalMask) external
+
+
+See {IOrderMixin-bitsInvalidateForOrder}.
+
+hashOrder
+function hashOrder(struct IOrderMixin.Order order) external view returns (bytes32)
+
+
+See {IOrderMixin-hashOrder}.
+
+checkPredicate
+function checkPredicate(bytes predicate) public view returns (bool)
+
+
+See {IOrderMixin-checkPredicate}.
+
+fillOrder
+function fillOrder(struct IOrderMixin.Order order, bytes32 r, bytes32 vs, uint256 amount, TakerTraits takerTraits) external payable returns (uint256, uint256, bytes32)
+
+
+See {IOrderMixin-fillOrder}.
+
+fillOrderArgs
+function fillOrderArgs(struct IOrderMixin.Order order, bytes32 r, bytes32 vs, uint256 amount, TakerTraits takerTraits, bytes args) external payable returns (uint256, uint256, bytes32)
+
+
+See {IOrderMixin-fillOrderArgs}.
+
+fillContractOrder
+function fillContractOrder(struct IOrderMixin.Order order, bytes signature, uint256 amount, TakerTraits takerTraits) external returns (uint256, uint256, bytes32)
+
+
+See {IOrderMixin-fillContractOrder}.
+
+fillContractOrderArgs
+function fillContractOrderArgs(struct IOrderMixin.Order order, bytes signature, uint256 amount, TakerTraits takerTraits, bytes args) external returns (uint256, uint256, bytes32)
+
+
+See {IOrderMixin-fillContractOrderArgs}.
+
+Previous
+OrderLib
+Next
+ApprovalPreInteraction
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

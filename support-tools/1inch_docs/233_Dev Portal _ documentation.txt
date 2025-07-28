@@ -1,0 +1,65 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+Interfaces
+Libraries
+Errors
+AmountCalculatorLib
+BitInvalidatorLib
+ExtensionLib
+MakerTraits
+Offsets
+RemainingInvalidator
+TakerTraits
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+Interfaces
+Libraries
+Errors
+AmountCalculatorLib
+BitInvalidatorLib
+ExtensionLib
+MakerTraits
+Offsets
+RemainingInvalidator
+TakerTraits
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Errors
+InvalidMsgValue
+error InvalidMsgValue()
+
+ETHTransferFailed
+error ETHTransferFailed()
+
+Previous
+ITakerInteraction
+Next
+AmountCalculatorLib
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

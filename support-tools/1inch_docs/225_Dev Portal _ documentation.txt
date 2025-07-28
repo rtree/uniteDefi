@@ -1,0 +1,97 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+PredicateHelper
+SeriesEpochManager
+SeriesNonceManager
+Interfaces
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+Helpers
+PredicateHelper
+SeriesEpochManager
+SeriesNonceManager
+Interfaces
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+SeriesNonceManager
+Quick links
+
+Functions
+Events
+Errors
+
+Functions
+increaseNonce
+function increaseNonce(uint8 series) external
+
+
+Advances nonce by one
+
+advanceNonce
+function advanceNonce(uint256 series, uint256 amount) public
+
+
+Advances nonce by specified amount
+
+nonceEquals
+function nonceEquals(uint256 series, address makerAddress, uint256 makerNonce) public view returns (bool)
+
+
+Checks if makerAddress has specified makerNonce for series
+
+Return Values
+Name	Type	Description
+[0]	bool	Result True if makerAddress has specified nonce. Otherwise, false
+timestampBelow
+function timestampBelow(uint256 time) public view returns (bool)
+
+
+Checks passed time against block timestamp
+
+Return Values
+Name	Type	Description
+[0]	bool	Result True if current block timestamp is lower than time. Otherwise, false
+timestampBelowAndNonceEquals
+function timestampBelowAndNonceEquals(uint256 timeNonceSeriesAccount) public view returns (bool)
+
+Events
+NonceIncreased
+event NonceIncreased(address maker, uint256 series, uint256 newNonce)
+
+Errors
+AdvanceNonceFailed
+error AdvanceNonceFailed()
+
+Previous
+SeriesEpochManager
+Next
+IAmountGetter
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

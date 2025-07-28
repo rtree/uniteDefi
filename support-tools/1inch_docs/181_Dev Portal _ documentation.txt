@@ -1,0 +1,105 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Introduction
+Quickstart guide
+Swagger
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Introduction
+Quickstart guide
+Swagger
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The Token Details API is a versatile set of endpoints designed to provide developers with in-depth insights about tokens and native tokens. This API empowers developers to access critical token data, historical price trends, and market performance metrics, streamlining the integration of token-related functionality into applications.
+
+Whether you’re building a DeFi application, analytics dashboard, or wallet service, the Token Details API provides the tools you need to deliver a rich, data-driven user experience.
+
+Why use the Token Details API?
+
+Token data and price history are essential for applications in the DeFi ecosystem to deliver accurate and insightful functionality. The Token Details API simplifies this by providing:
+
+Comprehensive token metadata and performance metrics.
+Historical price data to support analytics and trend visualization.
+Reduced development effort by offering ready-to-use endpoints for token-related data.
+Use cases
+
+The Token Details API can be leveraged for a variety of use cases, including:
+
+DeFi dashboards: display token details and price trends on analytics platforms.
+Wallet applications: show detailed token information, including links to explorers and social media.
+Market analytics: visualize historical price trends and analyze market performance.
+Token research: provide links to white papers, research materials, and source code for deeper insights.
+Portfolio tracking: enable users to monitor token performance and price changes.
+Custom charts: create visualizations of historical token price movements.
+Token listings: dynamically display token details, including descriptions and market data.
+Supported networks
+Ethereum Mainnet
+Polygon
+Optimism
+BNB Chain
+Arbitrum
+Sonic
+Avalanche
+Gnosis
+zkSync Era
+Base
+Linea
+Unichain
+Quickstart
+
+To start using Token Details API swiftly, refer to the Quickstart guide.
+
+API reference
+
+For detailed information about each endpoint, refer to the Token Details API Swagger section.
+
+Previous
+Returns list of provider data with avatar
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

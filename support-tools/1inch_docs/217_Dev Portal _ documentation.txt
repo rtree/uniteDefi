@@ -1,0 +1,123 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+ApprovalPreInteraction
+ChainlinkCalculator
+DutchAuctionCalculator
+ERC1155Proxy
+ERC721ProxySafe
+ERC721Proxy
+ETHOrders
+FeeTaker
+ImmutableOwner
+OrderIdInvalidator
+Permit2WitnessProxy
+PriorityFeeLimiter
+RangeAmountCalculator
+Helpers
+Interfaces
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Limit Order Protocol
+Introduction
+OrderLib
+OrderMixin
+Extensions
+ApprovalPreInteraction
+ChainlinkCalculator
+DutchAuctionCalculator
+ERC1155Proxy
+ERC721ProxySafe
+ERC721Proxy
+ETHOrders
+FeeTaker
+ImmutableOwner
+OrderIdInvalidator
+Permit2WitnessProxy
+PriorityFeeLimiter
+RangeAmountCalculator
+Helpers
+Interfaces
+Libraries
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+FeeTaker
+Quick links
+
+Functions
+Errors
+
+Functions
+constructor
+constructor(address limitOrderProtocol, address weth, address owner) public
+
+
+Initializes the contract.
+
+Parameters
+Name	Type	Description
+limitOrderProtocol	address	The limit order protocol contract.
+weth	address	
+owner	address	
+receive
+receive() external payable
+
+
+Fallback function to receive ETH.
+
+postInteraction
+function postInteraction(struct IOrderMixin.Order order, bytes, bytes32, address, uint256, uint256 takingAmount, uint256, bytes extraData) external
+
+
+See {IPostInteraction-postInteraction}.
+
+Takes the fee in taking tokens and transfers the rest to the maker. extraData consists of: 2 bytes — fee percentage (in 1e5) 20 bytes — fee recipient 20 bytes — receiver of taking tokens (optional, if not set, maker is used)
+
+rescueFunds
+function rescueFunds(contract IERC20 token, uint256 amount) external
+
+
+Retrieves funds accidently sent directly to the contract address
+
+Parameters
+Name	Type	Description
+token	contract IERC20	ERC20 token to retrieve
+amount	uint256	amount to retrieve
+Errors
+OnlyLimitOrderProtocol
+error OnlyLimitOrderProtocol()
+
+
+The caller is not the limit order protocol contract.
+
+EthTransferFailed
+error EthTransferFailed()
+
+
+Eth transfer failed. The target fallback may have reverted.
+
+Previous
+ETHOrders
+Next
+ImmutableOwner
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

@@ -1,0 +1,144 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Introduction
+AggregationRouterV6
+ClipperRouter
+GenericRouter
+LimitOrderProtocol
+UnoswapRouter
+Helpers
+Interfaces
+Limit Order Protocol
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Contracts
+Aggregation Protocol
+Introduction
+AggregationRouterV6
+ClipperRouter
+GenericRouter
+LimitOrderProtocol
+UnoswapRouter
+Helpers
+Interfaces
+Limit Order Protocol
+Spot Price Aggregator
+FAQ
+Becoming a Resolver
+Introduction
+
+The 1inch Swap API v6.1, Pathfinder, is a cutting-edge discovery and routing algorithm, which offers asset exchanges at the best rates on the market. Pathfinder finds the most efficient paths for a token swap, able to split between different protocols and even different market depths within one protocol in the shortest possible time. Pathfinder advantages include:
+
+Maximized returns. Multiple swap paths are aggregated to ensure optimal trading rates, maximizing value on every transaction.
+Enhanced liquidity efficiency. By fragmenting trade volumes and dynamically routing them across multiple pools, Pathfinder optimally utilizes liquidity sources, extracting the best rates from concentrated liquidity.
+Expanded market access. Pathfinder is deeply integrated with diverse liquidity pools, enabling strategic distribution of trade volume to capture the most favorable rates.
+Optimized execution speed. Smart routing accelerates path discovery and trade execution, reducing latency without compromising efficiency.
+Reduced gas costs. By consolidating routes and minimizing redundant transactions, gas fees are significantly reduced, making each swap more cost-efficient.
+Supported networks
+Ethereum Mainnet
+Arbitrum
+Avalanche
+Base
+BNB Chain
+Gnosis
+Klaytn
+Optimism
+Polygon
+zkSync Era
+Public contracts
+1inch Token
+Name	Chain	Address
+Governance staking	Ethereum Mainnet	0x9A0C8Ff858d273f57072D714bca7411D717501D7
+Staking farm	Ethereum Mainnet	0x1A87c0F9CCA2f0926A155640e8958a8A6B0260bE
+Voting power curve	Ethereum Mainnet	0x722E140f1222D404916B8d0A8Fd2F6233d446905
+1inch Token	Ethereum Mainnet	0x111111111117dC0aa78b770fA6A738034120C302
+1inch Token	Polygon	0x9c2C5fd7b07E95EE044DDeba0E97a665F142394f
+1inch Token	Arbitrum	0x6314C31A7a1652cE482cffe247E9CB7c3f4BB9aF
+1inch Token	Optimism	0xAd42D013ac31486B73b6b059e748172994736426
+1inch Token	Base	0xc5fecC3a29Fb57B5024eEc8a2239d4621e111CBE
+1inch Token	Gnosis	0x7f7440C5098462f833E123B44B8A03E1d9785BAb
+1inch Token	BNB Chain	0x111111111117dC0aa78b770fA6A738034120C302
+Aggregation Router v6
+Name	Chain	Address
+Aggregation Router v6	Arbitrum, Avalanche, BSC, Base, Gnosis, Goerli, Klaytn, Linea, Ethereum Mainnet, Optimism, Polygon, Sepolia	0x111111125421cA6dc452d289314280a0f8842A65
+Aggregation Router v6	zkSync	0x6fd4383cB451173D5f9304F041C7BCBf27d561fF
+Ether, MultiCall, UniV3Helper	Ethereum Mainnet	0x77340c866Ef1Da13407D61120010F136Fad5f91C
+Ether, MultiCall, UniV3Helper	BNB Chain	0xb97cD69145e5A9357b2Acd6AF6C5076380f17Afb
+Ether, MultiCall, UniV3Helper	Polygon	0xa218543cc21ee9388Fa1E509F950FD127Ca82155
+Ether, MultiCall, UniV3Helper	Arbitrum	0x4FCC6106220304691906Dd95C993F87984953a20
+Ether, MultiCall, UniV3Helper	Optimism	0x93131EFeE501d5721737C32576238F619548edda
+Ether, MultiCall, UniV3Helper	Avalanche	0xC4A8B7e29E3C8ec560cd4945c1cF3461a85a148d
+Ether, MultiCall, UniV3Helper	Gnosis	0xE295aD71242373C37C5FdA7B57F26f9eA1088AFe
+Ether, MultiCall, UniV3Helper	Base	0x138CE40d675F9a23E4D6127A8600308Cf7A93381
+Ether, MultiCall, UniV3Helper	zkSync	0x3eEbC6FD768b58ED9FC84b87FF6481D735afE751
+Ether, MultiCall, UniV3Helper	Linea	0x750c1b699552cAf908D67F5cCFd20A261305328c
+Maverick2TickHelper	BNB Chain	0x9fD3CC33Bf4F28459DA6383adA34dc048cD304D4
+Maverick2TickHelper	Base	0x75277E9da52E3Bbf365c25652f88d4370679055F
+Maverick2TickHelper	Ethereum Mainnet	0x1666EF2e729daB497a6798a4221D0e041111DcD4
+Maverick2TickHelper	zkSync	0x995bA9E88902cEF5C802c3A60A659699fB5a1fd0
+Curve Llamma Helper	Ethereum Mainnet	0xb52C1ce530ad6F651bc01C234f11F91517970aC9
+Kyber Helper	Ethereum Mainnet	0xDc49A6e76f017175bA46e5038A4DF6606d961FF3
+Kyber Helper	Avalanche	0xCC54299Fc291B261B2bF5552E7F0E5d2F8613E8C
+Kyber Helper	Polygon	0xE93293A6088d3a8abDDf62e6CA1A085Cec97D06F
+Kyber Helper	Optimism	0x3Ce81621e674Db129033548CbB9FF31AEDCc1BF6
+Solidly V3 Helper	Ethereum Mainnet	0xA3aF94A72f94ab3537cebf66eEf99B8705F0ACDD
+Solidly V3 Helper	Arbitrum	0x7F9Ac310a71e0447f9425E6095Eb5815E5D0c228
+Solidly V3 Helper	Base	0x8606321723D9cA7db708A8b12DAd0A8a83f2F3bD
+Solidly V3 Helper	Optimism	0x715C0357F8F29FB7a71acDcaeFdde2B964824B23
+Trader Joe v2 Helper	Ethereum Mainnet	0xB5d6422B5237228C8A9891F9DD94BCaBB523D247
+Trader Joe v2 Helper	BNB Chain	0xF3970201ed42c9c579Ab146B573457C5629b78cF
+Trader Joe v2 Helper	Arbitrum	0x2eeA44E40930b1984F42078E836c659A12301E40
+Trader Joe v2 Helper	Avalanche	0xaFeA5601b0A894451955355E79AD3026515e500d
+Trader Joe Helper	Avalanche	0x94Bc2a1C732BcAd7343B25af48385Fe76E08734f
+Algebra Helper	Arbitrum	0xC603A00595D5F8ea8d93C5c338c00Ff29dBA6258
+Algebra Helper	Base	0x59a0A6d73e6a5224871f45E6d845ce1574063ADe
+Ramses Helper	Avalanche	0xbAF9A5d4b0052359326A6CDAb54BABAa3a3A9643
+Aggregation Router v6, Crosschain, Fusion v2
+Name	Chain	Address
+KYC Token	Arbitrum, Avalanche, BSC, Base, Gnosis, Klaytn, Linea, Ethereum Mainnet, Optimism, Polygon	0xACCe550000159e70908C0499a1119D04e7039C28
+KYC Token	zkSync	0xC2c4fE863EC835D7DdbFE91Fe33cf1C7Df45Fa7C
+Crosschain
+Name	Chain	Address
+Crosschain Escrow Factory	Arbitrum, Avalanche, BSC, Base, Gnosis, Linea, Ethereum Mainnet, Optimism, Polygon	0xa7bCb4EAc8964306F9e3764f67Db6A7af6DdF99A
+Crosschain Escrow Factory	zkSync	0x584aEaB186D81dbB52a8a14820c573480c3d4773
+Crosschain Whitelist	Ethereum Mainnet	0xBe89346fE1cE1367f3d80C8522209A86511B1201
+ERC20True Token	Arbitrum, Avalanche, BSC, Base, Gnosis, Klaytn, Linea, Ethereum Mainnet, Optimism, Polygon	0xDA0000d4000015A526378bB6faFc650Cea5966F8
+ERC20True Token	zkSync	0xD66097C27eB8dEe404bAC235737932260EdC6f3b
+Fusion v1
+Name	Chain	Address
+Settlement	BNB Chain	0x1D0aE300Eec4093cee4367c00b228D10a5C7aC63
+Fusion v1, Fusion v2
+Name	Chain	Address
+Priority Fee Limiter	Ethereum Mainnet	0x5E92d4021e49f9A2967b4EA1d20213B3A1c7c912
+Whitelist v2	Ethereum Mainnet	0xF55684BC536487394B423e70567413faB8e45E26
+Resolver Information	Ethereum Mainnet	0xBF4543819ECede56220bcB1e8C1BBa9Ef290a58a
+Delegate Resolver	Ethereum Mainnet	0xAccfAc2339e16DC80c50d2fa81b5c2B049B4f947
+Fusion v2
+Name	Chain	Address
+Fee Bank	Arbitrum, Avalanche, BSC, Base, Gnosis, Klaytn, Linea, Ethereum Mainnet, Optimism, Polygon	0x798Ef9b5E2dd6CfDDB1e6a3e09bB6E4531492dB1
+Fee Bank	zkSync	0x0B5060B10f266343BeE501404f4607a29E32b520
+Settlement Extension (simple settlement)	Arbitrum, Avalanche, BSC, Base, Gnosis, Klaytn, Linea, Optimism, Polygon	0xfb2809A5314473E1165f6B58018E20ed8F07B840
+Settlement Extension	Ethereum Mainnet	0xfb2809A5314473E1165f6B58018E20ed8F07B840
+Settlement Extension	Ethereum Mainnet	0x3BfB9B75da98b5fCfCBc2D0DB0BC956d75c3084f
+Settlement Extension (simple settlement)	zkSync	0x0302b42c86540e636E438395C6344ED88c55B70e
+Offchain oracle
+Name	Chain	Address
+Offchain Oracle	Arbitrum, Avalanche, BSC, Base, Gnosis, Klaytn, Linea, Ethereum Mainnet, Optimism, Polygon	0x00000000000D6FFc74A8feb35aF5827bf57f6786
+Offchain Oracle	zkSync	0x739B4e7a3ad8210B6315F75b24cfe0D3226f6945
+Previous
+Returns token price change by interval
+Next
+AggregationRouterV6
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

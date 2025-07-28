@@ -1,0 +1,200 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Contracts
+FAQ
+Becoming a Resolver
+Terms of Use for Resolvers
+Introduction
+Resolver verification
+Resolver’s setup script example
+Fusion+ test examples
+Initializing Farm Reward Distribution
+Contract interaction
+Articles
+Overview
+APIs
+Contracts
+FAQ
+Becoming a Resolver
+Terms of Use for Resolvers
+Introduction
+Resolver verification
+Resolver’s setup script example
+Fusion+ test examples
+Initializing Farm Reward Distribution
+Contract interaction
+Introduction
+
+Welcome to the onboarding guide for becoming a resolver in the 1inch ecosystem. This document outlines the role of resolvers, the inner workings of Fusion, incentives for participants, the whitelisting process, technical integration steps, and helpful resources.
+
+Intent-Based Orders
+Step 1: Review Terms of Use
+
+Before proceeding, make sure you're eligible to participate. By onboarding, you confirm that you’ve read, understood, and accepted the Terms of Use for Resolvers.
+
+1inch Network Terms of Use for Resolvers
+
+Step 2: Pass Verification
+
+To maintain a secure and trustworthy network, resolvers must complete KYC/KYB verification.
+
+After you successfully pass verification, you will gain onchain Access Token to be able to solve the orders.
+
+Start Verification
+
+In case you face any difficulties with KYB, please reach out to: compliance@1inch.io.
+
+Step 3: Kick Off Integration
+
+Once verified, it’s time to integrate. Start exploring: Fusion API – for intent-based swaps, and Fusion+ API – for cross-chain swaps.
+
+Technical Documentation
+
+Please reach out to our support team for assistance: support@1inch.io.
+
+A dedicated support communication channel will be established.
+
+Step 4: Submit Resolver UI Data
+
+To appear on the Resolver Dashboard, please provide:
+
+Your delegation address (note: not the settlement address) Resolver name A brief description Your logo in SVG format
+
+Resolver Dashboard
+
+Submit via the dedicated support communication channel created in Step 3.
+
+Step 5: Resolver Setup
+
+Complete steps 1–3 from the Resolver setup script example:
+
+Approve staking 1INCH for 1inch contract.
+Stake 1INCH to gain unicorn power (UP).
+Add a delegation pod to enable power delegation.
+
+Resolver Setup Script Example
+
+Step 6: Set Up Farm
+Follow the instructions below to complete your farm configuration.
+
+Initializing Farm Reward Distribution
+
+Top up your distributor farm address. Set ~500 1INCH/day to remain competitive and attract delegations.
+Step 7: Gain Unicorn Power
+Stake and delegate 1INCH tokens to accumulate Unicorn Power (UP). To qualify for the whitelist and become eligible to execute Fusion orders, your resolver must hold at least 5% of the total UP across all whitelisted resolvers.
+
+Need help? Please contact our team for any further support.
+
+Complete steps 6-8 from the Resolver setup script example.
+
+Resolver Setup Script Example
+
+Setp 8: Test & Go Live
+
+Complete your resolver technical deployment and validate it in a test environment.
+
+For testing create and fulfill your own Fusion orders using this reference repo:
+
+1inch Fusion Resolver Example on GitHub
+
+Limit Orders
+Step 1: Review Terms of Use
+
+Before proceeding, make sure you're eligible to participate. By onboarding, you confirm that you’ve read, understood, and accepted the Terms of Use for Resolvers.
+
+1inch Network Terms of Use for Resolvers
+
+Step 2: Pass Verification
+
+To maintain a secure and trustworthy network, resolvers must complete KYC/KYB verification.
+
+After you successfully pass verification, you will gain onchain Access Token to be able to solve the orders.
+
+Start Verification
+
+In case you face any difficulties with KYB, please reach out to: compliance@1inch.io.
+
+Step 3: Kick Off Integration
+
+Once verified, it’s time to integrate. Resources:
+
+Limit Order Protocol Extension: FeeTaker
+
+SDK: Limit Order SDK
+
+Example for order submission: Submit limit order (line 24)
+
+makingAmount/takingAmount calculation: Functions (lines 78–108)
+
+Make sure to pass the taker address to apply the Fusion whitelist discount (Top 10, 5% UP) .
+
+Please reach out to our support team for assistance: support@1inch.io.
+
+A dedicated support communication channel will be established.
+
+Step 4: Active Order Discovery
+
+Use this API endpoint to fetch active orders: GET /v4.0/1/all — 1inch Dev Portal
+
+Use status=1,2 to filter:
+status=1: Order can be filled for the full remainingMakerAmount
+status=2: Orders with insufficient approval or balance for the full remaining amount
+Step 5: Submit Resolver UI Data
+
+To appear on the Resolver Dashboard, please provide:
+
+Resolver name A brief description Your logo in SVG format Your delegation address (note: not the settlement address) - if applicable
+
+Resolver Dashboard
+
+Submit via the dedicated support communication channel created in Step 3.
+
+Step 6: Choose Your Strategy
+
+Option 1: Unicorn Power (UP) Enabled
+
+✓ Fusion (Intent/Cross-Chain Swaps) and Limit Orders Execution ✓ 50% fee discount on Limit Orders ❗Requires at least 5% UP.
+
+➤ To complete onboarding: please follow Steps 7-8.
+
+Option 2: No Unicorn Power (UP)
+
+✓ Limit Orders (standard fee applies) ✕ No Fusion (Intent/Cross-Chain Swaps) Orders execution 🔷 Farming not required.
+
+➤ No further steps required.
+
+Step 7: Set Up Farm
+
+Complete steps 1–3 from the Resolver setup script example:
+
+Approve staking 1INCH for 1inch contract.
+Stake 1INCH to gain unicorn power (UP).
+Add a delegation pod to enable power delegation.
+
+Resolver Setup Script Example
+
+Follow the instructions below to complete your farm configuration.
+
+Initializing Farm Reward Distribution
+
+Top up your distributor farm address. Set ~500 1INCH/day to remain competitive and attract delegations.
+Setp 8: Gain Unicorn Power
+Stake and delegate 1INCH tokens to accumulate Unicorn Power (UP). To qualify for the whitelist and become eligible to execute Fusion orders, your resolver must hold at least 5% of the total UP across all whitelisted resolvers.
+
+Need help? Please contact our team for any further support.
+
+Complete steps 6-8 from the Resolver setup script example.
+
+Resolver Setup Script Example
+
+Previous
+Terms of Use for Resolvers
+Next
+Resolver verification
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use
