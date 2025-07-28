@@ -1,0 +1,165 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Introduction
+Swagger
+Orders
+GET
+Get cross chain swap active orders
+GET
+Get actual escrow factory contract address
+GET
+Get orders by maker address
+GET
+Get all data to perform withdrawal and cancellation
+GET
+Get idx of each secret that is ready for submission for specific order
+GET
+Get idx of each secret that is ready for submission for all orders
+GET
+Get all data to perform a cancellation or withdrawal on public periods
+GET
+Get order by hash
+POST
+Get orders by hashes
+Quoter
+Relayer
+Fusion+ SDK
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Introduction
+Swagger
+Orders
+GET
+Get cross chain swap active orders
+GET
+Get actual escrow factory contract address
+GET
+Get orders by maker address
+GET
+Get all data to perform withdrawal and cancellation
+GET
+Get idx of each secret that is ready for submission for specific order
+GET
+Get idx of each secret that is ready for submission for all orders
+GET
+Get all data to perform a cancellation or withdrawal on public periods
+GET
+Get order by hash
+POST
+Get orders by hashes
+Quoter
+Relayer
+Fusion+ SDK
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Orders
+
+1inch Fusion+ Orders API
+GET
+https://api.1inch.dev/fusion-plus/orders/v1.0/order/escrow
+Get actual escrow factory contract address
+Network
+Ethereum
+Parameters
+chainId
+number
+(query)
+Chain ID
+Example: 1
+swagger.response
+Code: default
+Schema:
+EscrowFactory
+object
+address
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/fusion-plus/orders/v1.0/order/escrow";
+
+  const config = {
+    headers: undefined,
+    params: {
+      chainId: "1",
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get cross chain swap active orders
+Next
+Get orders by maker address
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

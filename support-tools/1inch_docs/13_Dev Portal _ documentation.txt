@@ -1,0 +1,525 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Introduction
+Swagger
+Orders
+Quoter
+GET
+Get quote details based on input data
+POST
+Get quote with custom preset details
+POST
+Build order by given quote
+Relayer
+Fusion+ SDK
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Introduction
+Swagger
+Orders
+Quoter
+GET
+Get quote details based on input data
+POST
+Get quote with custom preset details
+POST
+Build order by given quote
+Relayer
+Fusion+ SDK
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Quoter
+
+1inch Fusion+ Quoter API
+GET
+https://api.1inch.dev/fusion-plus/quoter/v1.0/quote/receive
+Get quote details based on input data
+Parameters
+srcChain
+number
+*
+(query)
+Id of source chain
+Example: 1
+dstChain
+number
+*
+(query)
+Id of destination chain
+Example: 137
+srcTokenAddress
+string
+*
+(query)
+Address of "SOURCE" token in source chain
+Example: 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
+dstTokenAddress
+string
+*
+(query)
+Address of "DESTINATION" token in destination chain
+Example: 0x2791bca1f2de4661ed88a30c99a7a9449aa84174
+amount
+number
+*
+(query)
+Amount to take from "SOURCE" token to get "DESTINATION" token
+Example: 100000000000000000
+walletAddress
+string
+*
+(query)
+An address of the wallet or contract in source chain who will create Fusion order
+Example: 0x0000000000000000000000000000000000000000
+enableEstimate
+boolean
+*
+(query)
+if enabled then get estimation from 1inch swap builder and generates quoteId, by default is false
+Example: false
+fee
+number
+(query)
+fee in bps format, 1% is equal to 100bps
+Example: 0
+isPermit2
+string
+(query)
+permit2 allowance transfer encoded call
+permit
+string
+(query)
+permit, user approval sign
+swagger.response
+Code: 200
+Returns quote
+Code: 400
+Input data is invalid
+Code: default
+Schema:
+GetQuoteOutput
+object
+quoteId
+*
+object
+srcTokenAmount
+*
+string
+dstTokenAmount
+*
+string
+presets
+*
+any
+allOf[0]
+QuotePresets
+object
+fast
+*
+any
+allOf[0]
+Preset
+object
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+costInDstToken
+*
+string
+points
+*
+array
+items
+AuctionPoint
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfig
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+secretsCount
+*
+number
+medium
+*
+any
+allOf[0]
+Preset
+object
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+costInDstToken
+*
+string
+points
+*
+array
+items
+AuctionPoint
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfig
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+secretsCount
+*
+number
+slow
+*
+any
+allOf[0]
+Preset
+object
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+costInDstToken
+*
+string
+points
+*
+array
+items
+AuctionPoint
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfig
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+secretsCount
+*
+number
+custom
+any
+allOf[0]
+Preset
+object
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+costInDstToken
+*
+string
+points
+*
+array
+items
+AuctionPoint
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfig
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+secretsCount
+*
+number
+srcEscrowFactory
+*
+string
+dstEscrowFactory
+*
+string
+whitelist
+*
+array
+items
+string
+timeLocks
+*
+any
+allOf[0]
+TimeLocks
+object
+srcWithdrawal
+*
+number
+srcPublicWithdrawal
+*
+number
+srcCancellation
+*
+number
+srcPublicCancellation
+*
+number
+dstWithdrawal
+*
+number
+dstPublicWithdrawal
+*
+number
+dstCancellation
+*
+number
+srcSafetyDeposit
+*
+string
+dstSafetyDeposit
+*
+string
+recommendedPreset
+*
+string (Enum)
+fast
+slow
+medium
+custom
+prices
+*
+PairCurrency
+object
+usd
+*
+TokenPair
+object
+srcToken
+*
+string
+dstToken
+*
+string
+volume
+*
+PairCurrency
+object
+usd
+*
+TokenPair
+object
+srcToken
+*
+string
+dstToken
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/fusion-plus/quoter/v1.0/quote/receive";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get orders by hashes
+Next
+Get quote with custom preset details
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

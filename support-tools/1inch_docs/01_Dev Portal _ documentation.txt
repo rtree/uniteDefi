@@ -1,0 +1,75 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Authentication
+
+The 1inch Developer Portal API uses API keys to authenticate requests. You can view your API key in the Dashboard and Application menu.
+
+Your API keys carry many privileges, so be sure to keep them secure! Do not share your secret API keys in publicly accessible areas such as GitHub, client-side code, and so forth.
+
+Authentication to the API is performed via API Keys. We provide multiple ways to authenticate depending on the protocol.
+
+http protocol: Provide your API key as an Authorization: Bearer {YOUR_API_KEY} header.
+websocket protocol: Provide your API key as an Authorization: Bearer {YOUR_API_KEY} header or as query parameter apiKey={YOUR_API_KEY}
+# http call
+curl -X 'GET' \
+  'https://api.1inch.dev/swap/v5.2/1/tokens' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer YOUR_API_KEY'
+
+# websocket
+wscat -c 'wss://api.1inch.dev/web3/1/full?apiKey=YOUR_API_KEY'
+# or
+wscat -c 'wss://api.1inch.dev/web3/1/full' -H 'Authorization:Bearer YOUR_API_KEY'
+
+Previous
+Overview
+Next
+Overview
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

@@ -1,0 +1,140 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Overview
+Fusion+ (intent-based atomic cross-chain swaps)
+
+Fusion+ provides a quick and easy way to exchange assets across different blockchains by utilizing resolvers to handle the entire process. This approach significantly simplifies the user experience compared to traditional atomic swaps, where both parties must be actively involved. The system still employs escrow and hash time locks to ensure security, but the resolver manages everything, including locating the best rate through a gas-sensitive Dutch auction.
+
+By integrating Fusion+ into your project, your users will have a smoother, highly secure, and more intuitive cross-chain transaction experience. This integration eliminates the need for intermediaries, making cross-chain transactions more efficient and user-friendly.
+
+Read the 1inch Fusion+ whitepaper
+
+Key benefits
+Ultimate cross-chain interoperability: swap thousands of assets across all supported chains.
+White-glove user experience: once the maker signs the Fusion order, the resolver handles all operations, streamlining the entire experience.
+Best rates on the market: the Dutch auction system ensures you receive the best possible rates as resolvers compete to execute the order.
+Increased reliability: resolvers step in to complete the transaction if needed, ensuring the swap is finalized securely.
+Robust security: the use of hashlocks, timelocks, and KYC-compliant resolvers ensures a secure and compliant swap process.
+Supported networks
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Sonic
+Optimism
+Polygon
+Base
+Unichain
+Intent-based swaps (Fusion)
+
+1inch intent-swaps (Fusion mode) introduce a whole new frontier of swap capability, by leveraging the power of 3rd-party resolvers to execute trades. Through a dutch auction price curve, resolvers are incentivized to fill orders (intents) created by users.
+
+Key benefits
+Intent-based trading: you can specify your trading intentions, which can then be fulfilled by both onchain and offchain liquidity.
+Inherant MEV protection: by design, you cannot lose money to front-running or "sandwich attacks" on your orders.
+Gas cost abstraction: you can swap without the need for a balance of native assets (like ETH) in your wallet, as the resolvers cover all gas costs.
+Enhanced flexibility: you can set specific conditions for your trades, with the possibility of post-trade interactions, thereby providing greater control over the execution.
+Supported networks
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Solana
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+Unichain
+Classic swaps
+
+1inch classic swaps (also known as the aggregation protocol) involve a highly sophisticated router that provides users with the best possible exchange rates across hundreds of decentralized exchanges (DEXes). It achieves this by splitting each swap across multiple liquidity sources to minimize negative price impact and optimize trade execution.
+
+Key benefits
+Extremely efficient rates: you can receive the best rate on the market, with direct access to hundreds of liquidity sources.
+Reduced price impact: splits transactions across multiple liquidity pools to negate the impact of your trade on a single liquidity source.
+Highly intelligent routing: harness the power of "connector tokens" which reduce price friction when swapping from asset A to asset B.
+Customization: customize your trades with advanced options like partial fills, slippage tolerance, and direct protocol (Unoswap) interaction.
+Supported networks
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+Unichain
+Advantages of using 1inch swap APIs over other web3 providers
+Comprehensive aggregation: the 1inch API aggregates liquidity from multiple sources, ensuring you always get the best possible rates.
+Heavy gas-cost optimization: both classic aggregation and Fusion mode utilize sophisticated mechanisms to optimize trade execution, reducing gas costs and price impact in comparison to other protocols.
+User-centric features: with intent-based swaps, you can tailor your trades to meet specific criteria, getting unmatched flexibility and control.
+Robust security: built on decentralized protocols, 1inch ensures secure and reliable trading experiences.
+Access to the deepest liquidity in DeFi: gives access to the largest array of liquidity pools, providing the best trade execution and reliability on the market.
+
+By utilizing the 1inch API, you can benefit from superior trade execution, cost savings, and enhanced flexibility compared to other web3 swap APIs in the decentralized finance ecosystem.
+
+Previous
+Authentication
+Next
+Introduction
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use
