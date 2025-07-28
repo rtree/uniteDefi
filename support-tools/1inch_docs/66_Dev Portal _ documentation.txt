@@ -1,0 +1,261 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+Introduction
+Quickstart guide
+Swagger
+POST
+Include a limit order to the 1inch limit orders database
+GET
+Get limit orders belonging to the specified address
+GET
+Get order by the specified order hash
+GET
+Get all limit orders
+GET
+Get orders count by specified filters
+GET
+Get fill/cancel events related to the specified order
+GET
+Get all orders fill/cancel events
+GET
+Get all active orders which have permit for the specified wallet address and token
+GET
+Get unique active token pairs
+GET
+Get calculated making amount on trading pair by provided amount
+Limit Order SDK
+Migration
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+Introduction
+Quickstart guide
+Swagger
+POST
+Include a limit order to the 1inch limit orders database
+GET
+Get limit orders belonging to the specified address
+GET
+Get order by the specified order hash
+GET
+Get all limit orders
+GET
+Get orders count by specified filters
+GET
+Get fill/cancel events related to the specified order
+GET
+Get all orders fill/cancel events
+GET
+Get all active orders which have permit for the specified wallet address and token
+GET
+Get unique active token pairs
+GET
+Get calculated making amount on trading pair by provided amount
+Limit Order SDK
+Migration
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+1inch Orderbook API
+GET
+https://api.1inch.dev/orderbook/v4.0/{chain}/address/{address}
+Get limit orders belonging to the specified address
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+address
+string
+*
+(path)
+address in hexadecimal format
+page
+number
+(query)
+Pagination step, default: 1 (page = offset / limit)
+limit
+integer
+(query)
+Number of limit orders to receive (default: 100, max: 500)
+statuses
+string
+(query)
+A comma-separated list of statuses by which limit orders will be filtered. Valid statuses include: 1 - Valid orders, 2 - Temporarily invalid orders, 3 - Invalid orders.
+sortBy
+string
+(query)
+takerAsset
+string
+(query)
+Address of the taker asset
+makerAsset
+string
+(query)
+Address of the maker asset
+swagger.response
+Code: 200
+Array of queried limit orders
+Schema:
+GetLimitOrdersV4Response
+object
+signature
+*
+string
+orderHash
+*
+string
+createDateTime
+*
+string
+remainingMakerAmount
+*
+string
+makerBalance
+*
+string
+makerAllowance
+*
+string
+data
+*
+any
+allOf[0]
+LimitOrderV4Data
+object
+makerAsset
+*
+string
+takerAsset
+*
+string
+maker
+*
+string
+receiver
+string
+makingAmount
+*
+string
+takingAmount
+*
+string
+salt
+*
+string
+extension
+string
+makerTraits
+string
+makerRate
+*
+string
+takerRate
+*
+string
+isMakerContract
+*
+boolean
+orderInvalidReason
+*
+string
+Code: 400
+Input data is invalid or address is not provided
+Schema:
+object
+statusCode
+integer (Enum)
+400
+message
+string
+error
+string (Enum)
+Bad Request
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url =
+    "https://api.1inch.dev/orderbook/v4.0/1/address/0x1234567890ABCDEF1234567890ABCDEF12345678";
+
+  const config = {
+    headers: undefined,
+    params: {
+      page: 1,
+      limit: 100,
+      statuses: "1,2,3",
+      takerAsset: "0x1234567890ABCDEF1234567890ABCDEF12345678",
+      makerAsset: "0x1234567890ABCDEF1234567890ABCDEF12345678",
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Include a limit order to the 1inch limit orders database
+Next
+Get order by the specified order hash
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

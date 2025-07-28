@@ -1,0 +1,105 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Migration
+Fusion SDK
+Solana SDK
+SDK overview
+For integrators
+For resolvers
+Shared modules
+Fusion SDK for EVMs
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Migration
+Fusion SDK
+Solana SDK
+SDK overview
+For integrators
+For resolvers
+Shared modules
+Fusion SDK for EVMs
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+SDK overview
+
+The 1inch Solana Fusion SDK is an open-source developer toolkit that enables interaction with the 1inch Fusion smart contracts on the Solana blockchain. It provides the essential components for building, signing, submitting, and filling Fusion orders directly on-chain. The SDK supports two primary roles: integrators, who enable users to create Fusion orders, and resolvers, who find and fulfill existing orders.
+
+Advantages of using Solana Fusion SDK
+Ultra-fast and cheap transactions: Solana offers near-instant transaction finality with minimal fees (typically under $0.01), making swaps fast and affordable without sacrificing reliability. Additionally, 1inch doesn't charge any extra fees on top of Solana's minimal required gas.
+Access to huge liquidity: the SDK unlocks swaps across over 1 million Solana-native tokens via 1inch's deep aggregation engine, ensuring top swap rates and minimal slippage​.
+No relayer dependency: orders are placed directly onchain without needing external relayers, increasing trustlessness and reducing points of failure.
+Native MEV protection: users automatically benefit from 1inch MEV protection, securing trades against front-running and sandwich attacks​.
+Industry leading security: the SDK leverages 1inch’s extensively audited smart contracts, providing a secure foundation for Solana-based DeFi integrations.
+Installation
+
+Add the SDK to package.json:
+
+{
+  "dependencies": {
+    "@1inch/solana-fusion-sdk": "https://github.com/1inch/solana-fusion-sdk#latest"
+  }
+}
+
+Examples
+For integrators, learn how to create and cancel a Fusion order on Solana.
+For resolvers, learn how to fill and cancel a Fusion order on Solana.
+Previous
+Migration from v1.0 to v2.0
+Next
+Creating and canceling Solana Fusion order
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

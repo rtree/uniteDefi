@@ -1,0 +1,95 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Introduction
+Quickstart guide
+Swagger
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Introduction
+Quickstart guide
+Swagger
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The 1inch Trace API provides comprehensive, step-by-step data on every operation within on-chain transactions. This empowers developers and analysts to gain precise insights into transaction behavior. This API supports many networks ensuring compatibility across diverse ecosystems. With fast and organized transaction traces, you can debug, audit, and optimize with ease, whether you’re working on smart contracts or analyzing historical transaction data.
+
+Supported networks
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+[Linea] (https://linea.build)
+Unichain
+What are transaction traces?
+
+A transaction trace is essentially a step-by-step representation of every operation that occurs during the execution of a transaction on the blockchain. For Ethereum, these operations can be quite varied, from basic transfers of ETH to complex contract interactions.
+
+Why are transaction traces useful?
+Debugging smart contracts: developers can use transaction traces to troubleshoot their smart contracts, especially when something goes wrong. They can identify which specific step of the contract resulted in an error.
+Optimization: developers can analyze how gas is consumed during different operations in the transaction. This helps in optimizing smart contracts to be more gas efficient.
+Security audits: transaction traces can be instrumental in security audits. They allow auditors to see the exact flow of operations, ensuring that the contract behaves as expected.
+Understanding contract behavior: for those trying to understand how a particular smart contract operates, tracing provides a clear breakdown of its inner workings.
+Historical analysis: for platforms or researchers analyzing blockchain data, transaction traces offer rich insights into the actual execution of historical transactions.
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+API reference
+
+For detailed information about each endpoint, refer to the Traces API Swagger section.
+
+Previous
+Returns swap events for the user
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

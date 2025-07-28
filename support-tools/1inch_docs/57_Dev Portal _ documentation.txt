@@ -1,0 +1,179 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+GET
+Find the best quote to swap with 1inch Router
+GET
+Generate calldata to swap on 1inch Router
+GET
+Address of the 1inch Router that is trusted to spend funds for the swap
+GET
+Generate approve calldata to allow 1inch Router to perform a swap
+GET
+Get the number of tokens that the 1inch Router is allowed to swap
+GET
+List of liquidity sources that are available for routing in the 1inch Aggregation Protocol
+GET
+List of tokens that are available for swap in the 1inch Aggregation protocol
+Parameter Descriptions
+Migration
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+GET
+Find the best quote to swap with 1inch Router
+GET
+Generate calldata to swap on 1inch Router
+GET
+Address of the 1inch Router that is trusted to spend funds for the swap
+GET
+Generate approve calldata to allow 1inch Router to perform a swap
+GET
+Get the number of tokens that the 1inch Router is allowed to swap
+GET
+List of liquidity sources that are available for routing in the 1inch Aggregation Protocol
+GET
+List of tokens that are available for swap in the 1inch Aggregation protocol
+Parameter Descriptions
+Migration
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+1inch Swap API
+GET
+https://api.1inch.dev/swap/v6.1/{chain}/tokens
+List of tokens that are available for swap in the 1inch Aggregation protocol
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+swagger.response
+Code: 200
+All supported tokens (can also use your own)
+Schema:
+object
+tokens
+object
+0x111111111117dc0aa78b770fa6a738034120c302
+TokenInfo
+object
+address
+*
+string
+symbol
+*
+string
+name
+*
+string
+decimals
+*
+number
+logoURI
+*
+string
+domainVersion
+string
+eip2612
+boolean
+isFoT
+boolean
+tags
+array
+items
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/swap/v6.1/1/tokens";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+List of liquidity sources that are available for routing in the 1inch Aggregation Protocol
+Next
+Quote
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

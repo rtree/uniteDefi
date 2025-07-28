@@ -1,0 +1,160 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Introduction
+Quickstart guide
+Swagger
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Introduction
+Quickstart guide
+Swagger
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+History API allows you to access accurate transaction history data across several major networks. With it, you can get such information as:
+
+Transaction type, hash, status, fee, timestamps
+Participants addresses
+Token transfers, and more
+Use cases
+
+The History API can be applied across various industries and scenarios that require access to accurate on-chain transaction data. Below are some common use cases:
+
+Compliance and auditing
+
+The History API enables companies to access transaction details, including participants, amounts, and timestamps, helping them meet auditing requirements and adhere to Anti-Money Laundering (AML) regulations.
+
+Portfolio management
+
+Investors and portfolio managers can use the History API to analyze transaction histories across multiple blockchain networks. It helps track token movements, swaps, staking activities, and liquidity provisions, allowing your users to generate reports and optimize investment strategies.
+
+DeFi protocol analytics
+
+Decentralized Finance (DeFi) protocols rely on transaction data to monitor user behavior, liquidity, and protocol usage. The History API provides detailed information on liquidity additions, removals, borrowing, lending, and staking activities, making it essential for DeFi analytics platforms.
+
+NFT marketplaces
+
+NFT marketplaces can integrate the History API to display detailed transaction histories for NFTs, including purchases, bids, sales, and transfers. This enables buyers and sellers to review historical data before making decisions.
+
+Security and risk management
+
+Security platforms can use the History API to track transaction histories and identify suspicious activities, such as unauthorized approvals or large token transfers. The API’s detailed breakdown of transaction types helps detect patterns indicative of potential security threats, protecting users from fraud and malicious actions.
+
+Enterprise resource management
+
+Enterprises engaging in blockchain transactions can integrate the History API to manage internal operations and resources more effectively. It helps track employee or system-triggered transactions, manage smart contract interactions, and ensure transparency in decentralized workflows.
+
+Tax reporting
+
+Individuals and businesses dealing with cryptocurrencies must track all transactions for accurate tax reporting. The History API allows users to retrieve transaction histories to calculate gains, losses, and taxable events such as token swaps and sales.
+
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+Transaction types
+
+We define the following transaction types:
+
+Transaction type	Description
+Unknown	A transaction type that hasn't been identified or categorized.
+Approve	Granting permission for a smart contract to spend your tokens.
+Wrap	Converting a cryptocurrency into its wrapped version.
+Unwrap	Converting a wrapped token back to its original cryptocurrency.
+Swap	Exchanging one type of token for another.
+Transfer	Sending tokens from one address to another.
+LimitOrderFill	Executing a limit order by buying or selling tokens at the specified price or better.
+LimitOrderCancel	Canceling an existing limit order that is expired or hasn't been filled fully.
+LimitOrderCancelAll	Canceling an active limit order.
+AddLiquidity	Providing tokens to a liquidity pool to facilitate trading and earn rewards.
+RemoveLiquidity	Withdrawing tokens from a liquidity pool.
+Borrow	Taking out a loan in the form of tokens from a lending protocol.
+Repay	Returning borrowed tokens to a lending protocol.
+Stake	Locking tokens in a protocol to earn rewards or participate in governance.
+Unstake	Withdrawing staked tokens from a protocol.
+Vote	Casting a vote on a proposal in a decentralized governance system.
+DelegateVotePower	Assigning your voting power to another address to vote on your behalf.
+UnDelegateVotePower	Revoking the assignment of your voting power from a delegate.
+DiscardVote	Invalidating or withdrawing a previously cast vote.
+Claim	Retrieving rewards or tokens that are due to you.
+Action	Performing a specific function or task within a smart contract.
+Bridge	Transferring tokens across different blockchains.
+BuyNft	Purchasing an NFT from the marketplace.
+BidNft	Placing a bid on an NFT in an auction.
+OfferSellNft	Making an offer to sell an NFT you own.
+Burn	Permanently removing tokens from circulation.
+WrappedTx	A Gnosis Safe transaction which can include one or more multisigned transactions.
+RegisterENSDomain	Registering a human-readable name on the Ethereum Name Service (ENS) to associate with your address.
+Revoke	Withdrawing previously granted permissions or approvals.
+CreateSafe	Creating a multisig Gnosis Safe Wallet.
+AddOwner	Adding a new owner to a multisig Gnosis Safe Wallet.
+MultiStage	A transaction that involves multiple steps or stages, often used in complex operations.
+Supported networks
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+Unichain
+Quickstart
+
+To start using History API swiftly, refer to the Quickstart guide.
+
+API reference
+
+For detailed information about each endpoint, refer to the History API Swagger section.
+
+Previous
+Migration from v3.0 to v4.0
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

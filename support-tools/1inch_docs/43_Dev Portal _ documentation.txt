@@ -1,0 +1,189 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Migration
+Fusion SDK
+Solana SDK
+Fusion SDK for EVMs
+SDK overview
+For integrators
+How to swap with Fusion Mode
+Creating EVM Fusion order
+For resolvers
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Migration
+Fusion SDK
+Solana SDK
+Fusion SDK for EVMs
+SDK overview
+For integrators
+How to swap with Fusion Mode
+Creating EVM Fusion order
+For resolvers
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+How to swap with Fusion Mode
+
+Example:
+
+Typescript
+import {
+  FusionSDK,
+  NetworkEnum,
+  OrderStatus,
+  PrivateKeyProviderConnector,
+  Web3Like,
+} from "@1inch/fusion-sdk";
+import { computeAddress, formatUnits, JsonRpcProvider } from "ethers";
+
+const PRIVATE_KEY = "YOUR_PRIVATE_KEY";
+const NODE_URL = "YOUR_WEB3_NODE_URL";
+const DEV_PORTAL_API_TOKEN = "YOUR_DEV_PORTAL_API_TOKEN";
+
+const ethersRpcProvider = new JsonRpcProvider(NODE_URL);
+
+const ethersProviderConnector: Web3Like = {
+  eth: {
+    call(transactionConfig): Promise<string> {
+      return ethersRpcProvider.call(transactionConfig);
+    },
+  },
+  extend(): void {},
+};
+
+const connector = new PrivateKeyProviderConnector(
+  PRIVATE_KEY,
+  ethersProviderConnector,
+);
+
+const sdk = new FusionSDK({
+  url: "https://api.1inch.dev/fusion",
+  network: NetworkEnum.BINANCE,
+  blockchainProvider: connector,
+  authKey: DEV_PORTAL_API_TOKEN,
+});
+
+async function main() {
+  const params = {
+    fromTokenAddress: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d", // USDC
+    toTokenAddress: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", // BNB
+    amount: "10000000000000000000", // 10 USDC
+    walletAddress: computeAddress(PRIVATE_KEY),
+    source: "sdk-test",
+  };
+
+  const quote = await sdk.getQuote(params);
+
+  const dstTokenDecimals = 18;
+  console.log(
+    "Auction start amount",
+    formatUnits(
+      quote.presets[quote.recommendedPreset].auctionStartAmount,
+      dstTokenDecimals,
+    ),
+  );
+  console.log(
+    "Auction end amount",
+    formatUnits(quote.presets[quote.recommendedPreset].auctionEndAmount),
+    dstTokenDecimals,
+  );
+
+  const preparedOrder = await sdk.createOrder(params);
+
+  const info = await sdk.submitOrder(
+    preparedOrder.order,
+    preparedOrder.quoteId,
+  );
+
+  console.log("OrderHash", info.orderHash);
+
+  const start = Date.now();
+
+  while (true) {
+    try {
+      const data = await sdk.getOrderStatus(info.orderHash);
+
+      if (data.status === OrderStatus.Filled) {
+        console.log("fills", data.fills);
+        break;
+      }
+
+      if (data.status === OrderStatus.Expired) {
+        console.log("Order Expired");
+        break;
+      }
+
+      if (data.status === OrderStatus.Cancelled) {
+        console.log("Order Cancelled");
+        break;
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  console.log("Order executed for", (Date.now() - start) / 1000, "sec");
+}
+
+main();
+
+Previous
+SDK overview
+Next
+Creating EVM Fusion order
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

@@ -1,0 +1,190 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+Parameter Descriptions
+Migration
+Migration from v5.0 to v5.2
+Migration from v5.2 to v6.0
+Migration from v6.0 to v6.1
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+Parameter Descriptions
+Migration
+Migration from v5.0 to v5.2
+Migration from v5.2 to v6.0
+Migration from v6.0 to v6.1
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Migration from v6.0 to v6.1
+
+The following changes must be made when migrating from v6.0 to v6.1.
+
+Changes in /swap and /quote responses
+Structural updates
+The protocols[][][] structure remains, but the format of protocol data has changed.
+fromTokenAddress and toTokenAddress have been removed. Instead, a single token field is used at a higher level.
+Changed and renamed parameters
+
+fromTokenAddress → Removed (source token is now referenced at the top level).
+
+toTokenAddress → Removed (destination is now handled via dst).
+
+name → Moved inside protocols array within swaps.
+
+part → Now nested inside swaps and protocols.
+
+Compare the old version of that part of response with a new one below.
+
+Old response example
+"protocols": [
+  [
+    [
+      {
+        "name": "UNISWAP_V2",
+        "part": 2,
+        "fromTokenAddress": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "toTokenAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      },
+      {
+        "name": "UNISWAP_V4",
+        "part": 2,
+        "fromTokenAddress": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "toTokenAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      },
+      {
+        "name": "SUSHI",
+        "part": 4,
+        "fromTokenAddress": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "toTokenAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      },
+      {
+        "name": "UNISWAP_V3",
+        "part": 6,
+        "fromTokenAddress": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "toTokenAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      },
+      {
+        "name": "UNISWAP_V3",
+        "part": 86,
+        "fromTokenAddress": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "toTokenAddress": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+      }
+    ],
+  //...
+  ]
+]
+
+New response example
+"protocols": [
+    {
+      "token": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      "hops": [
+        {
+          "part": 62.5,
+          "dst": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "fromTokenId": 0,
+          "toTokenId": 1,
+          "protocols": [
+            {
+              "name": "UNISWAP_V4",
+              "part": 1
+            },
+            {
+              "name": "CURVE_V2_TRICRYPTO_NG",
+              "part": 1
+            },
+            {
+              "name": "UNISWAP_V3",
+              "part": 1
+            },
+            {
+              "name": "UNISWAP_V2",
+              "part": 3
+            },
+            {
+              "name": "UNISWAP_V3",
+              "part": 5
+            },
+            {
+              "name": "UNISWAP_V3",
+              "part": 20
+            },
+            {
+              "name": "FLUID_DEX_T1",
+              "part": 69
+            }
+          ]
+        }
+      //...
+      ]
+    }
+  ]
+
+
+For full schemas, see Swagger documentation for the /swap and /quote endpoints.
+
+INFO
+
+If you disabled includeProtocols, change the version to a newer one. No additional actions are required.
+
+Previous
+Migration from v5.2 to v6.0
+Next
+Introduction
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

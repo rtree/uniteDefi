@@ -1,0 +1,604 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+GET
+Protocols current value
+GET
+Protocols profit and loss
+GET
+Protocols details
+GET
+Tokens current value
+GET
+Tokens profit and loss
+GET
+Tokens details
+GET
+Is available
+GET
+Supported chains
+GET
+Supported protocols
+GET
+General current value
+GET
+General profit and loss
+GET
+General value chart
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+GET
+Protocols current value
+GET
+Protocols profit and loss
+GET
+Protocols details
+GET
+Tokens current value
+GET
+Tokens profit and loss
+GET
+Tokens details
+GET
+Is available
+GET
+Supported chains
+GET
+Supported protocols
+GET
+General current value
+GET
+General profit and loss
+GET
+General value chart
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger v4
+
+V4 API Docs
+GET
+https://api.1inch.dev/portfolio/portfolio/v4/overview/protocols/details
+Protocols details
+Provides general information for each protocol's statistics (underlying tokens, current_value, etc.) and protocol-specific metrics (ROI, APR, unclaimed_fees, claimed_fees, etc.). It may include closed positions.
+Network
+Ethereum
+Parameters
+addresses
+array
+*
+(query)
+Addresses
+string
+chain_id
+integer
+(query)
+Chain id or nothing
+closed
+boolean
+(query)
+Include closed positions
+true
+closed_threshold
+number
+(query)
+Closed positions threshold
+use_cache
+boolean
+(query)
+Get response from cache
+swagger.response
+Code: 200
+Successful Response
+Schema:
+ResponseEnvelope_list_ProtocolOverviewResponseItem__
+object
+result
+*
+array
+items
+ProtocolOverviewResponseItem
+object
+chain_id
+*
+ChainId
+integer (Enum)
+1
+137
+56
+42161
+43114
+10
+100
+1313161554
+250
+8217
+324
+8453
+59144
+146
+130
+contract_address
+*
+string
+token_id
+*
+integer
+addresses
+*
+array
+items
+string
+protocol
+*
+ProtocolName
+string (Enum)
+unknown
+native
+erc20
+curve
+uniswapv2
+cian
+sushiswapv2
+pancakeswapv2
+camelotv2
+quickswapv2
+velodromev2
+aerodromev2
+uniswapv3
+sushiswapv3
+camelotv3
+pancakeswapv3
+uniswapv4
+chai
+sdai
+aavev2
+aavev3
+avalon
+seamless
+kinza
+realtrmm
+sturdy
+radiantv1
+radiantv2
+valas
+lido
+staking1inchv2
+spark
+vesting1inch
+rocketpool
+balancer
+swell
+eigenlayer
+binancestakedeth
+mantlestakedeth
+coinbasestakedeth
+pharaoh
+etherfi
+pendlev1
+pendlev2
+ethena
+compoundv2
+venus
+compoundv3
+morphoblue
+renzo
+susds
+zircuitrestaking
+meth
+symbiotic
+pufeth
+kelpdao
+lseth
+zerolend
+eth2
+royco
+stader
+fraxether
+benqi
+listadao
+originprotocol
+stakestone
+stakewise
+ethereal
+enzyme
+graph
+hegicstake
+name
+*
+string
+contract_type
+*
+string
+sub_contract_type
+*
+SubContractType
+string (Enum)
+unknown
+staking
+tokenstaking
+liquidstaking
+restaking
+gauge
+deposit
+supply
+debt
+lendingvault
+yield
+yieldvault
+smartlending
+native
+erc20
+stable
+token
+sy
+yt
+pt
+lpt
+is_whitelisted
+*
+integer
+protocol_name
+*
+any
+anyOf[0]
+string
+anyOf[1]
+null
+protocol_icon
+*
+any
+anyOf[0]
+string
+anyOf[1]
+null
+status
+*
+AssetStatus
+integer (Enum)
+1
+0
+-1
+token_address
+*
+any
+anyOf[0]
+string
+anyOf[1]
+null
+underlying_tokens
+*
+array
+items
+ProtocolUnderlyingTokenResponseItem
+object
+chain_id
+*
+ChainId
+integer (Enum)
+1
+137
+56
+42161
+43114
+10
+100
+1313161554
+250
+8217
+324
+8453
+59144
+146
+130
+address
+*
+string
+name
+*
+any
+anyOf[0]
+string
+anyOf[1]
+null
+symbol
+*
+any
+anyOf[0]
+string
+anyOf[1]
+null
+decimals
+*
+integer
+amount
+*
+number
+price_to_usd
+*
+number
+value_usd
+*
+number
+value_usd
+*
+number
+debt
+*
+boolean
+rewards_tokens
+*
+array
+items
+ProtocolUnderlyingTokenResponseItem
+object
+chain_id
+*
+ChainId
+integer (Enum)
+1
+137
+56
+42161
+43114
+10
+100
+1313161554
+250
+8217
+324
+8453
+59144
+146
+130
+address
+*
+string
+name
+*
+any
+anyOf[0]
+string
+anyOf[1]
+null
+symbol
+*
+any
+anyOf[0]
+string
+anyOf[1]
+null
+decimals
+*
+integer
+amount
+*
+number
+price_to_usd
+*
+number
+value_usd
+*
+number
+profit_abs_usd
+*
+any
+anyOf[0]
+number
+anyOf[1]
+null
+roi
+*
+any
+anyOf[0]
+number
+anyOf[1]
+null
+weighted_apr
+*
+any
+anyOf[0]
+number
+anyOf[1]
+null
+holding_time_days
+*
+any
+anyOf[0]
+integer
+anyOf[1]
+null
+info
+*
+object
+meta
+any
+anyOf[0]
+ResponseMeta
+object
+cached_at
+any
+anyOf[0]
+integer
+anyOf[1]
+null
+system
+any
+anyOf[0]
+ProcessingInfo
+object
+click_time
+number
+node_time
+number
+microservices_time
+number
+redis_time
+number
+total_time
+number
+anyOf[1]
+null
+anyOf[1]
+null
+Code: 422
+Validation Error
+Schema:
+HTTPValidationError
+object
+detail
+array
+items
+ValidationError
+object
+loc
+*
+array
+items
+any
+anyOf[0]
+string
+anyOf[1]
+integer
+msg
+*
+string
+type
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url =
+    "https://api.1inch.dev/portfolio/portfolio/v4/overview/protocols/details";
+
+  const config = {
+    headers: undefined,
+    params: {
+      chain_id: "1",
+      closed: true,
+      closed_threshold: 1,
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Protocols profit and loss
+Next
+Tokens current value
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

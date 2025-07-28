@@ -1,0 +1,354 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+GET
+Protocols current value
+GET
+Protocols profit and loss
+GET
+Protocols details
+GET
+Tokens current value
+GET
+Tokens profit and loss
+GET
+Tokens details
+GET
+Is available
+GET
+Supported chains
+GET
+Supported protocols
+GET
+General current value
+GET
+General profit and loss
+GET
+General value chart
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+GET
+Protocols current value
+GET
+Protocols profit and loss
+GET
+Protocols details
+GET
+Tokens current value
+GET
+Tokens profit and loss
+GET
+Tokens details
+GET
+Is available
+GET
+Supported chains
+GET
+Supported protocols
+GET
+General current value
+GET
+General profit and loss
+GET
+General value chart
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger v4
+
+V4 API Docs
+GET
+https://api.1inch.dev/portfolio/portfolio/v4/overview/erc20/details
+Tokens details
+Provides general information for each token's statistics, including ROI (Return on Investment) and PnL (Profit and Loss). It may include closed positions.
+Network
+Ethereum
+Parameters
+addresses
+array
+*
+(query)
+Addresses
+string
+chain_id
+integer
+(query)
+Chain id or nothing
+timerange
+string
+(query)
+Timerange
+closed
+boolean
+(query)
+Include closed positions
+true
+closed_threshold
+number
+(query)
+Closed positions threshold
+use_cache
+boolean
+(query)
+Get response from cache
+swagger.response
+Code: 200
+Successful Response
+Schema:
+ResponseEnvelope_list_Erc20OverviewResponseItem__
+object
+result
+*
+array
+items
+Erc20OverviewResponseItem
+object
+chain_id
+*
+any
+anyOf[0]
+Chain
+any (Enum)
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+[object Object]
+anyOf[1]
+null
+contract_address
+*
+string
+name
+*
+string
+symbol
+*
+string
+amount
+*
+number
+price_to_usd
+*
+number
+value_usd
+*
+number
+abs_profit_usd
+*
+any
+anyOf[0]
+number
+anyOf[1]
+null
+roi
+*
+any
+anyOf[0]
+number
+anyOf[1]
+null
+status
+*
+integer
+meta
+any
+anyOf[0]
+ResponseMeta
+object
+cached_at
+any
+anyOf[0]
+integer
+anyOf[1]
+null
+system
+any
+anyOf[0]
+ProcessingInfo
+object
+click_time
+number
+node_time
+number
+microservices_time
+number
+redis_time
+number
+total_time
+number
+anyOf[1]
+null
+anyOf[1]
+null
+Code: 422
+Validation Error
+Schema:
+HTTPValidationError
+object
+detail
+array
+items
+ValidationError
+object
+loc
+*
+array
+items
+any
+anyOf[0]
+string
+anyOf[1]
+integer
+msg
+*
+string
+type
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url =
+    "https://api.1inch.dev/portfolio/portfolio/v4/overview/erc20/details";
+
+  const config = {
+    headers: undefined,
+    params: {
+      chain_id: "1",
+      closed: true,
+      closed_threshold: 1,
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Tokens profit and loss
+Next
+Is available
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

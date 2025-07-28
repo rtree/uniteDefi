@@ -1,0 +1,410 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+GET
+Find the best quote to swap with 1inch Router
+GET
+Generate calldata to swap on 1inch Router
+GET
+Address of the 1inch Router that is trusted to spend funds for the swap
+GET
+Generate approve calldata to allow 1inch Router to perform a swap
+GET
+Get the number of tokens that the 1inch Router is allowed to swap
+GET
+List of liquidity sources that are available for routing in the 1inch Aggregation Protocol
+GET
+List of tokens that are available for swap in the 1inch Aggregation protocol
+Parameter Descriptions
+Migration
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+GET
+Find the best quote to swap with 1inch Router
+GET
+Generate calldata to swap on 1inch Router
+GET
+Address of the 1inch Router that is trusted to spend funds for the swap
+GET
+Generate approve calldata to allow 1inch Router to perform a swap
+GET
+Get the number of tokens that the 1inch Router is allowed to swap
+GET
+List of liquidity sources that are available for routing in the 1inch Aggregation Protocol
+GET
+List of tokens that are available for swap in the 1inch Aggregation protocol
+Parameter Descriptions
+Migration
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+1inch Swap API
+GET
+https://api.1inch.dev/swap/v6.1/{chain}/swap
+Generate calldata to swap on 1inch Router
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+src
+string
+*
+(query)
+dst
+string
+*
+(query)
+amount
+string
+*
+(query)
+from
+string
+*
+(query)
+The address that calls the 1inch contract
+origin
+string
+*
+(query)
+An EOA address that initiate the transaction
+slippage
+number
+*
+(query)
+min: 0; max: 50
+protocols
+string
+(query)
+All supported liquidity sources by default
+fee
+number
+(query)
+Partner fee. min: 0; max: 3 Should be the same for /quote and /swap
+gasPrice
+string
+(query)
+Network price per gas in wei. By default fast network gas price
+complexityLevel
+number
+(query)
+parts
+number
+(query)
+mainRouteParts
+number
+(query)
+gasLimit
+number
+(query)
+includeTokensInfo
+boolean
+(query)
+Return fromToken and toToken info in response
+includeProtocols
+boolean
+(query)
+Return used swap protocols in response
+includeGas
+boolean
+(query)
+Return approximated gas in response
+connectorTokens
+string
+(query)
+excludedProtocols
+string
+(query)
+excluded supported liquidity sources
+permit
+string
+(query)
+https://eips.ethereum.org/EIPS/eip-2612
+receiver
+string
+(query)
+This address will receive funds after the swap. By default same address as "from" param
+referrer
+string
+(query)
+allowPartialFill
+boolean
+(query)
+By default set to false
+compatibility
+boolean
+(query)
+Allows to swap tokens with internal transfer fee
+disableEstimate
+boolean
+(query)
+Enable this flag to disable onchain simulation
+usePatching
+boolean
+(query)
+Enable this flag if you patch input amount on your smart contract
+usePermit2
+boolean
+(query)
+Enable this flag in case you did an approval to permit2 smart contract
+swagger.response
+Code: 200
+Schema:
+SwapResponse
+object
+srcToken
+any
+allOf[0]
+TokenInfo
+object
+address
+*
+string
+symbol
+*
+string
+name
+*
+string
+decimals
+*
+number
+logoURI
+*
+string
+domainVersion
+string
+eip2612
+boolean
+isFoT
+boolean
+tags
+array
+items
+string
+dstToken
+any
+allOf[0]
+TokenInfo
+object
+address
+*
+string
+symbol
+*
+string
+name
+*
+string
+decimals
+*
+number
+logoURI
+*
+string
+domainVersion
+string
+eip2612
+boolean
+isFoT
+boolean
+tags
+array
+items
+string
+dstAmount
+*
+string
+protocols
+array
+items
+TokenSwaps
+object
+token
+*
+string
+hops
+*
+array
+items
+TokenHop
+object
+part
+*
+number
+dst
+*
+string
+fromTokenId
+*
+number
+toTokenId
+*
+number
+protocols
+*
+array
+items
+SelectedLiquiditySource
+object
+name
+*
+string
+part
+*
+number
+tx
+*
+any
+allOf[0]
+TransactionData
+object
+from
+*
+string
+to
+*
+string
+data
+*
+string
+value
+*
+string
+gasPrice
+*
+string
+gas
+*
+number
+Code: 400
+Schema:
+SwapRequestError
+object
+error
+*
+string
+description
+*
+string
+statusCode
+*
+number (Enum)
+400
+500
+requestId
+*
+string
+meta
+*
+array
+items
+HttpExceptionMeta
+object
+type
+*
+string
+value
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/swap/v6.1/1/swap";
+
+  const config = {
+    headers: undefined,
+    params: {
+      src: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      dst: "0x111111111117dc0aa78b770fa6a738034120c302",
+      amount: "10000000000000000",
+      slippage: 1,
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Find the best quote to swap with 1inch Router
+Next
+Address of the 1inch Router that is trusted to spend funds for the swap
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

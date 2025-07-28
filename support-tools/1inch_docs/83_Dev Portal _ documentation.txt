@@ -1,0 +1,263 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Introduction
+Quickstart guide
+Swagger
+GET
+Returns history events for address
+POST
+Get history events by address
+POST
+Returns history event with search filter
+POST
+Returns swap events for the user
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Introduction
+Quickstart guide
+Swagger
+GET
+Returns history events for address
+POST
+Get history events by address
+POST
+Returns history event with search filter
+POST
+Returns swap events for the user
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+Transaction history
+POST
+https://api.1inch.dev/history/v2.0/history/{address}/search/events
+Returns history event with search filter
+Parameters
+address
+string
+*
+(path)
+Account address
+Request Body
+Content type
+application/json
+Click in to adjust the request body:
+  
+{
+  "filter": {
+    "and": {
+      "and": {
+        "from_time_ms": null,
+        "to_time_ms": null,
+        "chain_ids": [
+          "string"
+        ],
+        "transaction_types": [
+          "string"
+        ],
+        "token_addresses": [
+          "string"
+        ],
+        "chain_based_token_addresses": [
+          "string"
+        ]
+      },
+      "or": {
+        "chain_ids": [
+          "string"
+        ],
+        "transaction_types": [
+          "string"
+        ],
+        "chain_based_token_addresses": [
+          "string"
+        ],
+        "transaction_hash": {},
+        "from_or_to_address": {}
+      }
+    },
+    "limit": 0
+  }
+}
+
+
+Request Body Schema:
+HistorySearchMultiFilterRootDto
+object
+filter
+*
+HistorySearchMultiFilterRootFilterDto
+object
+and
+*
+HistorySearchMultiFilterRootAndDto
+object
+and
+*
+SearchAndMultiFilterDto
+object
+from_time_ms
+object
+to_time_ms
+object
+chain_ids
+array
+items
+string
+transaction_types
+array
+items
+string
+token_addresses
+array
+items
+string
+chain_based_token_addresses
+array
+items
+string
+or
+*
+SearchOrMultiFilterDto
+object
+chain_ids
+array
+items
+string
+transaction_types
+array
+items
+string
+chain_based_token_addresses
+array
+items
+string
+transaction_hash
+UnifiedTransactionHash
+object
+from_or_to_address
+UnifiedAccountAddress
+object
+limit
+number
+swagger.response
+Code: 200
+Schema:
+array
+items
+HistoryEventResponseDto
+object
+item
+*
+object
+cache_counter
+*
+number
+Code: 400
+Bad Request.
+Code: 401
+Unauthorized.
+Code: 500
+Internal server error.
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url =
+    "https://api.1inch.dev/history/v2.0/history/0x111111111117dC0aa78b770fA6A738034120C302/search/events";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+  const body = {
+    filter: {
+      and: {
+        and: {
+          from_time_ms: null,
+          to_time_ms: null,
+          chain_ids: ["string"],
+          transaction_types: ["string"],
+          token_addresses: ["string"],
+          chain_based_token_addresses: ["string"],
+        },
+        or: {
+          chain_ids: ["string"],
+          transaction_types: ["string"],
+          chain_based_token_addresses: ["string"],
+          transaction_hash: {},
+          from_or_to_address: {},
+        },
+      },
+      limit: 0,
+    },
+  };
+
+  try {
+    const response = await axios.post(url, body, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get history events by address
+Next
+Returns swap events for the user
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

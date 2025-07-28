@@ -1,0 +1,130 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Introduction
+Swagger
+Fusion+ SDK
+For integrators
+For resolvers
+Auction calculator
+Auction salt
+Auction suffix
+Websocket API
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Introduction
+Swagger
+Fusion+ SDK
+For integrators
+For resolvers
+Auction calculator
+Auction salt
+Auction suffix
+Websocket API
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Auction salt
+
+This parameters includes:
+
+Auction start time
+Duration of an auction
+Initial rate bump
+Taker fee
+Salt (optional parameter to control entropy)
+Example 1
+import {AuctionSalt} from '@1inch/fusion-sdk'
+
+const salt = new AuctionSalt({
+    duration: 180 // in seconds,
+    auctionStartTime: 1673548149 // Unix timestamp,
+    initialRateBump: 50000 // difference between max and min amount in percents, 10000000 = 100%
+    bankFee: '0' // in wei
+})
+
+salt.build()
+// #=> '45118768841948961586167738353692277076075522015101619148498725069326976549864'
+
+Example 2: Using an optional parameter to control entropy
+import {AuctionSalt} from '@1inch/fusion-sdk'
+
+// your random generated string
+const saltString = myCustomRandFunction()
+
+const salt = new AuctionSalt({
+    duration: 180 // in seconds,
+    auctionStartTime: 1673548149 // Unix timestamp,
+    initialRateBump: 50000 // 10000000 = 100%
+    bankFee: '0' // in wei,
+    salt: saltString
+})
+
+salt.build()
+
+static AuctionSalt.decode
+
+Arguments:
+
+string
+import { AuctionSalt } from "@1inch/fusion-sdk";
+
+const salt = AuctionSalt.decode(
+  "45118768841948961586167738353692277076075522015101619148498725069326976549864",
+);
+// #=> AuctionSalt
+
+Previous
+Auction calculator
+Next
+Auction suffix
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

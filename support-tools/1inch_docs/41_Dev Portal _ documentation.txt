@@ -1,0 +1,161 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Migration
+Fusion SDK
+Solana SDK
+SDK overview
+For integrators
+For resolvers
+Shared modules
+FusionOrder module
+SDK
+Fusion SDK for EVMs
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Migration
+Fusion SDK
+Solana SDK
+SDK overview
+For integrators
+For resolvers
+Shared modules
+FusionOrder module
+SDK
+Fusion SDK for EVMs
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+SDK
+
+The sdk module is your gateway to building powerful swap features on Solana using 1inch Fusion. It lets you easily fetch price quotes, create on-chain orders, and track their status. Whether you're building a DeFi app or integrating swaps into a wallet, this module gives you a clean, reliable way to tap into 1inch’s Fusion engine on Solana.
+
+Creation
+With axios provider
+import { Address, FusionSwapContract, Sdk } from "@1inch/solana-fusion-sdk";
+import { AxiosHttpProvider } from "@1inch/solana-fusion-sdk/axios";
+
+const sdk = new Sdk(new AxiosHttpProvider(), {
+  baseUrl: "https://api.1inch.dev/fusion",
+  authKey: "your key",
+  version: "v1.0",
+});
+
+With custom provider
+import {
+  Address,
+  FusionSwapContract,
+  Sdk,
+  HttpProvider,
+} from "@1inch/solana-fusion-sdk";
+
+class MyProvider implements HttpProvider {
+  // implement methods
+}
+
+const sdk = new Sdk(new MyProvider(), {
+  baseUrl: "https://api.1inch.dev/fusion",
+  authKey: "your key",
+  version: "v1.0",
+});
+
+Methods
+getQuote
+
+Description: Get quote for the order.
+
+Arguments:
+
+Name	Type	Description
+srcToken	Address	Source token mint address.
+dstToken	Address	Destination token mint address.
+amount	bigint	Amount of source tokens.
+signer	Address	User's wallet address.
+slippage?	Bps	Maximum allowed slippage (optional).
+
+Returns: The Quote object.
+
+createOrder
+
+Description: Create a Fusion order.
+
+Arguments:
+
+Name	Type	Description
+srcToken	Address	Source token mint address.
+dstToken	Address	Destination token mint address.
+amount	bigint	Amount of source tokens.
+signer	Address	User's wallet address.
+slippage?	Bps	Maximum allowed slippage (optional).
+
+Returns: The FusionOrder object.
+
+getOrderStatus
+
+Description: Get order status.
+
+Arguments:
+
+Name	Type	Description
+orderHash	string	Base58-encoded hash of the order. Use FusionOrder.getOrderHashBase58 to generate it.
+
+Returns: The OrderStatus object.
+
+Previous
+FusionOrder module
+Next
+SDK overview
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

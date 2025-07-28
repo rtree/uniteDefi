@@ -1,0 +1,102 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+Parameter Descriptions
+Migration
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+Parameter Descriptions
+Migration
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+1inch classic swap
+
+The 1inch classic swap API (Pathfinder v6.1) is a cutting-edge discovery and routing algorithm that offers asset exchanges at the best rates on the market. Pathfinder finds the most efficient paths for a token swap and is able to split between different protocols and even different market depths in within one protocol in the shortest possible time.
+
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+Supported networks
+Ethereum Mainnet
+Arbitrum
+Avalanche
+Base
+BNB Chain
+Gnosis
+Sonic
+Optimism
+Polygon
+zkSync Era
+Linea
+Unichain
+API reference
+
+For detailed information about each endpoint, refer to the classic swap API Swagger section.
+
+Quickstart
+
+In order to quickly understand how to make an exchange using the protocol, we suggest you use the Quickstart guide.
+
+Previous
+WebSocket API
+Next
+Quick start
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

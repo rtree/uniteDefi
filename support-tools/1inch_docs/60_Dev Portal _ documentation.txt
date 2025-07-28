@@ -1,0 +1,131 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+Parameter Descriptions
+Migration
+Migration from v5.0 to v5.2
+Migration from v5.2 to v6.0
+Migration from v6.0 to v6.1
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+Parameter Descriptions
+Migration
+Migration from v5.0 to v5.2
+Migration from v5.2 to v6.0
+Migration from v6.0 to v6.1
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Migration from v5.0 to v5.2
+
+Following changes must be done to migrate from v5.0 to v5.2
+
+Parameter change for /quote
+Request
+
+Renaming of parameter:
+fromTokenAddress -> src
+toTokenAddress -> dst
+
+Added new parameter optional query params:
+
+includeTokensInfo: boolean - Return fromToken and toToken info in response
+includeProtocols: boolean - Return used swap protocols in response
+includeGas: boolean - Return approximated gas in response
+
+Response:
+
+Renaming of parameter:
+estimatedGas -> gas
+toTokenAmount -> toAmount
+
+Specialities:
+
+By default only toAmount will be in the response. Additional parameter can be activated by additional parameters.
+
+Parameter change for /swap
+Request
+
+Renaming of parameter:
+fromTokenAddress -> src
+toTokenAddress -> dst
+fromAddress -> from
+destReceiver -> receiver
+referrerAddress -> referrer
+compatibilityMode -> compatibility
+
+Added new parameter optional query params:
+
+includeTokensInfo: boolean - Return fromToken and toToken info in response
+includeProtocols: boolean - Return used swap protocols in response
+includeGas: boolean - Return approximated gas in response
+
+Response:
+
+Renaming of parameter:
+toTokenAmount -> toAmount
+
+Specialities:
+
+By default only toAmount and tx will be in the response. Additional parameter can be activated by additional parameters.
+
+Previous
+Swap
+Next
+Migration from v5.2 to v6.0
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

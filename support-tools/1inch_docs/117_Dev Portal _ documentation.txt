@@ -1,0 +1,107 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Introduction
+Quickstart guide
+Swagger
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Introduction
+Quickstart guide
+Swagger
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The 1inch Balance API provides real-time, accurate information about token balances and allowances across multiple chains. This API is essential for applications that need to track or display the assets held in web3 wallets and offers a simple integration into wallets, exchanges, and other dApps. By leveraging the Balance API, you can ensure that your users always have up-to-date details on their token holdings, allowances, and more.
+
+Supported networks
+
+The 1inch Balance API supports a broad range of chains:
+
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Solana
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+[Linea] (https://linea.build)
+Unichain
+Why use the 1inch Balance API?
+
+The 1inch Balance API offers several significant benefits:
+
+Wide selection of tokens: supports any token on the most popular blockchain networks.
+
+Enterprise-grade performance: the dedicated endpoint ensures reliable, high-performance data retrieval, even under high demand.
+
+Fast response time: with response times under 400 ms, the Balance API is among the fastest on the market, providing nearly instant access to wallet balances and allowances.
+
+Integration possibilities
+
+The 1inch Balance API can be integrated into a variety of applications, making it versatile for many web3 use cases. It is especially useful in:
+
+Wallets
+Portfolio and token trackers
+Exchanges and meta-aggregators
+Majority of web3 applications
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+API reference
+
+For detailed information about each endpoint, refer to the Balance API Swagger section.
+
+Previous
+Migration from v4 to v5.0
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

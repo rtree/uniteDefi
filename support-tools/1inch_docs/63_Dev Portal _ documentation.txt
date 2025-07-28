@@ -1,0 +1,132 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+Introduction
+Quickstart guide
+Swagger
+Limit Order SDK
+Migration
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+Introduction
+Quickstart guide
+Swagger
+Limit Order SDK
+Migration
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+1inch Orderbook API is using the 1inch Limit Order Protocol, which is a set of smart contracts that can work on any EVM-based blockchains. Key features of the protocol are extreme flexibility and high gas efficiency.
+
+Orderbook
+
+Orderbook is a financial instrument with which you can put up an ERC-20 token for sale at a fixed price.
+For example, you can put up 2 WBTC tokens for sale at the price of 82,415 DAI tokens.
+
+1inch Limit Orders Protocol has many tools for flexible trade management:
+
+Partial fill
+Predicates
+Single cancellation
+Bunch cancellation
+Fullness check
+Validation
+
+To enable efficient market making, RFQ orders are used, benefiting from a special optimization that avoids high gas costs during execution.
+
+Limit order execution
+1. Order placement
+
+Users place limit orders via the 1inch dApp. Each order is cryptographically signed and remains off-chain until executed.
+
+2. Order discovery
+
+Anyone can fetch these signed orders using the 1inch Orderbook API to execute trades by submitting them on-chain.
+
+3. Order execution
+
+To execute an order, the signed order is submitted to the smart contract's fillOrder method. See the latest contract addresses in Limit Order SDK.
+
+INFO
+
+Both the buyer and seller must approve the 1inch Limit Order Protocol to transfer their tokens.
+
+Supported tokens standards
+ERC-20
+ERC-721
+ERC-1155
+
+Other token standards can be supported via external extensions.
+
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+Supported networks
+Ethereum Mainnet
+Arbitrum
+Avalanche
+BNB Chain
+Gnosis
+Sonic
+Optimism
+Polygon
+zkSync Era
+Base
+[Linea] (https://linea.build)
+Unichain
+More resources
+To quickly understand how to create, sign, and submit a limit order, see the Quickstart guide.
+For detailed information about each endpoint, refer to the Orderbook API Swagger section.
+Read more about Limit Order Protocol.
+Try directly at 1inch dApp.
+Explore the Limit Order repository.
+For integration purposes, check out Limit Order SDK.
+Previous
+Migration from v6.0 to v6.1
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

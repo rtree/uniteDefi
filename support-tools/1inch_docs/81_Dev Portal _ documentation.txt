@@ -1,0 +1,329 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Introduction
+Quickstart guide
+Swagger
+GET
+Returns history events for address
+POST
+Get history events by address
+POST
+Returns history event with search filter
+POST
+Returns swap events for the user
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Introduction
+Quickstart guide
+Swagger
+GET
+Returns history events for address
+POST
+Get history events by address
+POST
+Returns history event with search filter
+POST
+Returns swap events for the user
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+Transaction history
+GET
+https://api.1inch.dev/history/v2.0/history/{address}/events
+Returns history events for address
+Network
+Ethereum
+Parameters
+address
+string
+*
+(path)
+Account address
+limit
+number
+(query)
+Amount of events to return, default is 100, max is 2048
+tokenAddress
+string
+(query)
+Token address used at event
+chainId
+number
+(query)
+chainId
+toTimestampMs
+string
+(query)
+To time at milliseconds
+fromTimestampMs
+string
+(query)
+From time at milliseconds
+swagger.response
+Code: 200
+Schema:
+array
+items
+HistoryResponseDto
+object
+items
+*
+array
+items
+HistoryEventDto
+object
+id
+*
+string
+address
+*
+string
+type
+*
+number
+rating
+*
+string (Enum)
+Reliable
+Scam
+timeMs
+*
+number
+details
+*
+TransactionDetailsDto
+object
+orderInBlock
+*
+number
+txHash
+*
+string
+chainId
+*
+number (Enum)
+1
+45
+137
+10
+56
+42161
+43114
+100
+250
+1313161554
+8217
+324
+8453
+59144
+501
+146
+130
+blockNumber
+*
+number
+blockTimeSec
+*
+number
+status
+*
+string
+type
+*
+string (Enum)
+Unknown
+Approve
+Wrap
+Unwrap
+Transfer
+SwapExactInput
+SwapExactOutput
+LimitOrderFill
+LimitOrderCancel
+LimitOrderCancelAll
+Multicall
+AddLiquidity
+RemoveLiquidity
+Borrow
+Repay
+Stake
+Unstake
+Vote
+DelegateVotePower
+UnDelegateVotePower
+DiscardVote
+DeployPool
+Claim
+AbiDecoded
+TraceDecoded
+Action
+Bridge
+BuyNft
+BidNft
+OfferSellNft
+Burn
+WrappedTx
+RegisterENSDomain
+Revoke
+CreateSafe
+AddOwner
+Send
+Receive
+MultiStage
+Swap
+LimitOrderCreate
+tokenActions
+*
+array
+items
+TokenActionDto
+object
+address
+*
+string
+standard
+*
+string
+fromAddress
+*
+string
+toAddress
+*
+string
+tokenId
+object
+amount
+object
+direction
+*
+string (Enum)
+In
+Out
+Self
+On
+fromAddress
+*
+string
+toAddress
+*
+string
+nonce
+*
+number
+feeInSmallestNative
+*
+string
+meta
+TransactionDetailsMetaDto
+object
+is1inchFusionSwap
+object
+is1inchCrossChainSwap
+object
+orderFillPercentage
+object
+ensDomainName
+object
+fromChainId
+object
+toChainId
+object
+safeAddress
+object
+protocol
+object
+cache_counter
+*
+number
+Code: 400
+Bad Request.
+Code: 401
+Unauthorized.
+Code: 500
+Internal server error.
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url =
+    "https://api.1inch.dev/history/v2.0/history/0x266E77cE9034a023056ea2845CB6A20517F6FDB7/events";
+
+  const config = {
+    headers: undefined,
+    params: {
+      limit: 100,
+      chainId: "1",
+      toTimestampMs: 1695283931212,
+      fromTimestampMs: 1694754179096,
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Quickstart guide
+Next
+Get history events by address
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

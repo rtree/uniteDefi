@@ -1,0 +1,93 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Migration
+Migration from v1.0 to v2.0
+Fusion SDK
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Migration
+Migration from v1.0 to v2.0
+Fusion SDK
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Migration from v1.0 to v2.0
+
+Following changes must be done to migrate from v1.0 to v2.0
+
+Quoter Request Data changed
+Request
+
+Adding of parameter:
+isPermit2: permit2 allowance transfer encoded call
+
+Relayer Request Data changed
+Request
+
+Removing of parameter:
+allowedSender
+offsets
+interactions
+
+Adding of parameter:
+extension
+
+Previous
+Submit a list of limit orders which resolvers will be able to fill
+Next
+SDK overview
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

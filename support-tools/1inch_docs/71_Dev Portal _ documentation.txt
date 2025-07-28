@@ -1,0 +1,195 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+Introduction
+Quickstart guide
+Swagger
+POST
+Include a limit order to the 1inch limit orders database
+GET
+Get limit orders belonging to the specified address
+GET
+Get order by the specified order hash
+GET
+Get all limit orders
+GET
+Get orders count by specified filters
+GET
+Get fill/cancel events related to the specified order
+GET
+Get all orders fill/cancel events
+GET
+Get all active orders which have permit for the specified wallet address and token
+GET
+Get unique active token pairs
+GET
+Get calculated making amount on trading pair by provided amount
+Limit Order SDK
+Migration
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+Introduction
+Quickstart guide
+Swagger
+POST
+Include a limit order to the 1inch limit orders database
+GET
+Get limit orders belonging to the specified address
+GET
+Get order by the specified order hash
+GET
+Get all limit orders
+GET
+Get orders count by specified filters
+GET
+Get fill/cancel events related to the specified order
+GET
+Get all orders fill/cancel events
+GET
+Get all active orders which have permit for the specified wallet address and token
+GET
+Get unique active token pairs
+GET
+Get calculated making amount on trading pair by provided amount
+Limit Order SDK
+Migration
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+1inch Orderbook API
+GET
+https://api.1inch.dev/orderbook/v4.0/{chain}/events
+Get all orders fill/cancel events
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+limit
+integer
+(query)
+limit to get events, max 1000
+swagger.response
+Code: default
+Get events by order hash
+Schema:
+array
+items
+GetEventsV4Response
+object
+id
+*
+number
+network
+*
+number
+logId
+*
+string
+version
+*
+number
+action
+*
+string
+orderHash
+*
+string
+taker
+*
+string
+remainingMakerAmount
+*
+string
+transactionHash
+*
+string
+blockNumber
+*
+number
+createDateTime
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/orderbook/v4.0/1/events";
+
+  const config = {
+    headers: undefined,
+    params: {
+      limit: 100,
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get fill/cancel events related to the specified order
+Next
+Get all active orders which have permit for the specified wallet address and token
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

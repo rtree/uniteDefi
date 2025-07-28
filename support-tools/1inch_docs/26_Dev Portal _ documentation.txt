@@ -1,0 +1,247 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Orders
+GET
+Get gasless swap active orders
+GET
+Get actual settlement contract address
+GET
+OrderApiController_getOrderByOrderHash_v2.0
+POST
+Get orders by hashes
+GET
+OrderApiController_getOrdersByMaker_v2.0
+Quoter
+Relayer
+Migration
+Fusion SDK
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Orders
+GET
+Get gasless swap active orders
+GET
+Get actual settlement contract address
+GET
+OrderApiController_getOrderByOrderHash_v2.0
+POST
+Get orders by hashes
+GET
+OrderApiController_getOrdersByMaker_v2.0
+Quoter
+Relayer
+Migration
+Fusion SDK
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Orders
+
+1inch Fusion API
+GET
+https://api.1inch.dev/fusion/orders/v2.0/{chain}/order/active
+Get gasless swap active orders
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+page
+number
+(query)
+Pagination step, default: 1 (page = offset / limit)
+limit
+number
+(query)
+Number of active orders to receive (default: 100, max: 500)
+version
+number
+(query)
+Settlement extension version: 2.0 or 2.1. By default: all
+swagger.response
+Code: 200
+Array of queried active orders
+Code: 400
+Input data is invalid
+Code: default
+Schema:
+GetActiveOrdersOutput
+object
+meta
+*
+Meta
+object
+totalItems
+*
+number
+itemsPerPage
+*
+number
+totalPages
+*
+number
+currentPage
+*
+number
+items
+*
+array
+items
+ActiveOrdersOutput
+object
+orderHash
+*
+string
+signature
+*
+string
+deadline
+*
+string
+auctionStartDate
+*
+string
+auctionEndDate
+*
+string
+quoteId
+*
+string
+remainingMakerAmount
+*
+string
+extension
+*
+string
+order
+*
+any
+allOf[0]
+FusionOrderV4
+object
+salt
+*
+string
+maker
+*
+string
+receiver
+*
+string
+makerAsset
+*
+string
+takerAsset
+*
+string
+makingAmount
+*
+string
+takingAmount
+*
+string
+makerTraits
+*
+string
+version
+*
+string (Enum)
+2.0
+2.1
+2.2
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/fusion/orders/v2.0/1/order/active";
+
+  const config = {
+    headers: undefined,
+    params: {
+      page: 1,
+      limit: 100,
+      version: "2.0",
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Introduction
+Next
+Get actual settlement contract address
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

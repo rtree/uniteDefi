@@ -1,0 +1,114 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Introduction
+Swagger
+Fusion+ SDK
+For integrators
+SDK Overview
+When and how to submit a secret
+For resolvers
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Introduction
+Swagger
+Fusion+ SDK
+For integrators
+SDK Overview
+When and how to submit a secret
+For resolvers
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+When and how to submit a secret
+How to submit a secret
+Wait for finality lock and escrow creation
+After the escrows are created on both the source and destination chains, the finality lock period must expire before the secret is shared.
+Use getReadyToAcceptSecretFills(orderHash) to check if the secret can be submitted, meaning both escrows are in place, and finality locks have passed.
+    async getReadyToAcceptSecretFills(
+        orderHash: string
+    ): Promise<ReadyToAcceptSecretFills> {
+        return this.api.getReadyToAcceptSecretFills(orderHash)
+    }
+
+Check if the order is ready for public actions
+Next, call getReadyToExecutePublicActions() to verify if the system is ready to perform public actions, including secret submission. This step ensures that public events such as secret reveals can proceed.
+ async getReadyToExecutePublicActions(): Promise<ReadyToExecutePublicActions> {
+        return this.api.getReadyToExecutePublicActions()
+    }
+
+Verify if a secret has already been published
+Use getPublishedSecrets(orderHash) to check which secrets has already been revealed by other resolvers. If a valid secret is already published, further action may not be needed.
+    async getPublishedSecrets(
+        orderHash: string
+    ): Promise<PublishedSecretsResponse> {
+        return this.api.getPublishedSecrets(orderHash)
+    }
+
+How to Submit a secret
+Ensure the secret is ready
+The maker must have the secret stored securely and be ready to provide it after finality lock expiration. For example, in the 1inch dApp interface, the secret is stored in the user's browser. To provide the secret, they must keep the browser tab open.
+Submit the secret
+Use submitSecret(orderHash, secret) to submit the secret for the given order.
+Pass the correct orderHash and secret in this function to complete the submission process.
+This secret will be used to unlock the escrows and finalize the swap.
+    async submitSecret(orderHash: string, secret: string): Promise<void> {
+        return this.api.submitSecret(orderHash, secret)
+    }
+
+Verify successful submission
+After submitting the secret, ensure it has been successfully accepted by using getOrderStatus(orderHash) to check the order status. A successful secret submission will allow resolvers to complete the swap and release funds from both escrows.
+Previous
+SDK Overview
+Next
+Auction calculator
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

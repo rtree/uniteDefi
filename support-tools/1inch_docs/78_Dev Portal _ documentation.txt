@@ -1,0 +1,103 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+Introduction
+Quickstart guide
+Swagger
+Limit Order SDK
+Migration
+Migration from v3.0 to v4.0
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+Introduction
+Quickstart guide
+Swagger
+Limit Order SDK
+Migration
+Migration from v3.0 to v4.0
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Migration from v3.0 to v4.0
+
+Following changes must be done to migrate from v3.0 to v4.0
+
+Parameter change in all queries
+Request
+
+Typechange of parameter:
+statuses: change from array ([1,2,3]) to comma-separated list (1,2,3)
+
+New request /order/{orderHash} added
+
+Get order by the specified order hash
+
+LimitOrder Request Data changed
+Request
+
+Removing of parameter:
+allowedSender
+offsets
+interactions
+
+Adding of parameter:
+extension: An interaction call data. ABI encoded set of makerAssetSuffix, takerAssetSuffix, makingAmountGetter, takingAmountGetter, predicate, permit, preInteraction, postInteraction.If extension exists then lowest 160 bits of the order salt must be equal to the lowest 160 bits of the extension hash
+makerTraits: Includes some flags like, allow multiple fills, is partial fill allowed or not, price improvement, nonce, deadline etc.
+
+Response
+
+Removing of parameter:
+allowedSender
+offsets
+interactions
+
+Adding of parameter:
+extension: An interaction call data. ABI encoded set of makerAssetSuffix, takerAssetSuffix, makingAmountGetter, takingAmountGetter, predicate, permit, preInteraction, postInteraction.If extension exists then lowest 160 bits of the order salt must be equal to the lowest 160 bits of the extension hash
+makerTraits: Includes some flags like, allow multiple fills, is partial fill allowed or not, price improvement, nonce, deadline etc.
+
+Previous
+Advanced usage for custom protocol integration
+Next
+Introduction
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

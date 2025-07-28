@@ -1,0 +1,121 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Introduction
+Quickstart guide
+Swagger
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Introduction
+Quickstart guide
+Swagger
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Quickstart guide
+Building a Token Balance Checker using 1inch Balance API
+
+In this tutorial, we will create a simple Python script to check the token balances of a given wallet address using the 1inch Balance API. We'll use the popular requests library to make API calls.
+
+Prerequisites:
+Python (3.6 or higher) installed on your machine.
+requests library. Install it using pip install requests.
+Step 1: Understanding the API
+
+Before we begin, let's briefly understand the 1inch Balance API endpoint we'll be using:
+
+Endpoint: https://api.1inch.dev/balance
+Method: GET
+Parameters:
+walletAddress: The Ethereum wallet address for which we want to fetch token balances.
+Step 2: Implementing the Token Balance Checker
+
+Create a new Python file named token_balance_checker.py and write the following code:
+
+# token_balance_checker.py
+import requests
+
+def get_token_balances(wallet_address):
+    endpoint = f'https://api.1inch.dev/balance/v1.2/1/balances/{wallet_address}'
+    response = requests.get(endpoint, headers={'Authorization': f'Bearer YOUR-API-KEY'})
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print(f"Failed to fetch token balances. Error code: {response.status_code}")
+        return None
+
+def main():
+    # Replace '0xYourWalletAddress' with the Ethereum wallet address you want to check
+    wallet_address = '0xYourWalletAddress'
+    token_balances = get_token_balances(wallet_address)
+
+    if token_balances:
+        print(f"Token balances for wallet address {wallet_address}:")
+        for token, balance in token_balances.items():
+            print(f"{token}: {balance}")
+    else:
+        print("Token balance fetch failed. Please check your wallet address.")
+
+if __name__ == '__main__':
+    main()
+
+Step 3: Running the Token Balance Checker
+
+Save the script and run it using the command:
+
+python token_balance_checker.py
+
+
+Replace '0xYourWalletAddress' in the script with the Ethereum wallet address you want to check. The script will then fetch and display the token balances for that wallet address.
+
+That's it! You have now built a simple Token Balance Checker using the 1inch Balance API. You can further expand this project to include more functionality, such as calculating the total value of tokens based on token prices, filtering out zero-balance tokens, and more.
+
+Remember to handle errors and implement security measures, such as input validation and user authentication, when building real-world applications.
+
+Previous
+Introduction
+Next
+Get balances and allowances by spender for list of wallets addresses
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

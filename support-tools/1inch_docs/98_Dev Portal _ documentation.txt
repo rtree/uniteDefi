@@ -1,0 +1,254 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger v5.0
+
+V5.0 API Docs
+GET
+https://api.1inch.dev/portfolio/portfolio/v5.0/general/chart
+General value chart
+Returns value chart for all supported protocols and tokens (coming soon).
+Network
+Ethereum
+Parameters
+addresses
+array
+*
+(query)
+Addresses
+Example: 0xe3411d7ba6e99d4228e304ed1bbb4dff14813070
+string
+chain_id
+integer
+(query)
+Chain id or nothing
+timerange
+string
+(query)
+Timerange
+use_cache
+boolean
+(query)
+Get response from cache
+swagger.response
+Code: 200
+Successful Response
+Schema:
+BaseResponseEnvelope_list_AssetChartResponseItem__ValueChartResponseMeta_
+object
+result
+*
+array
+items
+AssetChartResponseItem
+object
+timestamp
+*
+integer
+value_usd
+*
+number
+meta
+any
+anyOf[0]
+ValueChartResponseMeta
+object
+cached_at
+any
+anyOf[0]
+integer
+anyOf[1]
+null
+system
+any
+anyOf[0]
+ProcessingInfo
+object
+click_time
+number
+node_time
+number
+microservices_time
+number
+redis_time
+number
+total_time
+number
+anyOf[1]
+null
+data_issues
+any
+anyOf[0]
+ValueChartDataIssues
+object
+price_outliers
+array
+items
+object
+anyOf[1]
+null
+anyOf[1]
+null
+Code: 422
+Validation Error
+Schema:
+HTTPValidationError
+object
+detail
+array
+items
+ValidationError
+object
+loc
+*
+array
+items
+any
+anyOf[0]
+string
+anyOf[1]
+integer
+msg
+*
+string
+type
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/portfolio/portfolio/v5.0/general/chart";
+
+  const config = {
+    headers: undefined,
+    params: {
+      chain_id: "1",
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get current portfolio value breakdown
+Next
+Overview report
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

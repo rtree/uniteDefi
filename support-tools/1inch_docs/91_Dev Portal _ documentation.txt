@@ -1,0 +1,141 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+Swagger v4
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+Swagger v4
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Introduction
+
+The 1inch Portfolio API aggregates and presents detailed information for web3 assets across multiple wallets and chains. By leveraging this API, you can gain a holistic view into any crypto portfolio and track performance metrics. This allows you or your users to make informed investment decisions without the hassle of juggling multiple platforms.
+
+Key features
+Multi-wallet support: add and monitor multiple wallets to get a complete picture of your crypto holdings across various addresses.
+Multi-chain integration: view assets and transactions across multiple supported blockchains on a single screen.
+Detailed analytics: access advanced DeFi analytics, including metrics from top protocols like Uniswap, Curve, Aave, and more.
+Profit and loss tracking: calculate and track your portfolio's profit and loss and return on investment across different protocols and tokens.
+Current value monitoring: obtain real-time data on the current value of your assets, organized by chains and addresses.
+Comprehensive protocol data: get detailed information on supported protocols, including underlying tokens, APR, unclaimed fees, and more.
+Investment opportunity discovery: identify and explore new investment opportunities based on any given portfolio's performance and market trends.
+Supported networks
+Ethereum Mainnet
+Arbitrum
+BNB Chain
+Gnosis
+Optimism
+Sonic
+Polygon
+Base
+ZKsync Era
+Linea
+Avalanche
+Unichain
+Getting started
+
+To begin using the 1inch Portfolio API, generate an API key and set up your development environment. Then you check out the Quickstart guide, or dive right into any of the endpoints listed below.
+
+Available endpoints
+Protocols overview
+
+Current value
+
+https://api.1inch.dev/portfolio/portfolio/v4/overview/protocols/current_value
+
+Profit and loss
+
+https://api.1inch.dev/portfolio/portfolio/v4/overview/protocols/profit_and_loss
+
+Details
+
+https://api.1inch.dev/portfolio/portfolio/v4/overview/protocols/details
+ERC20 tokens overview
+
+Current value
+
+https://api.1inch.dev/portfolio/portfolio/v4/overview/erc20/current_value
+
+Profit and loss
+
+https://api.1inch.dev/portfolio/portfolio/v4/overview/erc20/profit_and_loss
+
+Details
+
+https://api.1inch.dev/portfolio/portfolio/v4/overview/erc20/details
+General information
+
+API availability
+
+https://api.1inch.dev/portfolio/portfolio/v4/general/is_available
+
+Current value overview
+
+https://api.1inch.dev/portfolio/portfolio/v4/general/current_value
+
+Profit and loss overview
+
+https://api.1inch.dev/portfolio/portfolio/v4/general/profit_and_loss
+INFO
+
+If you are an enterprise with significant trading volumes, complete this application so we can assign you a custom API endpoint. The enterprise endpoint will offer significantly better performance across market rates and response times.
+
+API reference
+
+For detailed information about each endpoint, refer to the Portfolio API Swagger section.
+
+Previous
+Get transaction trace by block number and offset of transaction in block
+Next
+Quickstart guide
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

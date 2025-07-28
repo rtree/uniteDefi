@@ -6,8 +6,13 @@ from PyPDF2 import PdfMerger
 import time
 BASE_URL = "https://portal.1inch.dev/documentation/apis/authentication"
 STARTNUMBER = 1  # 開始ページ番号
-#BASE_URL = "https://portal.1inch.dev/documentation/apis/swap/fusion-plus/swagger/quoter?method=post&path=%2Fv1.0%2Fquote%2Fbuild"
-#STARTNUMBER = 17
+BASE_URL = "https://portal.1inch.dev/documentation/apis/swap/fusion-plus/swagger/quoter?method=post&path=%2Fv1.0%2Fquote%2Fbuild"
+STARTNUMBER = 15
+BASE_URL = "https://portal.1inch.dev/documentation/apis/swap/intent-swap/swagger/relayer?method=post&path=%2Fv2.0%2F1%2Forder%2Fsubmit"
+STARTNUMBER = 33
+BASE_URL = "https://portal.1inch.dev/documentation/apis/history/swagger?method=post&path=%2Fv2.0%2Fhistory%2F%7Baddress%7D%2Fsearch%2Fevents"
+STARTNUMBER = 83
+
 OUTPUT_DIR = "1inch_docs"
 MERGED_PDF_PATH = "1inch_full_documentation.pdf"
 def safe_filename(name: str) -> str:

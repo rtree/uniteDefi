@@ -1,0 +1,93 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+Swagger v4
+Migration
+Migration from v4 to v5.0
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+Swagger v4
+Migration
+Migration from v4 to v5.0
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Migration from v4 to v5.0
+Key Difference between V4 and V5
+
+V5 introduces a fundamental separation between snapshot and metrics:
+
+snapshot — a state at a specific point in time
+metrics — historical metrics over a selected time range (e.g. 1day, 1week)
+Migration Guide: From /v4 to /v5.0
+General
+V4 Endpoint	V5.0 Endpoint	Notes
+/portfolio/v4/general/is_available	/portfolio/v5.0/general/status	Renamed
+/portfolio/v4/general/supported_chains	/portfolio/v5.0/general/supported_chains	Same functionality
+/portfolio/v4/general/supported_protocols	/portfolio/v5.0/general/supported_protocols	Same functionality
+/portfolio/v4/general/current_value	/portfolio/v5.0/general/current_value	Wrapped response
+/portfolio/v4/general/profit_and_loss	Removed → see /metrics	Moved to metrics
+/portfolio/v4/general/value_chart	/portfolio/v5.0/general/chart	Renamed
+(none)	/portfolio/v5.0/general/address_check	New endpoint
+Tokens
+V4 Endpoint	V5.0 Endpoint	Notes
+/portfolio/v4/overview/erc20/current_value	/portfolio/v5.0/tokens/snapshot	Snapshot replaces current value
+/portfolio/v4/overview/erc20/profit_and_loss	/portfolio/v5.0/tokens/metrics	Historical metrics
+/portfolio/v4/overview/erc20/details	Covered by snapshot + metrics	Merged into snapshot and metrics
+Protocols
+V4 Endpoint	V5.0 Endpoint	Notes
+/portfolio/v4/overview/protocols/current_value	/portfolio/v5.0/protocols/snapshot	Snapshot replaces current value
+/portfolio/v4/overview/protocols/profit_and_loss	/portfolio/v5.0/protocols/metrics	Historical metrics
+/portfolio/v4/overview/protocols/details	Covered by snapshot + metrics	Merged into snapshot and metrics
+Previous
+General value chart
+Next
+Introduction
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

@@ -1,0 +1,283 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Orders
+GET
+Get gasless swap active orders
+GET
+Get actual settlement contract address
+GET
+OrderApiController_getOrderByOrderHash_v2.0
+POST
+Get orders by hashes
+GET
+OrderApiController_getOrdersByMaker_v2.0
+Quoter
+Relayer
+Migration
+Fusion SDK
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Orders
+GET
+Get gasless swap active orders
+GET
+Get actual settlement contract address
+GET
+OrderApiController_getOrderByOrderHash_v2.0
+POST
+Get orders by hashes
+GET
+OrderApiController_getOrdersByMaker_v2.0
+Quoter
+Relayer
+Migration
+Fusion SDK
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Orders
+
+1inch Fusion API
+GET
+https://api.1inch.dev/fusion/orders/v2.0/{chain}/order/maker/{address}
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+address
+string
+*
+(path)
+Maker's address
+page
+number
+(query)
+Pagination step, default: 1 (page = offset / limit)
+limit
+number
+(query)
+Number of active orders to receive (default: 100, max: 500)
+timestampFrom
+number
+(query)
+timestampFrom in milliseconds for interval [timestampFrom, timestampTo)
+timestampTo
+number
+(query)
+timestampTo in milliseconds for interval [timestampFrom, timestampTo)
+makerToken
+string
+(query)
+Find history by the given maker token
+takerToken
+string
+(query)
+Find history by the given taker token
+withToken
+string
+(query)
+Find history items by source or destination token
+version
+number
+(query)
+Settlement extension version: 2.0 or 2.1. By default: all
+swagger.response
+Code: default
+Schema:
+OrderFillsByMakerOutput
+object
+receiver
+*
+string
+orderHash
+*
+string
+status
+*
+string (Enum)
+pending
+filled
+false-predicate
+not-enough-balance-or-allowance
+expired
+partially-filled
+wrong-permit
+cancelled
+invalid-signature
+invalid-maker-traits
+awaiting-signatures
+makerAsset
+*
+string
+makerAmount
+*
+string
+minTakerAmount
+*
+string
+approximateTakingAmount
+*
+string
+positiveSurplus
+*
+string
+takerAsset
+*
+string
+cancelTx
+*
+object
+fills
+*
+array
+items
+FillOutputDto
+object
+txHash
+*
+object
+filledMakerAmount
+*
+object
+filledAuctionTakerAmount
+*
+object
+takerFeeAmount
+*
+object
+points
+*
+array
+items
+AuctionPointOutput
+object
+delay
+*
+number
+coefficient
+*
+number
+auctionStartDate
+*
+number
+auctionDuration
+*
+number
+initialRateBump
+*
+number
+isNativeCurrency
+*
+boolean
+version
+*
+string (Enum)
+2.0
+2.1
+2.2
+makerTraits
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url =
+    "https://api.1inch.dev/fusion/orders/v2.0/1/order/maker/0x1000000000000000000000000000000000000001";
+
+  const config = {
+    headers: undefined,
+    params: {
+      page: 1,
+      limit: 100,
+      timestampFrom: 1750849584021,
+      timestampTo: 1750849584021,
+      makerToken: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      takerToken: "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+      withToken: "0xc2132d05d31c914a87c6611c10748aeb04b58e8f",
+      version: "2.0",
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get orders by hashes
+Next
+Get quote details based on input data
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

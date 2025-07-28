@@ -1,0 +1,439 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger v5.0
+
+V5.0 API Docs
+GET
+https://api.1inch.dev/portfolio/portfolio/v5.0/tokens/metrics
+Get tokens metrics
+Get tokens metrics
+Network
+Ethereum
+Parameters
+addresses
+array
+*
+(query)
+Example: 0xd470055c6189b921c4d44b3d277ad868f79c0f75
+string
+chain_id
+integer
+(query)
+timerange
+string
+(query)
+1year
+use_cache
+boolean
+(query)
+Get response from cache
+swagger.response
+Code: 200
+Successful Response
+Schema:
+ResponseEnvelope_list_HistoryMetrics__
+object
+result
+*
+array
+items
+HistoryMetrics
+object
+index
+*
+string
+profit_abs_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+roi
+any
+anyOf[0]
+number
+anyOf[1]
+null
+weighted_apr
+any
+anyOf[0]
+number
+anyOf[1]
+null
+holding_time_days
+any
+anyOf[0]
+integer
+anyOf[1]
+null
+rewards_tokens
+any
+anyOf[0]
+array
+items
+TokenBalance
+object
+chain
+*
+integer
+address
+*
+string
+decimals
+*
+integer
+symbol
+any
+anyOf[0]
+string
+anyOf[1]
+null
+name
+any
+anyOf[0]
+string
+anyOf[1]
+null
+amount
+number
+price_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+anyOf[1]
+null
+rewards_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+claimed_fees
+any
+anyOf[0]
+array
+items
+TokenBalance
+object
+chain
+*
+integer
+address
+*
+string
+decimals
+*
+integer
+symbol
+any
+anyOf[0]
+string
+anyOf[1]
+null
+name
+any
+anyOf[0]
+string
+anyOf[1]
+null
+amount
+number
+price_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+anyOf[1]
+null
+unclaimed_fees
+any
+anyOf[0]
+array
+items
+TokenBalance
+object
+chain
+*
+integer
+address
+*
+string
+decimals
+*
+integer
+symbol
+any
+anyOf[0]
+string
+anyOf[1]
+null
+name
+any
+anyOf[0]
+string
+anyOf[1]
+null
+amount
+number
+price_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+anyOf[1]
+null
+impermanent_loss
+any
+anyOf[0]
+array
+items
+TokenBalance
+object
+chain
+*
+integer
+address
+*
+string
+decimals
+*
+integer
+symbol
+any
+anyOf[0]
+string
+anyOf[1]
+null
+name
+any
+anyOf[0]
+string
+anyOf[1]
+null
+amount
+number
+price_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+anyOf[1]
+null
+claimed_fees_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+unclaimed_fees_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+impermanent_loss_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+meta
+any
+anyOf[0]
+ResponseMeta
+object
+cached_at
+any
+anyOf[0]
+integer
+anyOf[1]
+null
+system
+any
+anyOf[0]
+ProcessingInfo
+object
+click_time
+number
+node_time
+number
+microservices_time
+number
+redis_time
+number
+total_time
+number
+anyOf[1]
+null
+anyOf[1]
+null
+Code: 422
+Validation Error
+Schema:
+HTTPValidationError
+object
+detail
+array
+items
+ValidationError
+object
+loc
+*
+array
+items
+any
+anyOf[0]
+string
+anyOf[1]
+integer
+msg
+*
+string
+type
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/portfolio/portfolio/v5.0/tokens/metrics";
+
+  const config = {
+    headers: undefined,
+    params: {
+      chain_id: "1",
+      timerange: "1year",
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get tokens snapshot
+Next
+Protocols current value
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

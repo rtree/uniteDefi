@@ -1,0 +1,570 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Orders
+Quoter
+GET
+Get quote details based on input data
+POST
+Get quote with custom preset details
+Relayer
+Migration
+Fusion SDK
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Orders
+Quoter
+GET
+Get quote details based on input data
+POST
+Get quote with custom preset details
+Relayer
+Migration
+Fusion SDK
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Quoter
+
+1inch Fusion API
+POST
+https://api.1inch.dev/fusion/quoter/v2.0/{chain}/quote/receive
+Get quote with custom preset details
+Network
+Ethereum
+Parameters
+chain
+number
+*
+(path)
+fromTokenAddress
+string
+*
+(query)
+Address of "FROM" token
+toTokenAddress
+string
+*
+(query)
+Address of "TO" token
+amount
+number
+*
+(query)
+Amount to take from "FROM" token to get "TO" token
+walletAddress
+string
+*
+(query)
+An address of the wallet or contract who will create Fusion order
+enableEstimate
+boolean
+*
+(query)
+if enabled then get estimation from 1inch swap builder and generates quoteId, by default is false
+false
+fee
+number
+(query)
+fee in bps format, 1% is equal to 100bps
+showDestAmountMinusFee
+object
+*
+(query)
+isPermit2
+string
+(query)
+permit2 allowance transfer encoded call
+surplus
+boolean
+*
+(query)
+permit
+string
+(query)
+permit, user approval sign
+source
+object
+(query)
+Request Body
+Content type
+application/json
+Click in to adjust the request body:
+  
+{
+  "auctionDuration": 0,
+  "auctionStartAmount": 0,
+  "auctionEndAmount": 0,
+  "points": [
+    "string"
+  ]
+}
+
+
+Request Body Schema:
+CustomPresetInput
+object
+auctionDuration
+*
+number
+auctionStartAmount
+*
+integer
+auctionEndAmount
+*
+integer
+points
+array
+items
+string
+swagger.response
+Code: 200
+Returns slippage, quoteId and presets with custom preset details as well
+Code: 400
+Input data is invalid
+Code: default
+Schema:
+GetQuoteOutput
+object
+quoteId
+*
+object
+fromTokenAmount
+*
+string
+toTokenAmount
+*
+string
+feeToken
+*
+string
+fee
+*
+ResolverFee
+object
+receiver
+*
+string
+bps
+*
+number
+whitelistDiscountPercent
+*
+number
+integratorFee
+*
+number
+presets
+*
+any
+allOf[0]
+QuotePresetsClass
+object
+fast
+*
+any
+allOf[0]
+PresetClass
+object
+bankFee
+*
+string
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+tokenFee
+*
+string
+estP
+*
+number
+points
+*
+array
+items
+AuctionPointClass
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfigClass
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+medium
+*
+any
+allOf[0]
+PresetClass
+object
+bankFee
+*
+string
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+tokenFee
+*
+string
+estP
+*
+number
+points
+*
+array
+items
+AuctionPointClass
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfigClass
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+slow
+*
+any
+allOf[0]
+PresetClass
+object
+bankFee
+*
+string
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+tokenFee
+*
+string
+estP
+*
+number
+points
+*
+array
+items
+AuctionPointClass
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfigClass
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+custom
+any
+allOf[0]
+PresetClass
+object
+bankFee
+*
+string
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+tokenFee
+*
+string
+estP
+*
+number
+points
+*
+array
+items
+AuctionPointClass
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfigClass
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+settlementAddress
+*
+string
+whitelist
+*
+array
+items
+string
+recommended_preset
+*
+string (Enum)
+fast
+medium
+slow
+custom
+suggested
+*
+boolean
+prices
+*
+TokenPairValue
+object
+usd
+*
+PairCurrencyValue
+object
+fromToken
+*
+string
+toToken
+*
+string
+volume
+*
+TokenPairValue
+object
+usd
+*
+PairCurrencyValue
+object
+fromToken
+*
+string
+toToken
+*
+string
+surplusFee
+*
+number
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/fusion/quoter/v2.0/1/quote/receive";
+
+  const config = {
+    headers: undefined,
+    params: {
+      fromTokenAddress: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      toTokenAddress: "0x6b175474e89094c44da98b954eedeac495271d0f",
+      amount: "100000",
+      walletAddress: "0x0000000000000000000000000000000000000000",
+      enableEstimate: "false",
+      fee: "100",
+      isPermit2: "0x",
+      permit: "0x",
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+  const body = {
+    auctionDuration: 0,
+    auctionStartAmount: 0,
+    auctionEndAmount: 0,
+    points: ["string"],
+  };
+
+  try {
+    const response = await axios.post(url, body, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+OrderApiController_getOrdersByMaker_v2.0
+Next
+Get quote with custom preset details
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

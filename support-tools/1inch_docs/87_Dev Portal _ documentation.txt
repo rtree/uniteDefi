@@ -1,0 +1,131 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Introduction
+Quickstart guide
+Swagger
+GET
+Get synced interval
+GET
+Get block trace by number
+GET
+Get transaction trace by block number and transaction hash
+GET
+Get transaction trace by block number and offset of transaction in block
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Introduction
+Quickstart guide
+Swagger
+GET
+Get synced interval
+GET
+Get block trace by number
+GET
+Get transaction trace by block number and transaction hash
+GET
+Get transaction trace by block number and offset of transaction in block
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+Transaction Traces Indexer
+GET
+https://api.1inch.dev/traces/v1.0/chain/{chain}/synced-interval
+Get synced interval
+swagger.response
+Code: 200
+OK.
+Schema:
+ReadSyncedIntervalResponseDto
+object
+from
+*
+number
+to
+*
+number
+Code: 400
+Bad Request.
+Code: 401
+Unauthorized.
+Code: 500
+Internal server error.
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/traces/v1.0/chain/{chain}/synced-interval";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Quickstart guide
+Next
+Get block trace by number
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

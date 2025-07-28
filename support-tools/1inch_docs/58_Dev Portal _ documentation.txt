@@ -1,0 +1,130 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+Parameter Descriptions
+Quote
+Swap
+Migration
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Classic Swap
+Introduction
+Quick start
+Swagger
+Parameter Descriptions
+Quote
+Swap
+Migration
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Quote
+Find the best quote to exchange via 1inch router: /api/quote
+Description of query parameters
+
+All parameters with astericks "*" are REQUIRED
+
+Parameter name	Type	Description
+src*	string	contract address of a token to sell
+e.g.: 0x6b175474e89094c44da98b954eedeac495271d0f
+dst*	string	contract address of a token to buy
+e.g.: 0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48
+amount*	integer	amount of a token to sell, set in minimal divisible units
+e.g.:
+1.00 DAI set as 1000000000000000000
+51.03 USDC set as 51030000
+includeTokensInfo	boolean	if set to true, response will include from token and to token info
+default: false
+includeProtocols	boolean	if set to true, response will include protocols used in the quote
+default: false
+includeGas	boolean	if set to true, response will include gas limit anticipated for the quote
+default: false
+fee	number	this percentage of src token amount will be sent to referrerAddress,
+the rest will be used as input for a swap
+min: 0; max: 3; default: 0;
+example to set a fee to 1.5%: &fee=1.5
+protocols	string	specify liquidity protocols to use. If not set, all liquidity protocols will be used
+e.g.: &protocols=WETH,CURVE,BALANCER,...,ZRX
+default: all protocols can be used
+gasPrice	string	1inch takes in account gas expenses to determine exchange route. It is important to use the same gas price
+on the quote and swap methods
+gas price set in wei: 12.5 GWEI set as 12500000000
+default: "fast" from the network
+complexityLevel	string	maximum number of token-connectors to be used in a transaction. The more is used — the longer route estimation will take, the more complex route might be as a result. If not set, two token-connectors might be used
+min: 0; max: 3; default: 2
+connectorTokens	string	token-connectors can be specified via this parameter. The more is set — the longer route estimation will take. If not set, default token-connectors will be used. If token you want to exchange doesn't have a pool with one of the default token-connectors, this parameter will help find the route; should be the same for a quote and swap e.g.:
+&connectorTokens=0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE, 0x6b175474e89094c44da98b954eedeac495271d0f
+default: list of default token-connectors
+gasLimit	integer	maximum amount of gas for a swap;
+should be the same for a quote and swap
+default: 11500000; max: 11500000;
+mainRouteParts	integer	limit maximum number of main route parts;
+should be the same for a quote and swap
+default: 20; max: 50;
+parts	integer	limit maximum number of parts each main route part can be split into; should be the same for a quote and swap
+default: 20; max: 100;
+Description of response parameters
+Parameter name	Type	Description
+srcToken	string	parameters of a token to sell
+dstToken	string	parameters of a token to buy
+fromAmount	string	input amount of srcToken in minimal divisible units
+dstAmount	string	result amount of dstToken in minimal divisible units
+protocols	string	route of the trade
+gas	string	rough estimated amount of the gas limit for used protocols;
+do not use gas from the quote method as the gas limit of a transaction
+Previous
+List of tokens that are available for swap in the 1inch Aggregation protocol
+Next
+Swap
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

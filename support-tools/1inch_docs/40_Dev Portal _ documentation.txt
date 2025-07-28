@@ -1,0 +1,254 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Migration
+Fusion SDK
+Solana SDK
+SDK overview
+For integrators
+For resolvers
+Shared modules
+FusionOrder module
+SDK
+Fusion SDK for EVMs
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Intent Swaps (Fusion)
+Introduction
+Swagger
+Migration
+Fusion SDK
+Solana SDK
+SDK overview
+For integrators
+For resolvers
+Shared modules
+FusionOrder module
+SDK
+Fusion SDK for EVMs
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+FusionOrder module
+
+This module provides low-level utilities for working with Fusion orders. It contains order parameters and can be submitted on-chain to create escrows.
+
+Creation
+From params
+import {
+  AuctionDetails,
+  FusionOrder,
+  now,
+  Address,
+  id,
+} from "@1inch/solana-fusion-sdk";
+
+const order = FusionOrder.new(
+  {
+    srcMint: Address.NATIVE,
+    dstMint: new Address("EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"),
+    srcAmount: 1000000000000000000n,
+    minDstAmount: 1420000000n,
+    estimatedDstAmount: 1420000000n,
+    id: id(),
+    receiver: Address.fromBigInt(1n),
+  },
+  AuctionDetails.noAuction(now(), 180), // expired in 3m
+);
+
+From JSON
+import { FusionOrder } from "@1inch/solana-fusion-sdk";
+
+const order = FusionOrder.fromJSON({
+  id: 3384470318,
+  fee: {
+    protocolFee: 0,
+    integratorFee: 0,
+    protocolDstAta: null,
+    integratorDstAta: null,
+    surplusPercentage: 0,
+    maxCancellationPremium: "1",
+  },
+  dstMint: "boopkpWqe68MSxLqBGogs8ZbUDN4GXaLhFwNP7mpP1i",
+  srcMint: "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+  receiver: "4hYy2LUC7j2g469vmoXZJjnsvkBdRXNWYxFYiBm5Lfk9",
+  srcAmount: "7504317665",
+  minDstAmount: "30695497527417",
+  expirationTime: 1746162263,
+  dstAssetIsNative: false,
+  dutchAuctionData: {
+    duration: 24,
+    startTime: 1746162227,
+    initialRateBump: 503,
+    pointsAndTimeDeltas: [{ rateBump: 433, timeDelta: 120 }],
+  },
+  srcAssetIsNative: false,
+  estimatedDstAmount: "30695497527417",
+  cancellationAuctionDuration: 1,
+});
+
+Getters
+Getter	Description
+fees	Returns [FeeConfig](https://github.com/1inch/solana-fusion-sdk/blob/master/src/fusion-order/fee-config/fee-config.ts) or null if no fees are set.
+resolverCancellationConfig	Returns [ResolverCancellationConfig](https://github.com/1inch/solana-fusion-sdk/blob/master/src/fusion-order/resolver-cancellation-config/resolver-cancellation-config.ts) or null if resolver cannot cancel the order.
+srcMint()	Returns source mint [Address](https://github.com/1inch/solana-fusion-sdk/blob/master/src/domains/address.ts).
+dstMint()	Returns destination mint Address.
+srcAmount()	Returns source amount (bigint).
+minDstAmount()	Returns minimum destination amount (bigint).
+estimateDstAmount()	Returns estimated destination amount (bigint).
+receiver()	Returns destination Address.
+deadline()	Returns UNIX timestamp of order expiration (number).
+auctionStartTime()	Returns UNIX timestamp of auction start time (number).
+auctionEndTime()	Returns UNIX timestamp of auction end time (number).
+auctionDetails()	Returns auction parameters as [AuctionDetails](https://github.com/1inch/solana-fusion-sdk/blob/master/src/fusion-order/auction-details/auction-details.ts).
+id()	Returns order ID (number).
+srcAssetIsNative()	Returns true if source asset is native SOL.
+dstAssetIsNative()	Returns true if destination asset is native SOL.
+Methods
+build
+
+Description: Transforms the order into contract order implementation.
+
+toJSON
+
+Description: Serializes order to JSON. Can be restored with [fromJSON](https://github.com/1inch/solana-fusion-sdk/blob/master/src/fusion-order/README.md#from-json).
+
+getOrderHash
+
+Description: Calculate sha256 of order parameters.
+
+Returns: Raw hash as Buffer.
+
+getOrderHashBase58
+
+Description: Calculate sha256 of order parameters.
+
+Returns: Base58-encoded hash as string.
+
+getEscrow
+
+Description: Returns escrow ATA address for source token.
+
+Arguments:
+
+[0] maker AddressLike
+[1] srcTokenProgram AddressLike owner of src token mint
+[2] programId AddressLike FusionSwap program ID
+
+Returns: The escrow ATA address as the Address object.
+
+calcTakingAmount
+
+Description: Calculates dstAmount for given srcAmount at block time.
+
+Arguments:
+
+[0] srcAmount bigint source amount to fill.
+[1] time number UNIX timestamp in sec at which fill will be executed.
+
+Returns: How much resolver must provide as dstAmount: bigint.
+
+getUserReceiveAmount
+
+Description: Calculates how much user will receive in destination token.
+
+Arguments:
+
+[0] srcAmount bigint source amount to fill.
+[1] time number UNIX timestamp in sec at which fill will be executed.
+
+Returns: Amount user receives in dstToken.
+
+getIntegratorFee
+
+Description: Calculates how much dstToken integrator will receive.
+
+Arguments:
+
+[0] srcAmount bigint source amount to fill.
+[1] time number UNIX timestamp in sec at which fill will be executed.
+
+Returns: Fee paid to integrator as feeAmount: bigint.
+
+getProtocolFee
+
+Description: Calculates how much dstToken protocol will receive.
+
+Arguments:
+
+[0] srcAmount bigint source amount to fill.
+[1] time number UNIX timestamp in sec at which fill will be executed.
+
+Returns: Fee paid to protocol as feeAmount: bigint.
+
+isExpiredAt
+
+Description: Checks if order is expired at given time.
+
+Arguments:
+
+[0] time number UNIX timestamp in seconds.
+
+Returns: isExpired: true if order expired at given time.
+
+getCalculator
+
+Description: Builds AmountCalculator based on order params.
+
+Returns: The AmountCalculator object
+
+Previous
+WebSocket API
+Next
+SDK
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

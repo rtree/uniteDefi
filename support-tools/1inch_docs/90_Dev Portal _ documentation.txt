@@ -1,0 +1,568 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Introduction
+Quickstart guide
+Swagger
+GET
+Get synced interval
+GET
+Get block trace by number
+GET
+Get transaction trace by block number and transaction hash
+GET
+Get transaction trace by block number and offset of transaction in block
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Introduction
+Quickstart guide
+Swagger
+GET
+Get synced interval
+GET
+Get block trace by number
+GET
+Get transaction trace by block number and transaction hash
+GET
+Get transaction trace by block number and offset of transaction in block
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger
+
+Transaction Traces Indexer
+GET
+https://api.1inch.dev/traces/v1.0/chain/{chain}/block-trace/{blockNumber}/offset/{offset}
+Get transaction trace by block number and offset of transaction in block
+Network
+Ethereum
+Parameters
+chain
+string
+*
+(path)
+blockNumber
+string
+*
+(path)
+offset
+number
+*
+(path)
+swagger.response
+Code: 200
+OK.
+Schema:
+PlainTransactionTraceWithTypeDto
+object
+transactionTrace
+*
+array
+items
+any
+oneOf[0]
+CoreBuiltinTransactionRootSuccessTraceDto
+object
+chainId
+*
+number (Enum)
+1
+45
+137
+10
+56
+42161
+43114
+100
+250
+1313161554
+8217
+324
+8453
+59144
+501
+146
+130
+type
+*
+string (Enum)
+SELFDESTRUCT
+CREATE
+CREATE2
+CALL
+CALLCODE
+DELEGATECALL
+STATICCALL
+TRANSFER_ETHER
+INVALID
+STOP
+from
+*
+string
+to
+*
+string
+value
+*
+string
+gas
+*
+string
+gasUsed
+*
+string
+input
+*
+string
+output
+*
+string
+calls
+*
+array
+items
+CoreBuiltinCallTraceDto
+object
+isParentHasError
+*
+boolean
+type
+*
+string (Enum)
+SELFDESTRUCT
+CREATE
+CREATE2
+CALL
+CALLCODE
+DELEGATECALL
+STATICCALL
+TRANSFER_ETHER
+INVALID
+STOP
+from
+*
+string
+to
+*
+string
+value
+*
+string
+gas
+*
+string
+gasUsed
+*
+string
+input
+*
+string
+output
+*
+string
+error
+*
+string
+calls
+*
+array
+items
+CoreBuiltinCallTraceDto
+any
+txHash
+*
+string
+nonce
+*
+string
+error
+*
+string
+revertReason
+*
+string
+gasPrice
+*
+string
+maxFeePerGas
+*
+string
+maxPriorityFeePerGas
+*
+string
+gasHex
+*
+string
+events
+*
+array
+items
+CoreBuiltinTraceLogDto
+object
+data
+*
+string
+topics
+*
+array
+items
+array
+contract
+*
+string
+oneOf[1]
+CoreCustomErrorTransactionTraceDto
+object
+error
+*
+string
+txHash
+*
+string
+nonce
+*
+string
+gasPrice
+*
+string
+maxFeePerGas
+*
+string
+maxPriorityFeePerGas
+*
+string
+gasHex
+*
+string
+oneOf[2]
+CoreCustomRootTxEventCallstackTraceFullDto
+object
+type
+*
+string (Enum)
+SELFDESTRUCT
+CREATE
+CREATE2
+CALL
+CALLCODE
+DELEGATECALL
+STATICCALL
+TRANSFER_ETHER
+INVALID
+STOP
+from
+*
+string
+to
+*
+string
+value
+*
+string
+gasLimit
+*
+number
+gasUsed
+*
+number
+input
+*
+string
+output
+*
+string
+time
+*
+string
+calls
+*
+array
+items
+CoreCustomTxEventCallstackTraceDto
+object
+type
+*
+string
+from
+*
+string
+to
+*
+string
+value
+*
+string
+gasLimit
+*
+number
+gasUsed
+*
+number
+input
+*
+string
+output
+*
+string
+time
+*
+string
+calls
+*
+array
+items
+CoreCustomTxEventCallstackTraceDto
+any
+logs
+*
+array
+items
+CoreCustomTraceLogDto
+object
+data
+*
+string
+topics
+*
+array
+items
+array
+contract
+*
+string
+status
+*
+string (Enum)
+REVERTED
+INVALID_OPCODE
+RETURNED
+STOPPED
+ERROR
+NO_CONTRACT
+OUT_OF_GAS
+SELFDESTRUCTED
+ERROR_UNWIND
+success
+*
+number
+res
+*
+string
+depth
+*
+number
+destructAddress
+*
+string
+errorDetails
+*
+string
+storage
+*
+array
+items
+CustomStorageDto
+object
+type
+*
+string
+key
+*
+string
+value
+*
+string
+prevGasLimit
+*
+number
+gas
+*
+string
+gasCost
+*
+number
+address
+*
+string
+logs
+*
+array
+items
+CoreCustomTraceLogDto
+object
+data
+*
+string
+topics
+*
+array
+items
+array
+contract
+*
+string
+status
+*
+string (Enum)
+REVERTED
+INVALID_OPCODE
+RETURNED
+STOPPED
+ERROR
+NO_CONTRACT
+OUT_OF_GAS
+SELFDESTRUCTED
+ERROR_UNWIND
+success
+*
+number
+address
+*
+string
+res
+*
+string
+depth
+*
+number
+destructAddress
+*
+string
+errorDetails
+*
+string
+storage
+*
+array
+items
+CustomStorageDto
+object
+type
+*
+string
+key
+*
+string
+value
+*
+string
+txHash
+*
+string
+nonce
+*
+string
+gasPrice
+*
+string
+maxFeePerGas
+*
+string
+maxPriorityFeePerGas
+*
+string
+intrinsicGas
+*
+number
+gasRefund
+*
+number
+gasActual
+*
+number
+gasHex
+*
+string
+type
+*
+string (Enum)
+CUSTOM
+CUSTOM_WITHOUT_STORE
+BUILTIN
+CUSTOM_GO
+OLD_ARBITRUM_RAW_TRACE
+BLOCK_STATE_V3
+Code: 400
+Bad Request.
+Code: 401
+Unauthorized.
+Code: 500
+Internal server error.
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url =
+    "https://api.1inch.dev/traces/v1.0/chain/1/block-trace/17378177/offset/1";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get transaction trace by block number and transaction hash
+Next
+Introduction
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

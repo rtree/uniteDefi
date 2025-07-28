@@ -1,0 +1,345 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger v5.0
+
+V5.0 API Docs
+GET
+https://api.1inch.dev/portfolio/portfolio/v5.0/tokens/snapshot
+Get tokens snapshot
+Get tokens snapshot
+Network
+Ethereum
+Parameters
+addresses
+array
+*
+(query)
+Example: 0xd470055c6189b921c4d44b3d277ad868f79c0f75
+string
+chain_id
+integer
+(query)
+timestamp
+integer
+(query)
+swagger.response
+Code: 200
+Successful Response
+Schema:
+array
+items
+AdapterResult
+object
+index
+*
+string
+chain_id
+*
+integer
+contract_address
+*
+string
+token_id
+*
+integer
+address
+*
+string
+block_number_created
+*
+integer
+block_number
+any
+anyOf[0]
+integer
+anyOf[1]
+null
+timestamp
+any
+anyOf[0]
+integer
+anyOf[1]
+null
+protocol_type
+*
+string
+protocol_handler_id
+*
+string
+protocol_group_id
+*
+string
+protocol_group_name
+*
+string
+protocol_group_icon
+*
+any
+anyOf[0]
+string
+anyOf[1]
+null
+protocol_sub_group_id
+any
+anyOf[0]
+string
+anyOf[1]
+null
+protocol_sub_group_name
+any
+anyOf[0]
+string
+anyOf[1]
+null
+contract_name
+*
+string
+contract_symbol
+*
+string
+asset_sign
+*
+integer
+status
+Status
+integer (Enum)
+1
+0
+-1
+underlying_tokens
+array
+items
+TokenBalance
+object
+chain
+*
+integer
+address
+*
+string
+decimals
+*
+integer
+symbol
+any
+anyOf[0]
+string
+anyOf[1]
+null
+name
+any
+anyOf[0]
+string
+anyOf[1]
+null
+amount
+number
+price_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+reward_tokens
+array
+items
+TokenBalance
+object
+chain
+*
+integer
+address
+*
+string
+decimals
+*
+integer
+symbol
+any
+anyOf[0]
+string
+anyOf[1]
+null
+name
+any
+anyOf[0]
+string
+anyOf[1]
+null
+amount
+number
+price_usd
+any
+anyOf[0]
+number
+anyOf[1]
+null
+value_usd
+*
+number
+locked
+boolean
+Code: 422
+Validation Error
+Schema:
+HTTPValidationError
+object
+detail
+array
+items
+ValidationError
+object
+loc
+*
+array
+items
+any
+anyOf[0]
+string
+anyOf[1]
+integer
+msg
+*
+string
+type
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/portfolio/portfolio/v5.0/tokens/snapshot";
+
+  const config = {
+    headers: undefined,
+    params: {
+      chain_id: "1",
+    },
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get protocols metrics
+Next
+Get tokens metrics
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

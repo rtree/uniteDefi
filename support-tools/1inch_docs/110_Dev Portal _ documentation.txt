@@ -1,0 +1,200 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+GET
+Protocols current value
+GET
+Protocols profit and loss
+GET
+Protocols details
+GET
+Tokens current value
+GET
+Tokens profit and loss
+GET
+Tokens details
+GET
+Is available
+GET
+Supported chains
+GET
+Supported protocols
+GET
+General current value
+GET
+General profit and loss
+GET
+General value chart
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Orderbook API
+History API
+Traces API
+Portfolio API
+Introduction
+Quickstart guide
+Swagger v5.0
+GET
+Check if portfolio service is available
+GET
+Check addresses for compliance
+GET
+Get supported chains
+GET
+Get supported protocols
+GET
+Get current portfolio value breakdown
+GET
+General value chart
+GET
+Overview report
+GET
+Get protocols snapshot
+GET
+Get protocols metrics
+GET
+Get tokens snapshot
+GET
+Get tokens metrics
+Swagger v4
+GET
+Protocols current value
+GET
+Protocols profit and loss
+GET
+Protocols details
+GET
+Tokens current value
+GET
+Tokens profit and loss
+GET
+Tokens details
+GET
+Is available
+GET
+Supported chains
+GET
+Supported protocols
+GET
+General current value
+GET
+General profit and loss
+GET
+General value chart
+Migration
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Swagger v4
+
+V4 API Docs
+GET
+https://api.1inch.dev/portfolio/portfolio/v4/general/is_available
+Is available
+Check if the service is available.
+swagger.response
+Code: 200
+Successful Response
+Schema:
+any
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url =
+    "https://api.1inch.dev/portfolio/portfolio/v4/general/is_available";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+
+  try {
+    const response = await axios.get(url, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Tokens details
+Next
+Supported chains
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use

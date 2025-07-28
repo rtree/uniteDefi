@@ -1,0 +1,706 @@
+Docs
+Pricing & Features
+Sign In
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Introduction
+Swagger
+Orders
+Quoter
+GET
+Get quote details based on input data
+POST
+Get quote with custom preset details
+POST
+Build order by given quote
+Relayer
+Fusion+ SDK
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Articles
+Overview
+APIs
+Authentication
+Swap APIs
+Overview
+Cross-Chain Swaps (Fusion+)
+Introduction
+Swagger
+Orders
+Quoter
+GET
+Get quote details based on input data
+POST
+Get quote with custom preset details
+POST
+Build order by given quote
+Relayer
+Fusion+ SDK
+Intent Swaps (Fusion)
+Classic Swap
+Orderbook API
+History API
+Traces API
+Portfolio API
+Balance API 
+Gas Price API
+Spot Price API
+Token API
+NFT API
+Transaction Gateway API
+Web3 RPC API
+Charts API
+Domains API
+Token Details API
+Contracts
+FAQ
+Becoming a Resolver
+Quoter
+
+1inch Fusion+ Quoter API
+POST
+https://api.1inch.dev/fusion-plus/quoter/v1.0/quote/build
+Build order by given quote
+Parameters
+srcChain
+number
+*
+(query)
+Id of source chain
+Example: 1
+dstChain
+number
+*
+(query)
+Id of destination chain
+Example: 137
+srcTokenAddress
+string
+*
+(query)
+Address of "SOURCE" token
+Example: 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
+dstTokenAddress
+string
+*
+(query)
+Address of "DESTINATION" token
+Example: 0x2791bca1f2de4661ed88a30c99a7a9449aa84174
+amount
+number
+*
+(query)
+Amount to take from "SOURCE" token to get "DESTINATION" token
+Example: 100000000000000000
+walletAddress
+string
+*
+(query)
+An address of the wallet or contract who will create Fusion order
+Example: 0x0000000000000000000000000000000000000000
+fee
+number
+(query)
+fee in bps format, 1% is equal to 100bps
+Example: 0
+source
+string
+(query)
+Frontend or some other source selector
+Example: Frontend
+isPermit2
+string
+(query)
+permit2 allowance transfer encoded call
+isMobile
+string
+(query)
+Enabled flag allows to save quote for Mobile History
+feeReceiver
+string
+(query)
+In case fee non zero -> the fee will be transferred to this address
+permit
+string
+(query)
+permit, user approval sign
+preset
+string
+(query)
+fast/medium/slow/custom
+Request Body
+Content type
+application/json
+Click in to adjust the request body:
+  
+{
+  "quote": {
+    "quoteId": "test_test_test",
+    "srcTokenAmount": "100000000000000000",
+    "dstTokenAmount": "250418225",
+    "presets": {
+      "fast": {
+        "bankFee": "0",
+        "auctionDuration": 100,
+        "startAuctionIn": 2,
+        "initialRateBump": 1000,
+        "auctionStartAmount": "250418225",
+        "startAmount": "250418225",
+        "auctionEndAmount": "250418225",
+        "exclusiveResolver": null,
+        "costInDstToken": "517184548685636",
+        "points": [
+          {
+            "delay": 12,
+            "rateBump": 455
+          }
+        ],
+        "allowPartialFills": false,
+        "allowMultipleFills": false,
+        "gasCost": {
+          "gasBumpEstimate": 54,
+          "gasPriceEstimate": "1231"
+        }
+      }
+    },
+    "timeLocks": {
+      "srcWithdrawal": 20,
+      "srcPublicWithdrawal": 21,
+      "srcCancellation": 22,
+      "srcPublicCancellation": 23,
+      "dstWithdrawal": 24,
+      "dstPublicWithdrawal": 25,
+      "dstCancellation": 26
+    },
+    "srcEscrowFactory": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "dstEscrowFactory": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "srcSafetyDeposit": "123",
+    "dstSafetyDeposit": "123",
+    "whitelist": [
+      "0x1d3b67bca8935cb510c8d18bd45f0b94f54a9681"
+    ],
+    "pubKeys": [
+      "0x0454d169b35a0061088d88c00f273f4a2ab603f45077abb2e404b94bff59238c5dfb7eb92ec442a8522ab88b471b7ba2fe9adc304a4ff1696d8afccd99e5e3531a"
+    ],
+    "secretsCount": 1,
+    "recommendedPreset": "fast",
+    "prices": {
+      "usd": {
+        "srcToken": "2505.44210175",
+        "dstToken": "1.0008429148729692"
+      }
+    },
+    "volume": {
+      "usd": {
+        "srcToken": "250.544210175",
+        "dstToken": "250.62930624631504754367"
+      }
+    },
+    "priceImpactPercent": 0,
+    "autoK": 0.1,
+    "k": 0.2,
+    "mxK": 1
+  },
+  "secretsHashList": [
+    "0x315b47a8c3780434b153667588db4ca628526e20000000000000000000000000"
+  ]
+}
+
+
+Request Body Schema:
+BuildOrderBody
+object
+quote
+*
+any
+allOf[0]
+GetQuoteOutput
+object
+quoteId
+*
+object
+srcTokenAmount
+*
+string
+dstTokenAmount
+*
+string
+presets
+*
+any
+allOf[0]
+QuotePresets
+object
+fast
+*
+any
+allOf[0]
+Preset
+object
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+costInDstToken
+*
+string
+points
+*
+array
+items
+AuctionPoint
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfig
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+secretsCount
+*
+number
+medium
+*
+any
+allOf[0]
+Preset
+object
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+costInDstToken
+*
+string
+points
+*
+array
+items
+AuctionPoint
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfig
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+secretsCount
+*
+number
+slow
+*
+any
+allOf[0]
+Preset
+object
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+costInDstToken
+*
+string
+points
+*
+array
+items
+AuctionPoint
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfig
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+secretsCount
+*
+number
+custom
+any
+allOf[0]
+Preset
+object
+auctionDuration
+*
+number
+startAuctionIn
+*
+number
+initialRateBump
+*
+number
+auctionStartAmount
+*
+string
+startAmount
+*
+string
+auctionEndAmount
+*
+string
+exclusiveResolver
+*
+object
+costInDstToken
+*
+string
+points
+*
+array
+items
+AuctionPoint
+object
+delay
+*
+number
+coefficient
+*
+number
+allowPartialFills
+*
+boolean
+allowMultipleFills
+*
+boolean
+gasCost
+*
+GasCostConfig
+object
+gasBumpEstimate
+*
+number
+gasPriceEstimate
+*
+string
+secretsCount
+*
+number
+srcEscrowFactory
+*
+string
+dstEscrowFactory
+*
+string
+whitelist
+*
+array
+items
+string
+timeLocks
+*
+any
+allOf[0]
+TimeLocks
+object
+srcWithdrawal
+*
+number
+srcPublicWithdrawal
+*
+number
+srcCancellation
+*
+number
+srcPublicCancellation
+*
+number
+dstWithdrawal
+*
+number
+dstPublicWithdrawal
+*
+number
+dstCancellation
+*
+number
+srcSafetyDeposit
+*
+string
+dstSafetyDeposit
+*
+string
+recommendedPreset
+*
+string (Enum)
+fast
+slow
+medium
+custom
+prices
+*
+PairCurrency
+object
+usd
+*
+TokenPair
+object
+srcToken
+*
+string
+dstToken
+*
+string
+volume
+*
+PairCurrency
+object
+usd
+*
+TokenPair
+object
+srcToken
+*
+string
+dstToken
+*
+string
+secretsHashList
+*
+string
+swagger.response
+Code: 200
+Returns cross chain order details
+Code: 400
+Input data is invalid
+Code: default
+Schema:
+BuildOrderOutput
+object
+typedData
+*
+object
+orderHash
+*
+string
+extension
+*
+string
+Authorization - API KEY
+API KEY
+Sign in for automatic API key authentication.
+Try it
+NodeJS
+Python
+cURL
+Go
+const axios = require("axios");
+
+async function httpCall() {
+  const url = "https://api.1inch.dev/fusion-plus/quoter/v1.0/quote/build";
+
+  const config = {
+    headers: undefined,
+    params: {},
+    paramsSerializer: {
+      indexes: null,
+    },
+  };
+  const body = {
+    quote: {
+      quoteId: "test_test_test",
+      srcTokenAmount: "100000000000000000",
+      dstTokenAmount: "250418225",
+      presets: {
+        fast: {
+          bankFee: "0",
+          auctionDuration: 100,
+          startAuctionIn: 2,
+          initialRateBump: 1000,
+          auctionStartAmount: "250418225",
+          startAmount: "250418225",
+          auctionEndAmount: "250418225",
+          exclusiveResolver: null,
+          costInDstToken: "517184548685636",
+          points: [
+            {
+              delay: 12,
+              rateBump: 455,
+            },
+          ],
+          allowPartialFills: false,
+          allowMultipleFills: false,
+          gasCost: {
+            gasBumpEstimate: 54,
+            gasPriceEstimate: "1231",
+          },
+        },
+      },
+      timeLocks: {
+        srcWithdrawal: 20,
+        srcPublicWithdrawal: 21,
+        srcCancellation: 22,
+        srcPublicCancellation: 23,
+        dstWithdrawal: 24,
+        dstPublicWithdrawal: 25,
+        dstCancellation: 26,
+      },
+      srcEscrowFactory: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      dstEscrowFactory: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+      srcSafetyDeposit: "123",
+      dstSafetyDeposit: "123",
+      whitelist: ["0x1d3b67bca8935cb510c8d18bd45f0b94f54a9681"],
+      pubKeys: [
+        "0x0454d169b35a0061088d88c00f273f4a2ab603f45077abb2e404b94bff59238c5dfb7eb92ec442a8522ab88b471b7ba2fe9adc304a4ff1696d8afccd99e5e3531a",
+      ],
+      secretsCount: 1,
+      recommendedPreset: "fast",
+      prices: {
+        usd: {
+          srcToken: "2505.44210175",
+          dstToken: "1.0008429148729692",
+        },
+      },
+      volume: {
+        usd: {
+          srcToken: "250.544210175",
+          dstToken: "250.62930624631504754367",
+        },
+      },
+      priceImpactPercent: 0,
+      autoK: 0.1,
+      k: 0.2,
+      mxK: 1,
+    },
+    secretsHashList: [
+      "0x315b47a8c3780434b153667588db4ca628526e20000000000000000000000000",
+    ],
+  };
+
+  try {
+    const response = await axios.post(url, body, config);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+Response
+Click the try-it button to test your API call and see the real-time response right here.
+Previous
+Get quote with custom preset details
+Next
+Submit a cross chain order that resolvers will be able to fill
+© 2025 1inch Limited
+Privacy Policy
+Terms of Service
+Commercial API Terms of Use
