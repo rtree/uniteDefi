@@ -1,7 +1,5 @@
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
-import { HttpServerTransport } from "@modelcontextprotocol/sdk/server/http.js";
 import { z } from "zod";
 
 // サーバー本体
@@ -42,11 +40,6 @@ server.registerResource(
   }),
 );
 
-// HTTP でクライアントと通信
-const transport = new HttpServerTransport({
-  port: 3000,
-  hostname: "localhost",
-});
-
+// 標準入出力でクライアントと通信
+const transport = new StdioServerTransport();
 await server.connect(transport);
-console.log("Server is running on port 3000");
