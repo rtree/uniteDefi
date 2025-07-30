@@ -1,6 +1,6 @@
 // PRJROOT/testMCP/src/server.ts
 import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { HttpServerTransport } from "@modelcontextprotocol/sdk/server/http.js";
 import { z } from "zod";
 
 // サーバー本体
@@ -41,6 +41,10 @@ server.registerResource(
   }),
 );
 
-// 標準入出力でクライアントと通信
-const transport = new StdioServerTransport();
+// HTTPサーバーとして起動（ポート3000で待ち受け）
+const transport = new HttpServerTransport({
+  port: 3000
+});
 await server.connect(transport);
+
+console.log('MCP Server is running on http://localhost:3000');
