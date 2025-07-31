@@ -42,6 +42,110 @@ server.registerResource(
   }),
 );
 
+/**
+ * 3) Tool ─ Get Token Addresses
+ *    Fetch available token addresses from 1inch API for a specific chain
+ */
+server.registerTool(
+  "getTokenAddresses",
+  {
+    title: "Get Token Addresses",
+    description: "Fetch available token addresses from 1inch API for a specific blockchain. Returns common tokens like ETH, USDC, USDT, etc.",
+    inputSchema: {
+      chainId: z.number().describe("Chain ID (1 = Ethereum, 10 = Optimism, 137 = Polygon, 42161 = Arbitrum)"),
+      limit: z.number().optional().default(20).describe("Maximum number of tokens to return (default: 20)")
+    },
+  },
+  async ({ chainId, limit = 20 }) => {
+    try {
+      const response = await fetch(`https://api.1inch.dev/swap/v6.1/${chainId}/tokens`, {
+        headers: {
+          'Authorization': 'Bearer YOUR_API_KEY_HERE', // Note: Replace with actual API key
+          'Accept': 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      
+      // Extract and format token information
+      const tokens = Object.entries(data.tokens || {})
+        .slice(0, limit)
+        .map(([address, token]: [string, any]) => ({
+          address,
+          symbol: token.symbol,
+          name: token.name,
+          decimals: token.decimals,
+          logoURI: token.logoURI
+        }));
+
+      const responseText = {
+        chainId,
+        totalTokens: Object.keys(data.tokens || {}).length,
+        tokens,
+        commonExamples: {
+          ethereum: {
+            ETH: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+            USDC: "0xA0b86a33E6417c5aD3dE73E45AA42FE19f23E96f",
+            USDT: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+          },
+          optimism: {
+            ETH: "0x4200000000000000000000000000000000000006",
+            USDC: "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+            OP: "0x4200000000000000000000000000000000000042"
+          }
+        }
+      };
+
+      return {
+        content: [{ type: "text", text: JSON.stringify(responseText, null, 2) }],
+      };
+    } catch (error) {
+      console.error("Error fetching token addresses:", error);
+      
+      // Provide fallback common token addresses
+      const fallbackTokens = {
+        1: { // Ethereum
+          ETH: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+          USDC: "0xA0b86a33E6417c5aD3dE73E45AA42FE19f23E96f",
+          USDT: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+          WETH: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+          "1INCH": "0x111111111117dc0aa78b770fa6a738034120c302"
+        },
+        10: { // Optimism
+          ETH: "0x4200000000000000000000000000000000000006",
+          USDC: "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
+          OP: "0x4200000000000000000000000000000000000042",
+          WETH: "0x4200000000000000000000000000000000000006"
+        },
+        137: { // Polygon
+          MATIC: "0x0000000000000000000000000000000000001010",
+          USDC: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174",
+          USDT: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+          WETH: "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
+        }
+      };
+
+      const chainTokens = fallbackTokens[chainId as keyof typeof fallbackTokens] || {};
+      
+      return {
+        content: [{ 
+          type: "text", 
+          text: JSON.stringify({
+            error: "Could not fetch from 1inch API, using fallback data",
+            chainId,
+            fallbackTokens: chainTokens,
+            note: "These are common token addresses. For live data, ensure API key is configured."
+          }, null, 2) 
+        }],
+      };
+    }
+  },
+);
+
 // HTTPサーバーを作成
 const httpServer = createServer();
 

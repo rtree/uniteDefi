@@ -68,31 +68,27 @@ server.registerTool(
   "findDeFiEarningOpportunities",
   {
     title: "Find DeFi Earning Opportunities via 1inch Fusion+",
-    description: "Finds potential cross-chain swap earning opportunities by getting quotes from 1inch Fusion+ API. Provides details on estimated destination token amount and auction parameters. Input 'srcChainId' and 'dstChainId' should be NetworkEnum values (e.g., 1 for Ethereum, 100 for Gnosis, etc.).",
-    inputSchema: z.object({
-      // 送金元チェーンID。NetworkEnumまたは対応する数値IDを使用
-      srcChainId: z.nativeEnum(NetworkEnum, {
-        description: "ID of the source blockchain (e.g., NetworkEnum.ETHEREUM or 1)",
-      }),
-      // 送金先チェーンID。NetworkEnumまたは対応する数値IDを使用
-      dstChainId: z.nativeEnum(NetworkEnum, {
-        description: "ID of the destination blockchain (e.g., NetworkEnum.GNOSIS or 100)",
-      }),
+    description: "Finds potential cross-chain swap earning opportunities by getting quotes from 1inch Fusion+ API. Provides details on estimated destination token amount and auction parameters. Use getTokenAddresses tool first to get valid token addresses. Example valid addresses: ETH on Ethereum: 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE, USDC on Ethereum: 0xA0b86a33E6417c5aD3dE73E45AA42FE19f23E96f",
+    inputSchema: {
+      // 送金元チェーンID。数値IDを使用
+      srcChainId: z.number().describe("ID of the source blockchain (e.g., 1 for Ethereum, 137 for Polygon)"),
+      // 送金先チェーンID。数値IDを使用
+      dstChainId: z.number().describe("ID of the destination blockchain (e.g., 100 for Gnosis, 42161 for Arbitrum)"),
       // 送金元トークンアドレス。0xから始まる42文字の16進数アドレス
-      srcTokenAddress: z.string().startsWith("0x").length(42, "Must be a 42-character hexadecimal address starting with 0x"),
+      srcTokenAddress: z.string().regex(/^0x[a-fA-F0-9]{40}$/, "Must be a valid Ethereum address. Use getTokenAddresses tool to find valid addresses. Example: 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE for ETH"),
       // 送金先トークンアドレス。0xから始まる42文字の16進数アドレス
-      dstTokenAddress: z.string().startsWith("0x").length(42, "Must be a 42-character hexadecimal address starting with 0x"),
-      // 送金元トークン量。トークンの最小単位（例: ETHならwei）での文字列。例: 1 ETH = '1000000000000000000'
-      amount: z.string().regex(/^\d+$/, "Amount must be a string of digits representing the token's smallest divisible unit. E.g., '1000000000000000000' for 1 ETH (18 decimals)."),
+      dstTokenAddress: z.string().regex(/^0x[a-fA-F0-9]{40}$/, "Must be a valid Ethereum address. Use getTokenAddresses tool to find valid addresses. Example: 0x7F5c764cBc14f9669B88837ca1490cCa17c31607 for USDC on Optimism"),
+      // 送金元トークン量。トークンの最小単位での文字列。例: 1 ETH = '1000000000000000000'
+      amount: z.string().regex(/^\d+$/, "Amount must be a string of digits representing the token's smallest divisible unit"),
       // ウォレットアドレス
-      walletAddress: z.string().startsWith("0x").length(42, "Must be a 42-character hexadecimal address starting with 0x"),
+      walletAddress: z.string().regex(/^0x[a-fA-F0-9]{40}$/, "Must be a valid Ethereum address. Example: 0x742d35Cc6634C0532925a3b8d8B5Df09F24fA734"),
       // 推定を行うかどうか。デフォルトはfalse
       enableEstimate: z.boolean().optional().describe("If enabled, gets estimation from 1inch swap builder and generates quoteId. Default is false."),
       // 手数料をBPS形式で指定。1%は100bps
       fee: z.number().optional().describe("Fee in bps format, 1% is 100bps."),
-    }),
+    },
   },
-  async (input) => {
+  async (input, extra) => {
     try {
       const {
         srcChainId,
@@ -113,39 +109,49 @@ server.registerTool(
         dstTokenAddress,
         amount,
         walletAddress,
-        enableEstimate: enableEstimate ?? false, // 指定がなければfalseをデフォルトに
-        fee: fee, // オプションの手数料
+        enableEstimate: enableEstimate ?? false,
+        // fee は QuoteParams に含まれていないため削除
       };
 
       // 1inch Fusion+ Quoter APIを呼び出し、quoteの詳細を取得
       const quote = await oneInchSdk.getQuote(quoteParams);
 
       // LLM向けに整形された情報を抽出
-      const recommendedPreset = quote.recommendedPreset; // 例: 'fast', 'medium', 'slow', 'custom'
-      const presetDetails = quote.presets[recommendedPreset]; // 推奨プリセットの詳細を取得
+      const recommendedPreset = quote.recommendedPreset;
+      const presetDetails = quote.presets[recommendedPreset];
 
       if (!presetDetails) {
         throw new Error(`No details found for recommended preset: ${recommendedPreset}`);
       }
 
       const responseContent = {
-        quoteId: quote.quoteId, // クォートの一意の識別子
-        srcTokenAmount: quote.srcTokenAmount, // クォートで使用された送金元トークン量
-        dstTokenAmount: quote.dstTokenAmount, // 推定される受取トークン量
-        recommendedPreset: recommendedPreset, // 推奨されるスワッププリセット
-        auctionDetails: { // ダッチオークションの詳細
-          auctionDuration: presetDetails.auctionDuration, // オークション期間（秒）
-          startAuctionIn: presetDetails.startAuctionIn, // オークション開始までの時間（秒）
-          initialRateBump: presetDetails.initialRateBump, // 初期レートの上昇値（最大値と最小値の差）
-          auctionStartAmount: presetDetails.auctionStartAmount, // オークション開始時の数量
-          auctionEndAmount: presetDetails.auctionEndAmount, // オークション終了時の数量
-          costInDstToken: presetDetails.costInDstToken, // 目的地トークンでのコスト
-          gasCostEstimate: presetDetails.gasCost?.gasPriceEstimate, // 推定ガス価格
+        quoteId: quote.quoteId,
+        srcTokenAmount: quote.srcTokenAmount?.toString() || "0",
+        dstTokenAmount: quote.dstTokenAmount?.toString() || "0",
+        recommendedPreset: recommendedPreset,
+        auctionDetails: {
+          auctionDuration: presetDetails.auctionDuration?.toString() || "0",
+          startAuctionIn: presetDetails.startAuctionIn?.toString() || "0",
+          initialRateBump: presetDetails.initialRateBump?.toString() || "0",
+          auctionStartAmount: presetDetails.auctionStartAmount?.toString() || "0",
+          auctionEndAmount: presetDetails.auctionEndAmount?.toString() || "0",
+          costInDstToken: presetDetails.costInDstToken?.toString() || "0",
+          gasCostEstimate: (presetDetails as any).gasCost?.gasPriceEstimate || (presetDetails as any).gasBumpEstimate || "N/A",
         },
+        // 価格情報（利用可能な場合）
+        prices: quote.prices ? {
+          srcTokenUsd: quote.prices.usd?.srcToken?.toString(),
+          dstTokenUsd: quote.prices.usd?.dstToken?.toString(),
+        } : undefined,
+        // ボリューム情報（利用可能な場合）
+        volume: quote.volume ? {
+          srcTokenUsd: quote.volume.usd?.srcToken?.toString(),
+          dstTokenUsd: quote.volume.usd?.dstToken?.toString(),
+        } : undefined,
       };
 
       return {
-        content: [{ type: "json", json: responseContent }],
+        content: [{ type: "text", text: JSON.stringify(responseContent, null, 2) }],
       };
     } catch (error) {
       console.error("Error finding DeFi earning opportunities:", error);
