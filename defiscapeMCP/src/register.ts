@@ -13,6 +13,7 @@ import {
                                           } from "./tools/activeOrders.js";
 
 import {
+         registerSimpleDeFiTools,
          registerMarketDataResource
                                           } from "./tools/basicInfo.js";
 
@@ -30,7 +31,8 @@ export function registerAllTools(server: McpServer) {
 
   registerExample(server);
   // Market Data Resource
-  registerMarketDataResource(server);
+  registerSimpleDeFiTools(server);
+  //registerMarketDataResource(server);
   // // Defi Earning Opportunities
   // registerDefiEarningOpportunities(server);
   // // Active Orders

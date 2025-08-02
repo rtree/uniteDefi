@@ -72,10 +72,11 @@ export function registerMarketDataResource(server: McpServer) {
   );
 }
 
-function registerSimpleDeFiTools(server: McpServer) {
+export function registerSimpleDeFiTools(server: McpServer) {
   /**
    * Simple tool to get token information and prices
    */
+  
   server.registerTool(
     "getTokenInfo",
     {
@@ -310,6 +311,234 @@ function registerSimpleDeFiTools(server: McpServer) {
       }
     },
   );
+
+  /**
+   * Tool to find token address from symbol
+   */
+  server.registerTool(
+    "findTokenBySymbol",
+    {
+      title: "Find Token Address by Symbol",
+      description: "Search for a token's contract address and chain information using its symbol (e.g., USDC, ETH, WBTC). Essential for getting the exact token address needed for other operations.",
+      inputSchema: {
+        tokenSymbol: z.string().describe("Token symbol to search for (e.g., USDC, ETH, WBTC)"),
+        chainId: z.number().optional().describe("Specific chain ID to search on (optional - if not provided, searches across all supported chains)"),
+        limit: z.number().default(5).describe("Maximum number of results to return per chain"),
+      },
+    },
+    async (input) => {
+      try {
+        const { tokenSymbol, chainId, limit } = input;
+        const results = [];
+
+        // If chainId is specified, search only that chain
+        const chainsToSearch = chainId ? [chainId] : [1, 137, 42161, 10, 56, 100, 43114]; // Popular chains
+
+        for (const currentChainId of chainsToSearch) {
+          try {
+            // Use the search API to find tokens by symbol
+            const searchResponse = await fetch(`https://api.1inch.dev/token/v1.4/${currentChainId}/search?query=${encodeURIComponent(tokenSymbol)}&limit=${limit}`, {
+              headers: {
+                'Authorization': `Bearer ${ONE_INCH_AUTH_KEY}`,
+              },
+            });
+
+            if (!searchResponse.ok) {
+              console.warn(`Search failed for chain ${currentChainId}: ${searchResponse.statusText}`);
+              continue;
+            }
+
+            const searchData = await searchResponse.json();
+            
+            // Filter results to exact symbol matches (case insensitive)
+            const exactMatches = searchData.items?.filter((token: ProviderTokenDto) => 
+              token.symbol.toLowerCase() === tokenSymbol.toLowerCase()
+            ) || [];
+
+            if (exactMatches.length > 0) {
+              results.push({
+                chainId: currentChainId,
+                chainName: getChainName(currentChainId),
+                tokens: exactMatches.map((token: ProviderTokenDto) => ({
+                  address: token.address,
+                  symbol: token.symbol,
+                  name: token.name,
+                  decimals: token.decimals,
+                  providers: token.providers,
+                  tags: token.tags,
+                  explanation: getTokenExplanation(token.symbol),
+                })),
+              });
+            }
+
+          } catch (error) {
+            console.warn(`Error searching chain ${currentChainId}:`, error);
+          }
+        }
+
+        const result = {
+          searchedSymbol: tokenSymbol.toUpperCase(),
+          totalChainsFound: results.length,
+          results,
+          usage: {
+            howToUse: "Copy the 'address' field to use in other tools like getTokenInfo or price comparisons",
+            example: results.length > 0 ? `Use address: ${results[0].tokens[0]?.address} on ${results[0].chainName}` : "No tokens found",
+          },
+          beginnerTip: results.length > 1 
+            ? `${tokenSymbol} exists on multiple chains! Make sure to use the correct address for the chain you want to interact with.`
+            : results.length === 1 
+            ? `${tokenSymbol} found on ${results[0].chainName}. Use the provided address for transactions on this network.`
+            : `${tokenSymbol} not found. Try checking the spelling or use 'searchTokensByName' for partial matches.`,
+        };
+
+        return {
+          content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+        };
+
+      } catch (error) {
+        return {
+          content: [{ type: "text", text: `Error: ${error instanceof Error ? error.message : 'Unknown error'}` }],
+        };
+      }
+    },
+  );
+
+  /**
+   * Tool to search tokens by partial name or symbol
+   */
+  server.registerTool(
+    "searchTokensByName",
+    {
+      title: "Search Tokens by Name or Symbol",
+      description: "Search for tokens using partial names or symbols. Great for discovering tokens when you're not sure of the exact symbol.",
+      inputSchema: {
+        query: z.string().describe("Search query (partial token name or symbol, e.g., 'usd' to find stablecoins)"),
+        chainId: z.number().default(1).describe("Chain ID to search on"),
+        limit: z.number().default(10).describe("Maximum number of results to return"),
+      },
+    },
+    async (input) => {
+      try {
+        const { query, chainId, limit } = input;
+
+        const searchResponse = await fetch(`https://api.1inch.dev/token/v1.4/${chainId}/search?query=${encodeURIComponent(query)}&limit=${limit}`, {
+          headers: {
+            'Authorization': `Bearer ${ONE_INCH_AUTH_KEY}`,
+          },
+        });
+
+        if (!searchResponse.ok) {
+          throw new Error(`Search failed: ${searchResponse.statusText}`);
+        }
+
+        const searchData = await searchResponse.json();
+        
+        const tokens = searchData.items?.map((token: ProviderTokenDto) => ({
+          address: token.address,
+          symbol: token.symbol,
+          name: token.name,
+          decimals: token.decimals,
+          providers: token.providers,
+          tags: token.tags,
+          explanation: getTokenExplanation(token.symbol),
+          matchReason: {
+            symbolMatch: token.symbol.toLowerCase().includes(query.toLowerCase()),
+            nameMatch: token.name.toLowerCase().includes(query.toLowerCase()),
+          },
+        })) || [];
+
+        const result = {
+          searchQuery: query,
+          chainId,
+          chainName: getChainName(chainId),
+          totalResults: tokens.length,
+          tokens,
+          searchTips: [
+            "Use exact symbols (e.g., 'USDC') for precise matches",
+            "Use partial names (e.g., 'wrapped') to find related tokens", 
+            "Check multiple chains as the same token may exist on different networks",
+            "Always verify the contract address before making transactions",
+          ],
+        };
+
+        return {
+          content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+        };
+
+      } catch (error) {
+        return {
+          content: [{ type: "text", text: `Error: ${error instanceof Error ? error.message : 'Unknown error'}` }],
+        };
+      }
+    },
+  );
+
+  /**
+   * Tool to get all supported chains and their info
+   */
+  server.registerTool(
+    "getSupportedChains",
+    {
+      title: "Get Supported Blockchain Networks",
+      description: "Get a list of all blockchain networks supported by 1inch, with their chain IDs and basic information.",
+      inputSchema: {
+        includeTestnets: z.boolean().default(false).describe("Whether to include test networks"),
+      },
+    },
+    async (input) => {
+      try {
+        const { includeTestnets } = input;
+
+        // Get supported chain IDs from the API
+        const chainsResponse = await fetch('https://api.1inch.dev/token/v1.4/chain-ids', {
+          headers: {
+            'Authorization': `Bearer ${ONE_INCH_AUTH_KEY}`,
+          },
+        });
+
+        if (!chainsResponse.ok) {
+          throw new Error(`Failed to get supported chains: ${chainsResponse.statusText}`);
+        }
+
+        const chainIds: number[] = await chainsResponse.json();
+        
+        // Filter out testnets if not requested
+        const filteredChainIds = includeTestnets 
+          ? chainIds 
+          : chainIds.filter(id => ![5, 11155111, 80001, 421613].includes(id)); // Common testnet IDs
+
+        const supportedChains = filteredChainIds.map(chainId => ({
+          chainId,
+          chainName: getChainName(chainId),
+          description: getChainDescription(chainId),
+          isTestnet: [5, 11155111, 80001, 421613].includes(chainId),
+          isMainnet: ![5, 11155111, 80001, 421613].includes(chainId),
+        }));
+
+        const result = {
+          totalChains: supportedChains.length,
+          includesTestnets: includeTestnets,
+          supportedChains,
+          popularChains: supportedChains.filter(chain => 
+            [1, 137, 42161, 10, 56].includes(chain.chainId)
+          ),
+          usage: {
+            tip: "Use the chainId values in other tools to specify which blockchain network to query",
+            example: "Use chainId: 1 for Ethereum, 137 for Polygon, 42161 for Arbitrum",
+          },
+        };
+
+        return {
+          content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+        };
+
+      } catch (error) {
+        return {
+          content: [{ type: "text", text: `Error: ${error instanceof Error ? error.message : 'Unknown error'}` }],
+        };
+      }
+    },
+  );
 }
 
 // Helper functions
@@ -351,15 +580,6 @@ function getTokenExplanation(symbol: string): string {
   return explanations[symbol] || 'A cryptocurrency token used in DeFi applications';
 }
 
-// Add to your registerAllTools function:
-export function registerAllTools(server: McpServer) {
-  // ...existing tools...
-  
-  // Add the simple DeFi tools
-  registerSimpleDeFiTools(server);
-  
-  // ...rest of existing tools...
-}
 
 interface ProviderTokenDto {
   chainId: number;
