@@ -1,6 +1,7 @@
 
 # DefiScape MCP Server
 A Model Context Protocol (MCP) server that connects large language models to 1inch’s Fusion+ DeFi APIs.
+
 The server exposes a set of LLM-friendly tools and resources so assistants can discover DeFi information, query market data, and analyze cross‑chain swap opportunities.
 
 # Project Structure
@@ -41,15 +42,17 @@ ONE_INCH_AUTH_KEY=your-1inch-api-key
 
 Run the server
 ```
-npm run dev
+npm run dev &
+ngrok start --config=ngrok.yml frontend
 ```
 
 The MCP server listens on http://localhost:3000.
 Requests must include Authorization: Bearer <MCP_PRESHARED_KEY>.
 
+
 # Usage
 
-Goto OpenAI's dashboard -> Goto playground and register this MCP server like this
+Goto OpenAI's dashboard -> Goto playground and register this MCP server like this:
 <img width="1018" height="783" alt="image" src="https://github.com/user-attachments/assets/cbda3e1f-8b04-4465-b907-a35f66c70263" />
 
 Then ask like this
