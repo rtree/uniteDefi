@@ -4,17 +4,8 @@ A Model Context Protocol (MCP) server that connects large language models to 1in
 The server exposes a set of LLM-friendly tools and resources so assistants can discover DeFi information, query market data, and analyze cross‑chain swap opportunities.
 
 # Project Structure
-defiscapeMCP/
-├─ src/
-│  ├─ server.ts           # MCP server with HTTP transport and auth middleware
-│  ├─ register.ts         # Registers all tools/resources
-│  └─ tools/              # Individual tool implementations
-│     ├─ basicInfo.ts     # Token info, price comparison, chain lists
-│     ├─ activeOrders.ts  # Fusion+ order queries and profit scanning
-│     ├─ defiEarning.ts   # Cross‑chain swap earning opportunities
-│     └─ _example.ts      # Sample addition tool
-testMCP/                  # Minimal test servers
-support-tools/            # Auxiliary scripts and docs
+<img width="857" height="368" alt="image" src="https://github.com/user-attachments/assets/f4e74335-a7b7-4c96-918d-7e597fcdf85e" />
+
 
 # Features
 
