@@ -14,7 +14,7 @@ import {
 
 import {
          registerMarketDataResource
-                                          } from "./tools/marketInfo.js";
+                                          } from "./tools/basicInfo.js";
 
 // Initialize 1inch SDK with API key and URL
 dotenv.config();
