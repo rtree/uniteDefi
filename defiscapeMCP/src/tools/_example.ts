@@ -4,8 +4,17 @@ import { z } from "zod";
 import { SDK, NetworkEnum, QuoteParams } from "@1inch/cross-chain-sdk";
 import dotenv from "dotenv";
 
+// Initialize 1inch SDK with API key and URL
+dotenv.config();
+const ONE_INCH_AUTH_KEY = process.env.ONE_INCH_AUTH_KEY || "YOUR_API_KEY_HERE";
+const ONE_INCH_API_URL = "https://api.1inch.dev/fusion-plus";
+const oneInchSdk = new SDK({
+  url: ONE_INCH_API_URL,
+  authKey: ONE_INCH_AUTH_KEY,
+});
 
 export function registerExample(server: McpServer) {
+
   server.registerTool(
     "add",
     {
@@ -17,15 +26,5 @@ export function registerExample(server: McpServer) {
       content: [{ type: "text", text: String(a + b) }],
     }),
   );
-  server.registerResource(
-    "greeting",
-    new ResourceTemplate("greeting://{name}", { list: undefined }),
-    {
-      title: "Greeting Resource",
-      description: "Dynamic greeting generator",
-    },
-    async (uri, { name }) => ({
-      contents: [{ uri: uri.href, text: `Hello, ${name}!` }],
-    }),
-  );
+
 }

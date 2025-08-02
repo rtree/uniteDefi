@@ -2,7 +2,7 @@ import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mc
 import { StreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/streamableHttp.js";
 import { createServer } from "http";
 import dotenv from "dotenv";
-import { registerAllTools } from "./tools.js"
+import { registerAllTools } from "./register.js"
 
 dotenv.config();
 // Prepare MCP server
