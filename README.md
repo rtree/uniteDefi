@@ -63,7 +63,11 @@ Cross-Chain Token Price Comparison of ETH, WBTC and DAI.
 
 # Additional Notes
 
-testMCP contains minimal server examples for experimentation.
-support-tools holds helper crawler scripts and downloaded 1inch documentation.
-Tools for DeFi earnings and active orders require a valid 1inch API key.
+I think this is useful for extending development.
+- testMCP contains minimal server examples for experimentation.
+- support-tools holds helper crawler scripts and downloaded 1inch documentation.
+- Tools for DeFi earnings and active orders require a valid 1inch API key.
+
 Feel free to adapt or extend the tools to fit your LLM’s needs!
+
+and please feel free to reach me out on: <https://x.com/rtree>
